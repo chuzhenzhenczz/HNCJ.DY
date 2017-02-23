@@ -1,0 +1,35 @@
+﻿@model HNCJ.DY.Model.RoleInfo
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<h2>Edit</h2>
+@section header{
+    <script type="text/javascript">
+        function submitForm() {
+            var name = $("#RoleName").val();
+            
+            if (name == "") {
+                alert("角色名不能为空？");
+                return false;
+            }
+            
+            $("form").submit();
+        }
+    </script>
+   
+    
+    }
+@section content{
+    <div style="margin-bottom:10px">
+			<div>角色名:</div>
+			<input class="easyui-textbox"  style="width:100%;height:32px" type="text" id="RoleName" name="RoleName" value="@Model.RoleName"  >
+		</div>
+    @Html.HiddenFor(model => model.ID)
+    @Html.HiddenFor(model => model.Status)
+    @Html.HiddenFor(model => model.RegTime)
+    @Html.HiddenFor(model => model.ModfiedTime)
+    @Html.HiddenFor(model => model.DelFlag)
+    }

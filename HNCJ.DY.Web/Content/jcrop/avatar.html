@@ -1,0 +1,224 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+     <div id="header">
+         <!--Header-->
+        <div class="header">
+          <div class="header-wrap">
+            <div class="section">
+             <div class="left-box">
+                <a class="logo" href="/HomePage/Index">帮吆喝</a>
+                 <p class="nav">
+                  <a href="/HomePage/Index">主页</a>
+                  <a href="/HomePage/Index">校园趣事</a>
+                  <a href="/HomePage/Message">发布信息</a>
+                  <a href="/UserLogin/AdminLogin">后台登陆</a>
+                </p>
+              </div>
+                <script type="text/javascript">
+                    $.ajax({
+                        type: "POST",
+                        url: "/UserInfo/Check_login",
+                        dataType: "json",
+                        timeout: 20000,
+                        success: function (data) {
+                            if (data.status == "ok") {
+                                $("#menu").prepend('<li class="line"><a href="/UserInfo/Exits">退出</a></li>');
+                                $("#menu").prepend('<li class="login"><em></em><a href="/UserInfo/Details">会员中心</a></li>');
+                            } else {
+                                $("#menu").prepend('<li class="line"><a href="/UserInfo/Register">注册</a></li>');
+                                $("#menu").prepend('<li class="login"><em></em><a href="/UserLogin/Login">登录</a></li>');
+                            }
+                            $("#shoppingCartCount").text(data.count);
+                        }
+                    });
+                </script>
+              <div class="right-box">
+                  <ul id="menu">
+                     
+                      <li><a href="/UserInfo/MyCart">购物车<span id="shoppingCartCount"></span>件</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--/Header-->
+    </div>
+    <div class="section clearfix">
+  <div class="line30"></div>
+
+  <div class="info-wrap">
+    
+    <!--左侧导航-->
+        <div class="info-box"style="height:500px">
+            <script type="text/javascript">
+                $.ajax({
+                    type: "post",
+                    url: "/UserInfo/GetAvatarName",
+                    dataType: "json",
+                    timeout: 20000,
+                    success: function (data, textStatus) {
+                        $("#avatar").attr('src', data.path);
+                        $("#username").text(data.name);
+                        $("#p1").text(data.nick);
+                        $("#p2").text(data.amount);
+                    }
+                });
+            </script>
+      <div class="avatar-box">
+        <a href="/UserInfo/Details" class="img-box">
+           <img id="avatar" src="/Content/jcrop/user-avatar.png" alt="头像" />
+        </a>
+        <h3 id="username">
+          
+        </h3>
+        <p >昵称：<span id="p1"></span></p>
+          
+        <p>余额：<span id="p2"></span>元</p>	
+      </div>
+      <ul class="side-nav">
+        
+        <li>
+            <a href="/UserInfo/MyOrderInfo">订单管理</a>
+            <a href="/AddressInfo/Index">收货地址</a>
+            
+            </li><li>
+            
+            <a href="/UserInfo/MyRelease">发布管理</a>
+            <a href="/UserInfo/MyCart">购物管理</a>
+            </li><li>
+           <a href="/UserInfo/MyDetails">个人资料</a>
+          <a href="/UserInfo/SetAvatar">头像设置</a>
+            
+           </li><li>
+          <a href="/UserInfo/ModifyPwd">修改密码</a>
+          <a href="/UserInfo/Exits">退出登录</a>
+        </li>
+      </ul>
+    </div>
+    <!--/左侧导航-->
+    
+    <!--右侧内容-->
+    <div class="home-box">
+        <div id="container" >
+    <!--设置头像-->
+            <script src="jquery-1.7.1.min.js"></script>
+            <link href="jquery.jcrop.css" rel="stylesheet" />
+            <script src="jquery.jcrop.min.js"></script>
+            <script src="webuploader.min.js"></script>
+            <script src="avatar.js"></script>
+     
+      <script type="text/javascript">
+          $(function () {
+              initWebUploader('/');
+          });
+          //提交裁剪
+          function CropSubmit(obj) {
+              if ($("#hideFileName").val() == '') {
+                  alert("请先上传一张图片再提交保存！");
+              } else {
+                  var btnTxt = $(obj).val();
+                  $.ajax({
+                      type: "post",
+                      url: $("#uploadForm").attr("url"),
+                      dataType: "json",
+                      data: $("#uploadForm").serialize(),
+                      beforeSend: function (formData, jqForm, options) {
+                          $(obj).prop("disabled", true).val("请稍候..");
+                      },
+                      success: function (data) {
+                          if (data.status == "ok") {
+
+                              var d = dialog({ content: data.msg }).show();
+                              setTimeout(function () {
+                                  d.close().remove();
+                                  window.location.reload();
+                              }, 2000);
+                          } else {
+                              dialog({ title: '提示', content: data.msg, okValue: '确定', ok: function () { } }).showModal();
+                          }
+                      }
+                  });
+              }
+              return false;
+          }
+
+	  </script>
+      <div class="u-tab-content">
+        <div class="title-div">
+          <strong>头像设置</strong>
+        </div>
+        <p><strong>设置我的新头像</strong></p>
+        <p>如果您还没有设置自己的头像，系统会显示为默认头像，您需要自己上传一张新照片来作为自己的个人头像。</p>
+        <p>上传成功后，请裁剪合适的头像确认保存后才能生效。</p>
+        <div class="line20"></div>
+        
+        <div id="upload-box" class="upload-box"></div>
+        
+        <div class="cropper-wraper">
+          <div class="cropper-box">
+            <img id="target" src="/Content/jcrop/avatar-bg.png" width="350" height="350" />
+          </div>
+          <div class="cropper-view">
+            <div class="img-box">
+
+                <img id="preview" src="/Content/Images/Avatar/3baa39d0-b0b7-438d-9dd9-a34ce706710a.jpg" />
+                
+              <span>头像预览</span>
+            </div>
+            <div class="btn-box">
+              <p><strong>头像预览区</strong></p>
+              <p><a class="btn" href="#" onclick="CropSubmit(this);" >确定保存 </a></p>
+              <p class="tip">提示：生成头像大小180*180相素上传图片后，左侧选取图片合适大小，点击下面的保存按钮。</p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      <form id="uploadForm" name="uploadForm" url="/UserInfo/cropSaveAs">
+        <input id="hideFileName" name="hideFileName" type="hidden" />
+        <input id="hideX1" name="hideX1" type="hidden" value="0" />
+        <input id="hideY1" name="hideY1" type="hidden" value="0" />
+        <input id="hideWidth" name="hideWidth" type="hidden" value="0" />
+        <input id="hideHeight" name="hideHeight" type="hidden" value="0" />
+      </form>
+      <!--/设置头像-->
+    
+    </div>
+
+    </div>
+    <!--/右侧内容-->
+  </div>
+</div>
+    
+    <div id="footer">
+        <!--Footer-->
+        <div class="footer">
+            <script type="text/javascript">
+                $.ajax({
+                    type: "POST",
+                    url: "/HomePage/Links",
+                    dataType: "json",
+                    timeout: 20000,
+                    success: function (data, textStatus) {
+                        for (var i = 0; i < data.length; i++) {
+                            $(".foot-nav").prepend("<a target='_blank' href=" + data[i].Url + ">" + data[i].Title + "</a>");
+                        }
+                    }
+                });
+            </script>
+          <div class="foot-nav">
+          </div>
+          <div class="copyright">
+             <p>版权  &copy;  hnjc </p>
+          </div>
+        </div>
+<!--/Footer-->
+    </div>
+</body>
+</html>

@@ -1,0 +1,114 @@
+.contextmenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 148px;
+    height:  110px;
+    padding: 10px 0 0 0 ;
+    overflow: hidden;
+    background-color: red;
+    list-style: none;
+    transition: all 0.3s ease;
+    background-color: rgba(127, 209, 184, 0.4);
+    &>li {
+        height: 30px;
+        & > a {
+            display: block;
+            height: 30px;
+            line-height: 30px;
+            //padding: 5px 0 5px 0px;
+            text-decoration: none;
+            -webkit-transform: perspective(1px) translateZ(0);
+            transform: perspective(1px) translateZ(0);
+            box-shadow: 0 0 1px transparent;
+            overflow: hidden;
+            -webkit-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+            -webkit-transition-property: color, background-color;
+            transition-property: color, background-color;
+            text-align: center;
+        }
+        & > a:hover {
+            background-color: rgb(97, 156, 136);
+            color: white;
+            //-webkit-transform: translateX(6px);
+            //transform: translateX(6px);
+            &:hover:before {
+                content: ">";
+            }
+            &:hover:after {
+                content: "<";
+            }
+        }
+    }
+    z-index: 100;
+
+    &.hide {
+        padding: 0;
+        z-index: -100;
+        height: 0;
+        width: 0;
+    }
+}
+
+/*
+ul.list-son {
+    &.hide {
+        height: 0;
+        overflow: hidden;
+    }
+    & > li {
+        margin: 5px auto;
+        & > a {
+            display: block;
+            padding: 10px 0 10px 15px;
+            text-decoration: none;
+            -webkit-transform: perspective(1px) translateZ(0);
+            transform: perspective(1px) translateZ(0);
+            box-shadow: 0 0 1px transparent;
+            overflow: hidden;
+            -webkit-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+            -webkit-transition-property: color, background-color;
+            transition-property: color, background-color;
+            text-align: center;
+        }
+        & > a:hover {
+            background-color: rgba(127, 209, 184, 0.4);
+            color: white;
+            //-webkit-transform: translateX(6px);
+            //transform: translateX(6px);
+            &:hover:before {
+                content: ">";
+            }
+            &:hover:after {
+                content: "<";
+            }
+        }
+        & > a:link, & > a:visited, & > a:hover, & > a:active {
+            color: rgb(10, 8, 8);
+
+            &:hover:before, &:focus:before, &:active:before {
+                left: 0;
+                right: 0;
+            }
+            //&:before {
+            //    content: "";
+            //    position: absolute;
+            //    z-index: -1;
+            //    left: 50%;
+            //    right: 50%;
+            //    bottom: 0;
+            //    background: #2098D1;
+            //    height: 4px;
+            //    -webkit-transition-property: left, right;
+            //    transition-property: left, right;
+            //    -webkit-transition-duration: 0.3s;
+            //    transition-duration: 0.3s;
+            //    -webkit-transition-timing-function: ease-out;
+            //    transition-timing-function: ease-out;
+            //}
+        }
+    }
+}
+*/

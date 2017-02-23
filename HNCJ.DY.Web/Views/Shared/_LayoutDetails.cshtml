@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/jquery-easyui-1.5/themes/default/easyui.css" rel="stylesheet" />
+    <link href="~/Content/demo.css" rel="stylesheet" />
+    <script src="~/Content/jquery-easyui-1.5/jquery.min.js"></script>
+    <script src="~/Content/jquery-easyui-1.5/jquery.easyui.min.js"></script>
+    <script src="~/Content/jquery-easyui-1.5/locale/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript">
+        function submitForm() {
+            window.parent.window.afterSuccess();
+        }
+    </script>
+    <style type="text/css">
+        * {
+            margin:0;
+            padding:0;
+        }
+    </style>
+</head>
+<body>
+    <div style="padding:10px 60px;max-width:400px;font-size:20px;">    
+            @RenderSection("content",false)    
+    </div>
+</body>
+</html>
+

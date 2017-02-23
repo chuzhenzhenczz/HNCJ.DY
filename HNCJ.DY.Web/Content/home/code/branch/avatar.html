@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
+    <!--设置头像-->
+    <script src="../../../../Scripts/jquery-1.7.1.min.js"></script>
+    <link href="../../../templates/main/css/style.css" rel="stylesheet" />
+    <link href="../../../jcrop/jquery.jcrop.css" rel="stylesheet" />
+    <script src="../../../jcrop/webuploader.min.js"></script>
+    <script src="../../../jcrop/jquery.jcrop.min.js"></script>
+    <script src="../../../jcrop/avatar.js"></script>
+     
+      <!--右侧内容-->
+    <div class="home-box">
+        <div id="container" >
+    <!--设置头像-->
+ 
+     
+      <script type="text/javascript">
+          $(function () {
+              initWebUploader('/');
+          });
+          //提交裁剪
+          function CropSubmit(obj) {
+              if ($("#hideFileName").val() == '') {
+                  alert("请先上传一张图片再提交保存！");
+              } else {
+                  var btnTxt = $(obj).val();
+                  $.ajax({
+                      type: "post",
+                      url: $("#uploadForm").attr("url"),
+                      dataType: "json",
+                      data: $("#uploadForm").serialize(),
+                      beforeSend: function (formData, jqForm, options) {
+                          $(obj).prop("disabled", true).val("请稍候..");
+                      },
+                      success: function (data) {
+                          if (data.status == "ok") {
+
+                              var d = dialog({ content: data.msg }).show();
+                              setTimeout(function () {
+                                  d.close().remove();
+                                  window.location.reload();
+                              }, 2000);
+                          } else {
+                              dialog({ title: '提示', content: data.msg, okValue: '确定', ok: function () { } }).showModal();
+                          }
+                      }
+                  });
+              }
+              return false;
+          }
+
+	  </script>
+      <div class="u-tab-content">
+        <div class="title-div">
+          <strong>头像设置</strong>
+        </div>
+        <p><strong>设置我的新头像</strong></p>
+        <p>如果您还没有设置自己的头像，系统会显示为默认头像，您需要自己上传一张新照片来作为自己的个人头像。</p>
+        <p>上传成功后，请裁剪合适的头像确认保存后才能生效。</p>
+        <div class="line20"></div>
+        
+        <div id="upload-box" class="upload-box"></div>
+        
+        <div class="cropper-wraper">
+          <div class="cropper-box">
+            <img id="target" src="/Content/jcrop/avatar-bg.png" width="350" height="350" />
+          </div>
+          <div class="cropper-view">
+            <div class="img-box">
+
+                <img id="preview" src="/Content/Images/Avatar/3baa39d0-b0b7-438d-9dd9-a34ce706710a.jpg" />
+                
+              <span>头像预览</span>
+            </div>
+            <div class="btn-box">
+              <p><strong>头像预览区</strong></p>
+              <p><a class="btn" href="#" onclick="CropSubmit(this);" >确定保存 </a></p>
+              <p class="tip">提示：生成头像大小180*180相素上传图片后，左侧选取图片合适大小，点击下面的保存按钮。</p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      <form id="uploadForm" name="uploadForm" url="/UserInfo/cropSaveAs">
+        <input id="hideFileName" name="hideFileName" type="hidden" />
+        <input id="hideX1" name="hideX1" type="hidden" value="0" />
+        <input id="hideY1" name="hideY1" type="hidden" value="0" />
+        <input id="hideWidth" name="hideWidth" type="hidden" value="0" />
+        <input id="hideHeight" name="hideHeight" type="hidden" value="0" />
+      </form>
+      <!--/设置头像-->
+    
+    </div>
+
+    </div>
+    <!--/右侧内容-->
+</body>
+</html>

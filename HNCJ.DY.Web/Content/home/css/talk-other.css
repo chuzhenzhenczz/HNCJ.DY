@@ -1,0 +1,333 @@
+@media screen and (min-width:780px){
+    .child-logo p{
+        display:none;
+    }
+}
+@media screen and (min-width:980px){
+
+    .left-talk-phone img{
+        display: none;
+    }
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-size: 100%;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+/*nav*/
+.navbar-header a:hover{
+    text-align: center;
+    font-weight: 700;
+
+}
+.content-talk{
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    min-width: 1080px;
+    height: 1160px;
+    min-height: 1750px;
+    margin: 100px 0 0 0;
+    background-color: white;
+
+}
+
+
+.content-right{
+    /*width: 100%;*/
+    width: 1080px;
+    /*background-color: #fffec8;*/
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    top: -20px;
+    /*background-color: #1f3eb3;*/
+}
+
+/*个人主页*/
+
+.myHomePage{
+    width: 1080px;
+    height: 260px;
+    margin: 0 auto;
+    /*margin-left: 260px;*/
+    background-image: url("../img/otherhome2.jpg");
+    background-size: 100% auto;
+    /*background-position:center;*/
+    background-repeat: no-repeat;
+
+}
+
+.myHomePage2{
+    width: 1080px;
+    height: 260px;
+    position: absolute;
+    background:linear-gradient(to top right, rgba(10, 3, 2, 0.9), rgba(255, 254, 253, 0.05)) ;
+    z-index: 1;
+    top: 0;
+}
+
+.myHomePage2 .name h1{
+    color: white;
+    position: relative;
+    top: 60px;
+    left: 50px;
+}
+.myHomePage2 .name h4{
+    color: white;
+    position: relative;
+    top: 100px;
+    left: 50px;
+    width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.myHomePage2 .count{
+    position: relative;
+    top: -30px;
+    left: 350px;
+    width: 20px;
+}
+.myHomePage2 .count h4{
+    color: white;
+    position: relative;
+    top: 100px;
+    left: 20px;
+    width: 120px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border: 1px solid white;
+}
+
+.content-right .my-Phone{
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    background-image: url("../img/myphone1.jpg");
+    background-size: 100% 100%;
+    margin-left: 50px;
+    position: relative;
+    top: -30px;
+    border-radius: 10px;
+    border: 3px solid white;
+    z-index: 1;
+}
+
+.content-right .my-content{
+    width: 1080px;
+    min-height: 1060px;
+    height: 100%;
+    margin: 0 auto;
+    background-color: #f8f5f5;
+    /*margin-left: 260px;*/
+    top: -130px;
+    position: relative;
+
+}
+.content-right .my-name{
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.content-right .my-name ul{
+    width: 160px;
+    height: 80px;
+    /*background-color: #17b9e7;*/
+    margin-left: 220px;
+    list-style-type: none;
+    color: #8f8e8c;
+}
+.my-name ul h3{
+    color: #6c6c6c;
+    font-size: 20px;
+}
+.add-friend {
+    width: 250px;
+    height: 100px;
+    /*background-color: #8ecdd0;*/
+}
+.add-follow{
+    width: 250px;
+    height: 100px;
+    /*background-color: #ff8026;*/
+}
+.add-friend .ad-button,.add-follow .aw-button{
+    width: 120px;
+    height: 35px;
+    background-color: #E3F0FC;
+    margin-top: 50px;
+    border: 1px solid #B2CEDB;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 35px;
+}
+.my-name .add {
+    color: #2aabd2;
+    font-size: 30px;
+    margin-right: 15px;
+
+}
+.my-name .add2 {
+    color: #8f8e8c;
+    font-size: 20px;
+    position: relative;
+    top: -5px;
+
+}
+.other-content{
+    width: 100%;
+    height: 200px;
+    /*background-color: #2aabd2;*/
+    border-top: 1px solid #dad9d7;
+}
+.other-content .love-post{
+    width: 100%;
+    height: 18px;
+    border-left: 2px solid #ff8026;
+    margin-left: 20px;
+    margin-top: 20px;
+    line-height: 18px;
+}
+
+.other-content p{
+    margin-left: 10px;
+    color: #6c6c6c;
+    font-size: 18px;
+}
+#post-title{
+    display: flex;
+    flex-flow: row wrap;
+}
+.ad-post{
+    width: 230px;
+    height: 35px;
+    background-color: #E3F0FC;
+    margin-top: 50px;
+    margin-left: 20px;
+    border: 1px solid #B2CEDB;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 35px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.ad-post .add{
+    color: #6c6c6c;
+}
+
+a:link{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+a:active{
+    text-decoration: none;
+}
+a:visited{
+    text-decoration: none;
+}
+/*我的帖子*/
+.div3-myPosts{
+    margin-top: 80px;
+    margin-left: 50px;
+}
+.myPosts-div{
+    width: 80%;
+    height: 100%;
+    padding: 15px;
+    margin: 0 auto;
+    margin-top: 30px;
+    background-color: #eeeeee;
+    border-top: 1px solid #e6e3e3;
+    border-bottom: 1px solid #e6e3e3;
+}
+.div3-myPosts textarea{
+    width: 80%;
+    border: 1px solid #c9c8c6;
+}
+.myPosts-title input{
+    margin-bottom: 30px;
+    border: 1px solid #c9c8c6;
+    width: 80%;
+    height: 40px;
+}
+.myPosts-button button{
+    width: 70px;
+    height: 30px;
+    text-align: center;
+    background-color: #5390ee;
+    border: 0;
+    border-radius: 3px;
+    color: white;
+    font-weight: 600;
+}
+.myPosts-button{
+    margin-left: 542px;
+}
+.new-myPosts img{
+    background-size: 100% 100%;
+    width: 32px;
+    height: 32px;
+}
+.new-myPosts{
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.myPosts{
+    width: 100%;
+    height: 110px;
+    margin-top: 20px;
+    border-bottom: 1px solid #e9e6e6;
+    margin-bottom: 10px;
+}
+.myPosts h3{
+    font-size: 20px;
+    color: #282828;
+    font-weight: 600;
+}
+.myPosts p{
+    font-size: 14px;
+    color: #5f5e5c;
+    line-height: 30px;
+}
+.myPosts-com{
+    display: flex;
+    flex-flow: row nowrap;
+}
+.myPosts-com img{
+    margin-right: 10px;
+}
+.myPosts-time{
+    margin-right: 20px;
+}
+.myPosts-newCom{
+    margin-right: 60px;
+    color: #282828;
+}
+.myPosts-number,.newCom-name{
+    margin-right: 60px;
+    color: #a8a7a5;
+}
+.right-phone-bottom{
+    width: 80%;
+    height: 300px;
+    margin-top: 50px;
+
+}
+.right-phone-bottom img{
+    width: 100%;
+    height: 300px;
+    background-size: 100% 100%;
+}

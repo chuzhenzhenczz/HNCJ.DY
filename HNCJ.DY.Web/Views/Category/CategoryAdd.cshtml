@@ -1,0 +1,87 @@
+﻿@model HNCJ.DY.Model.Category
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CategoryAdd</title>
+</head>
+<body>
+    @using (Html.BeginForm()) {
+        @Html.ValidationSummary(true)
+    
+        <fieldset>
+            <legend>Category</legend>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Name)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Name)
+                @Html.ValidationMessageFor(model => model.Name)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Count)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Count)
+                @Html.ValidationMessageFor(model => model.Count)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Status)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Status)
+                @Html.ValidationMessageFor(model => model.Status)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.DelFlag)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.DelFlag)
+                @Html.ValidationMessageFor(model => model.DelFlag)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.RegTime)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.RegTime)
+                @Html.ValidationMessageFor(model => model.RegTime)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ModfiedTime)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.ModfiedTime)
+                @Html.ValidationMessageFor(model => model.ModfiedTime)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Path)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Path)
+                @Html.ValidationMessageFor(model => model.Path)
+            </div>
+    
+            <p>
+                <input type="submit" value="Create" />
+            </p>
+        </fieldset>
+    }
+    
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</body>
+</html>

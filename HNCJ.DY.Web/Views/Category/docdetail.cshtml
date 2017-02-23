@@ -1,0 +1,49 @@
+﻿@model HNCJ.DY.Model.StudyOnline
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>docdetail</title>
+    <link href="~/Content/gaga/css/main.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="de-top">
+    <!--标题-->
+    <h2 class="title">@Model.Name</h2>
+    <hr>
+    <!--正文-->
+    <div>
+        @Model.Content
+    </div>
+</div>
+<!--评论-->
+<ul class="comment-list">
+    
+    
+</ul>
+
+    
+    @{
+        var list = ViewBag.List as List<HNCJ.DY.Model.StudyItem>;
+        }
+    <ul class="comment-list">
+        @foreach(var entity in list){
+        <li class="item">
+        <a href="#">
+            <div class="bag">
+                <img src="@entity.UserInfo.Icon" alt="头像">
+                <span>@entity.RegTime.Value.ToString("yyyy-MM-dd")</span>
+            </div>
+            <p>@entity.Context</p>
+        </a>
+    </li>
+        }
+
+    </ul>
+</body>
+</html>

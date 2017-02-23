@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net" default-autowire="constructor" >
+			<object name="ActionInfoService" type="HNCJ.DY.BLL.ActionInfoService, HNCJ.DY.BLL">
+		</object>
+			<object name="CategoryService" type="HNCJ.DY.BLL.CategoryService, HNCJ.DY.BLL">
+		</object>
+			<object name="ContentInfoService" type="HNCJ.DY.BLL.ContentInfoService, HNCJ.DY.BLL">
+		</object>
+			<object name="FilesInfoService" type="HNCJ.DY.BLL.FilesInfoService, HNCJ.DY.BLL">
+		</object>
+			<object name="FriendService" type="HNCJ.DY.BLL.FriendService, HNCJ.DY.BLL">
+		</object>
+			<object name="MessageService" type="HNCJ.DY.BLL.MessageService, HNCJ.DY.BLL">
+		</object>
+			<object name="NewInfoService" type="HNCJ.DY.BLL.NewInfoService, HNCJ.DY.BLL">
+		</object>
+			<object name="PaityMemberService" type="HNCJ.DY.BLL.PaityMemberService, HNCJ.DY.BLL">
+		</object>
+			<object name="RoleInfoService" type="HNCJ.DY.BLL.RoleInfoService, HNCJ.DY.BLL">
+		</object>
+			<object name="StudyItemService" type="HNCJ.DY.BLL.StudyItemService, HNCJ.DY.BLL">
+		</object>
+			<object name="StudyOnlineService" type="HNCJ.DY.BLL.StudyOnlineService, HNCJ.DY.BLL">
+		</object>
+			<object name="TemplateService" type="HNCJ.DY.BLL.TemplateService, HNCJ.DY.BLL">
+		</object>
+			<object name="TopicInfoService" type="HNCJ.DY.BLL.TopicInfoService, HNCJ.DY.BLL">
+		</object>
+			<object name="UserActionInfoService" type="HNCJ.DY.BLL.UserActionInfoService, HNCJ.DY.BLL">
+		</object>
+			<object name="UserInfoService" type="HNCJ.DY.BLL.UserInfoService, HNCJ.DY.BLL">
+		</object>
+			<object name="VisitorRecordService" type="HNCJ.DY.BLL.VisitorRecordService, HNCJ.DY.BLL">
+		</object>
+	
+</objects>

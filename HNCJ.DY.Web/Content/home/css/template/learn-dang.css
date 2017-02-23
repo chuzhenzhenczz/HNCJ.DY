@@ -1,0 +1,99 @@
+.read-upFiles .party-constitution{
+    width: 100%;
+    height: 500px;
+    background-color: #d7d6d4;
+    display: flex;
+    flex-flow: row nowrap;
+}
+.party-button{
+    /*background-color: #2aabd2;*/
+    width:20%;
+    height: 100%;
+}
+.constitution-content{
+    /*background-color: #72716f;*/
+    width:80%;
+    height: 100%;
+    position: relative;
+}
+.constitution-box{
+    background-color: #eff2c7;
+    padding: 10px;
+    width:95%;
+    height: 90%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scroll-snap-type: mandatory;
+    line-height: 20px;
+    margin-top: 20px;
+    z-index: -1;
+}
+.party-button-bottom{
+    height: 200px;
+
+}
+.party-button .button-one{
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: #a8a7a5;
+    color: white;
+    font-family:"Bell MT", sans-serif;
+    border: 1px solid #adacaa;
+    position: relative;
+    top: 10px;
+    margin-top: 30px;
+    font-weight: 600;
+    font-size: 20px;
+}
+.party-button .button-two{
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: #a8a7a5;
+    color: #3c3c3c;
+    font-family:"Bell MT", sans-serif;
+    border: 1px solid #adacaa;
+    position: relative;
+    top: 10px;
+    margin-top: 30px;
+    font-weight: 600;
+    font-size: 20px;
+}
+/*党章内容*/
+
+#constitution-content1 p,#constitution-dangji p{
+    text-align: left ;
+    text-indent: 2em;
+}
+/*#constitution-content1 ul h4{*/
+    /*text-align: left ;*/
+    /*text-indent: 2em;*/
+/*}*/
+#constitution-content1 .mu-lu,#constitution-dangji .mu-lu{
+    /*text-align: left ;*/
+    display: flex;
+    flex-flow: row nowrap;
+    list-style-type: none;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 150px;
+    margin-top: 60px;
+}
+#constitution-content1 .mu-lu ul,#constitution-dangji .mu-lu ul{
+    list-style-type: none;
+    width: 16%;
+}
+#constitution-content1 .mu-lu ul h4,#constitution-dangji .mu-lu ul h4{
+    font-size: 20px;
+    text-align: left;
+    margin-left: 35px;
+}
+
+.button-top{
+    position: relative;
+    top: 400px;
+    left: -350px;
+    z-index: 99;
+    display: none;
+}

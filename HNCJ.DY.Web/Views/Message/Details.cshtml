@@ -1,0 +1,32 @@
+﻿@model HNCJ.DY.Model.Message
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutDetails.cshtml";
+}
+
+<h2>Details</h2>
+@section content{
+    <div style="margin-bottom:10px">
+			<div>发送者:</div>
+			<input class="easyui-textbox" style="width:100%;height:32px" value="@Model.SenderID" readonly="true">
+		</div>
+    <div style="margin-bottom:10px">
+			<div>接收者:</div>
+			<input class="easyui-textbox" style="width:100%;height:32px" value="@Model.RecipientID" readonly="true">
+		</div>
+    <div style="margin-bottom:10px">
+			<div>消息:</div>
+			<input class="easyui-textbox" style="width:100%;height:60px" value="@Model.Msg" readonly="true" data-options="multiline:true"  >
+		</div>
+        @{var str = Model.Status == 1 ? "已读" : "未读";}
+        <div style="margin-bottom:10px">
+			<div>状&nbsp;态:</div>
+			<input class="easyui-textbox" style="width:100%;height:32px" value="@str" readonly="true">
+		</div>
+        <div style="margin-bottom:10px">
+			<div>添加时间:</div>
+			<input class="easyui-textbox" style="width:100%;height:32px" value="@Model.RegTime" readonly="true">
+		</div>
+    
+    }

@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>私信</title>
+    <link rel="stylesheet" href="../../../lib/bootstrap-3.3.5-dist/css/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="../../../css/talk.css">
+
+</head>
+<body>
+<header>
+    <nav style="height: 60px" class="navbar navbar-fixed-top nav_bottom">
+        <div class="container">
+            <!--logo-->
+            <nav class="navbar-header child-logo">
+                <a href="../../first_page.html" >
+                    <img class="navbar-brand" style="height: 80px;width: 80px;margin-top: -10px" src="../../../img/logo3.png" alt="">
+                </a>
+                <p style="font-weight: 700;font-size: 30px;color: #125ae4;margin: 10px auto">党员论坛</p>
+            </nav>
+            <!--搜索框-->
+            <form id="so1" class="navbar-form navbar-right collapse navbar-collapse childes" role="search">
+
+                <nav class="navbar-header col-md-2 ">
+                    <a href="../files.html" class="navbar-brand" style="padding: 10px;font-size: 15px;">档案管理</a>
+                </nav>
+                <nav class="navbar-header  col-md-2">
+                    <a href="../upFiles.html" class="navbar-brand" style="padding: 10px;font-size: 15px ;">党员资料</a>
+                </nav>
+                <nav class="navbar-header  col-md-2">
+                    <a href="../learn.html" class="navbar-brand" style="padding: 10px;font-size: 15px;">在线学习</a>
+                </nav>
+                <nav class="navbar-header col-md-2">
+                    <a href="../news.html" class="navbar-brand" style="padding: 10px;font-size: 15px;">新闻在线</a>
+                </nav>
+                <nav class="navbar-header col-md-2">
+                    <a href="talk-hot.html" class="navbar-brand" style="padding: 10px;font-size: 15px;">党员论坛</a>
+                </nav>
+            </form>
+        </div>
+    </nav>
+</header>
+<section>
+    <div class="content-talk">
+        <div class="form-group  has-feedback">
+            <span class="glyphicon glyphicon-search form-control-feedback"></span>
+            <input type="text"style="width: 250px;height: 30px" class="form-control" placeholder="请输入....">
+
+        </div>
+        <div class="content-left">
+
+            <div class="user-talk">
+                <a href="../talk.html">
+                    <div class="phone-talk">
+                        <img id="userimg" src="../../../img/块状花朵1.png" style="height:70px;width:70px;border-radius: 50%;" alt="" />
+                    </div>
+                </a>
+                <div class="id-talk">
+                    <ul id="getuser">
+                        <li><p>尊尊</p><span>党员</span></li>
+                        <li>账号：30048442</li>
+                        <li>等级  <div class="progress"style="height: 8px">
+                            <div class="progress-bar" role="progressbar" style="width:10%;">
+                            </div>
+                        </div></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="action-information">
+                <!--<img class="alterInformation" style="width: 30px;height: 30px;" src="../../../img/修改.png" alt="">-->
+                <a href="">请上传您的靓照</a>
+            </div>
+            <div class="menu-talk">
+
+                <ul class="menu-files">
+                    <li value="1"><img src="../../../img/私信2.png" alt=""><a href="talk-hot.html">热点</a></li>
+                    <li value="2"><img src="../../../img/我的关注.png" alt=""><a href="talk-post.html">我关注的帖子</a></li>
+                    <li value="3"><img src="../../../img/帖子管理.png" alt=""><a href="talk-myPost.html">我的帖子</a></li>
+                    <li value="4"><img src="../../../img/留言.png" alt=""><a href="talk-news.html">私信</a></li>
+                    <li value="5"><img src="../../../img/新访客.png" alt=""><a href="talk-in.html">访客</a></li>
+                </ul>
+
+            </div>
+            <div class="left-talk-phone">
+                <img src="../../../img/jiji2.jpg" alt="">
+            </div>
+
+        </div>
+        <div class="content-right">
+
+            <!--私信    联系人聊天界面-->
+            <div class="div5 div4">
+
+                <div class="Letter-talk-bottom">
+                    <div class="Letter-talk-left">
+                        <div class="talk-myFriend">
+                            <ul class="myFriend">
+                                <li value="1">
+                                    <a href="#">好友</a>
+                                    <div class="select-myFriend1"  style="display:block;"></div>
+                                </li>
+                                <li value="2">
+                                    <a href="#">消息</a>
+                                    <div class="select-myFriend1" style="display:none;"></div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="all-myFriend div1" style="display:block;">
+                            <div class="myFriend-box">
+                                <div id="myFriend-bottom">
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="all-myFriend div2" style="display:none;">
+                            <div class="myFriend-box">
+                                <div id="myFriend-bottom2">
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="Letter-talk-right">
+                        <div class="Letter-right-title">
+                            <ul class="Letter-right-friend" id="users">
+                               <!-- <li><img src="../../../img/bute1.jpg" alt=""></li>
+                                <li>忧伤的豆豆</li>
+                                <li>预备党员</li>
+                                <li><img src="../../../img/add1.png" alt=""></li>-->
+                            </ul>
+
+                        </div>
+                        <div class="Letter-right-content">
+                            <div class="other-talking" id="other-talking" >
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="warning">
+                            <p>安全提示：请不要随意透漏您的联系方式、卡号或密码</p>
+                        </div>
+                        <form action="">
+                            <textarea id="searchkey" cols="80" rows="5"placeholder="按回车键发送内容">
+
+                            </textarea>
+                            <div class="Letter-right-footer">
+                                <ul>
+                                    <li><img src="../../../img/表情%20(1).png" alt=""></li>
+                                    <li><img src="../../../img/图片%20(1).png" alt=""></li>
+                                    <li><img src="../../../img/记录.png" alt=""></li>
+                                    <li><input class="com-button" type="button" onclick="Message();" value="发送"></li>
+                                </ul>
+
+                            </div>
+                        </form>
+
+
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation" style="height: 40px">
+    <ol class="breadcrumb">
+        <li><a href="">河南</a></li>
+        <li><a href="">平顶山</a></li>
+        <li><a href="">河南城建学院</a></li>
+        <li><a href="">计算机与数据科学学院</a></li>
+    </ol>
+</nav>
+<script type="text/javascript" src="../../../lib/bootstrap-3.3.5-dist/js/jquery.js"></script>
+<script src="../../../js/script.js"></script>
+    <script src="../../../../jquery-easyui-1.5/datapattern.js"></script>
+    <script src="../../../js/Check_login.js"></script>
+<script src="../../../js/template/talk-news.js"></script>
+<script src="../../../js/nav.js"></script>
+<script src="../../../lib/bootstrap-3.3.5-dist/js/bootstrap.min.js" type="text/javascript"></script>
+</body>
+</html>

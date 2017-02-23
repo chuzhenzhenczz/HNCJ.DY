@@ -1,0 +1,100 @@
+﻿@model HNCJ.DY.Model.UserInfo
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>details</title>
+    <script src="~/Scripts/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript">
+        var api = top.dialog.get(window); //获取父窗体对象
+        //页面加载完成执行
+        $(function () {
+            //设置按钮及事件
+            api.button([{
+                value: '确认打印',
+                callback: function () {
+                    printWin();
+                },
+                autofocus: true
+            }, {
+                value: '取消',
+                callback: function () { }
+            }]);
+        });
+        //打印方法
+        function printWin() {
+            var oWin = window.open("", "_blank");
+            oWin.document.write(document.getElementById("content").innerHTML);
+            oWin.focus();
+            oWin.document.close();
+            oWin.print();
+            oWin.close();
+            return false;
+        }
+</script>
+    <style type="text/css">
+       
+        
+        
+    </style>
+</head>
+<body>
+    <div id="content" style="flex-align:center;">
+    <table align="center"  width="600" border="1" cellspacing="0" cellpadding="5" style="font-size:12px; font-family:'微软雅黑'; background:#fff;">
+		<tr>
+			<td >姓名</td>
+			<td >XXX</td>
+			<td >性别</td>
+			<td >如实填写</td>
+			<td rowspan="4" >正面免冠图片</td>
+		</tr>
+		<tr>
+			<td>名族</td>
+			<td>X</td>
+			<td>出生年月</td>
+			<td>XXXX年XX月</td>
+			
+		</tr>
+		<tr>
+			<td>籍贯</td>
+			<td>X省X市X县</td>
+			<td>出生地</td>
+			<td>X省X市X县</td>
+			
+		</tr>
+		<tr>
+			<td>学历</td>
+			<td>相当大学本科</td>
+			<td>学位或昵称</td>
+			<td>无</td>
+			
+		</tr>
+		<tr>
+			<td colspan="2">单位</td>
+			<td colspan="3">X学院X班X职务</td>
+		</tr>
+		<tr>
+			<td colspan="2">现居住地</td>
+			<td colspan="3">市（县）乡（镇）村（街道办事处）</td>
+		</tr>
+		<tr>
+			<td colspan="2">居民身份证号码</td>
+			<td colspan="3">如实填写</td>
+		</tr>
+		<tr>
+			<td colspan="2">有何专长</td>
+			<td colspan="3">如实填写</td>
+		</tr>
+		<tr>
+			<td colspan="5">入党志愿</td>
+		</tr>
+	</table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<!--头部-->
+<header>
+    <ul class="left" id="manger">
+        <li><a class="" href="doc-list.html" target="left">文档管理</a></li>
+        <li><a class="" href="mov-list.html" target="left">视频管理</a></li>
+    </ul>
+    <!--<ul class="right">-->
+        <!--<li><a href="#">添加</a></li>-->
+        <!--<li><a href="#">删除</a></li>-->
+        <!--<li><a href="#">修改</a></li>-->
+    <!--</ul>-->
+</header>
+<div class="box-shadow-bottom"></div>
+</body>
+<script src="lib/jquery/jquery.js"></script>
+<script>
+    var li = $('#manger a');
+    li.eq('0').addClass('choose');
+    li.on('click', function (e) {
+        li.removeClass('choose');
+        $(e.target).addClass('choose');
+    })
+</script>
+</html>

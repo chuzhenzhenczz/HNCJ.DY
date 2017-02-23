@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net" default-autowire="constructor" >
+  <object type="HNCJ.DY.Web.Controllers.ActionInfoController, HNCJ.DY.Web" singleton="false" >
+    <property name="ActionInfoService" ref="ActionInfoService" />
+  </object>
+  
+  <object type="HNCJ.DY.Web.Controllers.RoleInfoController, HNCJ.DY.Web" singleton="false" >
+    <property name="RoleInfoService" ref="RoleInfoService" />
+    <property name="ActionInfoService" ref="ActionInfoService" />
+  </object>
+
+ 
+  <object type="HNCJ.DY.Web.Controllers.UserInfoController, HNCJ.DY.Web" singleton="false" >
+    <property name="UserInfoService" ref="UserInfoService" />
+    <property name="ActionInfoService" ref="ActionInfoService" />
+    <property name="UserActionInfoService" ref="UserActionInfoService" />
+    <property name="RoleInfoService" ref="RoleInfoService" />
+
+
+  </object>
+  <object type="HNCJ.DY.Web.Controllers.UserLoginController, HNCJ.DY.Web" singleton="false" >
+    <property name="UserInfoService" ref="UserInfoService" />
+
+  </object>
+  <object type="HNCJ.DY.Web.Controllers.UserDoActionController, HNCJ.DY.Web" singleton="false" >
+    <property name="UserInfoService" ref="UserInfoService" />
+    <property name="ActionInfoService" ref="ActionInfoService" />
+    
+  </object>
+  <object type="HNCJ.DY.Web.Controllers.HomeController, HNCJ.DY.Web" singleton="false" >
+    <property name="UserInfoService" ref="UserInfoService" />
+    <property name="ActionInfoService" ref="ActionInfoService" />
+    <property name="RoleInfoService" ref="RoleInfoService" />
+  </object>
+  
+  <object type="HNCJ.DY.Web.Controllers.NewInfoController, HNCJ.DY.Web" singleton="false" >
+    <property name="NewInfoService" ref="NewInfoService" />
+  </object>
+  <object type="HNCJ.DY.Web.Controllers.PaityMemberController, HNCJ.DY.Web" singleton="false" >
+    <property name="PaityMemberService" ref="PaityMemberService" />
+    <property name="UserInfoService" ref="UserInfoService" />
+  </object>
+ 
+  <object type="HNCJ.DY.Web.Controllers.FilesInfoController, HNCJ.DY.Web" singleton="false" >
+    <property name="FilesInfoService" ref="FilesInfoService" />
+    <property name="PaityMemberService" ref="PaityMemberService" />
+  </object>
+ 
+  <object type="HNCJ.DY.Web.Controllers.MessageController, HNCJ.DY.Web" singleton="false" >
+    <property name="MessageService" ref="MessageService" />
+  </object>
+  <object type="HNCJ.DY.Web.Controllers.VisitorRecordController, HNCJ.DY.Web" singleton="false" >
+    <property name="VisitorRecordService" ref="VisitorRecordService" />
+  </object>
+
+  
+ 
+  
+  <object type="HNCJ.DY.Web.Controllers.StudyItemController, HNCJ.DY.Web" singleton="false" >
+    <property name="StudyItemService" ref="StudyItemService" />
+    <property name="StudyOnlineService" ref="StudyOnlineService" />
+  </object>
+  <object type="HNCJ.DY.Web.Controllers.StudyOnlineController, HNCJ.DY.Web" singleton="false" >
+    <property name="StudyOnlineService" ref="StudyOnlineService" />
+  </object>
+  <object type="HNCJ.DY.Web.Controllers.TemplateController, HNCJ.DY.Web" singleton="false" >
+    <property name="TemplateService" ref="TemplateService" />
+  </object>
+  <object type="HNCJ.DY.Web.Controllers.TopicInfoController, HNCJ.DY.Web" singleton="false" >
+    <property name="TopicInfoService" ref="TopicInfoService" />
+    
+  </object>
+  <object type="HNCJ.DY.Web.Controllers.CategoryController, HNCJ.DY.Web" singleton="false" >
+    <property name="CategoryService" ref="CategoryService" />
+    <property name="StudyOnlineService" ref="StudyOnlineService" />
+  </object>
+
+
+  
+  <object type="HNCJ.DY.Web.Controllers.User.NewsDataController, HNCJ.DY.Web" singleton="false" >
+    <property name="NewInfoService" ref="NewInfoService" />
+  </object>
+  <object type="HNCJ.DY.Web.Controllers.User.TemplateFileController, HNCJ.DY.Web" singleton="false" >
+    <property name="TemplateService" ref="TemplateService" />
+  </object>
+  <object type="HNCJ.DY.Web.Controllers.User.TalkDataController, HNCJ.DY.Web" singleton="false" >
+    <property name="TopicInfoService" ref="TopicInfoService" />
+    <property name="UserInfoService" ref="UserInfoService" />
+    <property name="PaityMemberService" ref="PaityMemberService" />
+  </object>
+  <object type="HNCJ.DY.Web.Controllers.User.LearnDataController, HNCJ.DY.Web" singleton="false" >
+    <property name="StudyOnlineService" ref="StudyOnlineService" />
+    <property name="StudyItemService" ref="StudyItemService" />
+    <property name="CategoryService" ref="CategoryService" />
+    <property name="ContentInfoService" ref="ContentInfoService" />
+  </object>
+  <object type="HNCJ.DY.Web.Controllers.User.FriendController, HNCJ.DY.Web" singleton="false" >
+    <property name="FriendService" ref="FriendService" />
+    <property name="UserInfoService" ref="UserInfoService" />
+    <property name="MessageService" ref="MessageService" />
+  </object>
+  <object type="HNCJ.DY.Web.Controllers.User.MaterialController, HNCJ.DY.Web" singleton="false" >
+    <property name="UserInfoService" ref="UserInfoService" />
+    <property name="PaityMemberService" ref="PaityMemberService" />
+    <property name="FilesInfoService" ref="FilesInfoService" />
+  </object>
+ 
+</objects>

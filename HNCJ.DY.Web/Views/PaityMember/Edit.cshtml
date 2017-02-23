@@ -1,0 +1,99 @@
+﻿@model HNCJ.DY.Model.PaityMember
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<h2>Edit</h2>
+@section header{
+    <script type="text/javascript">
+        function submitForm() {
+            var name = $("#Name").val();
+            var pwd = $("#IDCard").val();
+            if (name == "") {
+                alert("姓名不能为空？");
+                return false;
+            }
+            if (pwd == "") {
+                alert("身份证号不能为空？");
+                return false;
+            }
+            $("form").submit();
+        }
+    </script>
+   
+    
+    }
+@section content{
+    <div style="margin-top:-40px;">   
+    <div style="margin-bottom:10px">
+        <div>姓名:</div>
+			<input class="easyui-textbox" style="width:100%;height:32px" id="Name" name="Name" value="@Model.Name"  >
+		</div>
+        <div style="margin-bottom:10px">
+            <div>性别:</div>
+			<input class="easyui-textbox" style="width:100%;height:32px" name="Sex" value="@Model.Sex"  >
+		</div>
+        <div style="margin-bottom:10px">
+            <div>出生日期:</div>
+			<input class="easyui-datebox" style="width:100%;height:32px" name="Brithday" value="@Model.Brithday"  >
+		</div>
+        <div style="margin-bottom:10px">
+            <div>电话号码:</div>
+			<input class="easyui-textbox" style="width:100%;height:32px" name="Telphone" value="@Model.Telphone"  >
+		</div>
+        <div style="margin-bottom:10px">
+            <div>身份证号:</div>
+			<input class="easyui-textbox" style="width:100%;height:32px" id="IDCard" name="IDCard" value="@Model.IDCard"  >
+		</div>
+        <div style="margin-bottom:10px">
+            <div>入团时间:</div>
+			<input class="easyui-datebox" style="width:100%;height:32px" name="JoinYLTime" value="@Model.JoinYLTime"  >
+		</div>
+        
+        <div style="margin-bottom:10px">
+            <div>预备党员时间:</div>
+			<input class="easyui-datebox" style="width:100%;height:32px" name="StartTime" value="@Model.StartTime"  >
+		</div>
+        <div style="margin-bottom:10px">
+            <div>入党申请时间:</div>
+			<input class="easyui-datebox" style="width:100%;height:32px" name="SubmitTime" value="@Model.SubmitTime"  >
+		</div>
+        <div style="margin-bottom:10px">
+            <div>党课结业时间:</div>
+			<input class="easyui-datebox" style="width:100%;height:32px" name="EndTime" value="@Model.EndTime" >
+		</div>
+        <div style="margin-bottom:10px">
+            <div>转正时间:</div>
+			<input class="easyui-datebox" style="width:100%;height:32px" name="RegularTime" value="@Model.RegularTime"  >
+		</div>
+        <div style="margin-bottom:10px">
+            <div>奖励与惩罚:</div>
+			<input class="easyui-textbox" style="width:100%;height:60px" name="RewardPunishment" value="@Model.RewardPunishment"  data-options="multiline:true">
+		</div>
+        <div style="margin-bottom:10px">
+            <div>挂科数目:</div>
+			<input class="easyui-textbox" style="width:100%;height:60px" name="FailedSubject" value="@Model.FailedSubject"  data-options="multiline:true">
+		</div>
+        <div style="margin-bottom:10px">
+            <div>班级职务:</div>
+			<input class="easyui-textbox" style="width:100%;height:32px" name="ClassPosition" value="@Model.ClassPosition"  >
+		</div>
+        <div style="margin-bottom:10px">
+            <div>班级号:</div>
+			<input class="easyui-textbox" style="width:100%;height:32px" name="ClassNO" value="@Model.ClassNO"  >
+		</div>
+        
+        
+                @Html.HiddenFor(model => model.ID)
+               
+                @Html.HiddenFor(model => model.Status)
+            
+                @Html.HiddenFor(model => model.DelFlag)
+            
+                @Html.HiddenFor(model => model.RegTime)
+           
+                @Html.HiddenFor(model => model.ModfiedTime)
+        </div>
+    }

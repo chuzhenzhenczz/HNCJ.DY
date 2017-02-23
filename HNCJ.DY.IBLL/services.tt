@@ -1,0 +1,26 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ include file="EF.Utility.CS.ttinclude"#><#@ output extension=".xml" #>
+<#
+	CodeGenerationTools code = new CodeGenerationTools(this);
+	MetadataLoader loader=new MetadataLoader(this);
+	CodeRegion region=new CodeRegion(this,1);
+	MetadataTools ef = new MetadataTools(this);
+	string inputFile=@"..\\HNCJ.DY.Model\\DataModel.edmx";
+	EdmItemCollection ItemCollection=loader.CreateEdmItemCollection(inputFile);
+	string namespaceName=code.VsNamespaceSuggestion();
+	var	fileManager = EntityFrameworkTemplateFileManager.Create(this);
+
+
+#><?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net" default-autowire="constructor" >
+	<#
+	foreach (var entity in ItemCollection.GetItems<EntityType>().OrderBy(e=>e.Name))
+	{
+	#>
+		<object name="<#=entity.Name#>Service" type="HNCJ.DY.BLL.<#=entity.Name#>Service, HNCJ.DY.BLL">
+		</object>
+	<#
+	}
+	#>
+
+</objects>

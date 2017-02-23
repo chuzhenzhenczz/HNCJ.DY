@@ -1,0 +1,42 @@
+﻿@model HNCJ.DY.Model.ActionInfo
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutDetails.cshtml";
+}
+
+<h2>Details</h2>
+@section content{
+    <div style="margin-bottom:10px">
+			<div>权限名:</div>
+			<input class="easyui-textbox" style="width:100%;height:32px" value="@Model.ActionName" readonly="true">
+		</div>
+    <div style="margin-bottom:10px">
+			<div>URL:</div>
+			<input class="easyui-textbox" style="width:100%;height:32px" value="@Model.Url" readonly="true">
+		</div>
+   
+        @{var str = Model.Status == 1 ? "启用" : "未启用";}
+        <div style="margin-bottom:10px">
+            <div>HTTP:<input class="easyui-textbox" style="width:80px;height:32px" value="@Model.HttpMethd" readonly="true" >&nbsp;状&nbsp;态:<input class="easyui-textbox" style="width:80px;height:32px" value="@str" readonly="true"></div>
+			
+			
+		</div>@{var dd = (bool)Model.IsMenu ? "是" : "否";}
+     <div style="margin-bottom:10px">
+			<div>是否菜单:<input class="easyui-textbox" readonly="true" value="@dd"style="width:50px;height:32px" />
+                
+                排序号:<input class="easyui-textbox" style="width:80px;height:32px" value="@Model.Sort" readonly="true">
+			</div>
+		</div>
+    @if((bool)Model.IsMenu){
+        <div style="margin-bottom:10px">
+			<div>图标:</div>
+			<img src="@Model.MenuIcon" style="width:40px;height:40px;" />
+		</div>
+    }
+        <div style="margin-bottom:10px">
+			<div>注册时间:</div>
+			<input class="easyui-textbox" style="width:100%;height:32px" value="@Model.RegTime" readonly="true">
+		</div>
+    
+    }

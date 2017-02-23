@@ -1,0 +1,84 @@
+﻿@model HNCJ.DY.Model.PaityMember
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutDetails.cshtml";
+}
+
+<h2>Details</h2>
+@section content{
+       
+    <div style="margin-bottom:10px">
+        <div>姓名:</div>
+			<input class="easyui-textbox" style="width:100%;height:32px" id="Name" name="Name" value="@Model.Name" readonly="true" >
+		</div>
+        <div style="margin-bottom:10px">
+            <div>性别:</div>
+			<input class="easyui-textbox" style="width:100%;height:32px" name="Sex" value="@Model.Sex"readonly="true"  >
+		</div>
+        <div style="margin-bottom:10px">
+            <div>出生日期:</div>
+			<input class="easyui-datebox" style="width:100%;height:32px" name="Brithday" value="@Model.Brithday" readonly="true" >
+		</div>
+        <div style="margin-bottom:10px">
+            <div>电话号码:</div>
+			<input class="easyui-textbox" style="width:100%;height:32px" name="Telphone" value="@Model.Telphone" readonly="true" >
+		</div>
+        <div style="margin-bottom:10px">
+            <div>身份证号:</div>
+			<input class="easyui-textbox" style="width:100%;height:32px" id="IDCard" name="IDCard" value="@Model.IDCard"readonly="true"  >
+		</div>
+        <div style="margin-bottom:10px">
+            <div>入团时间:</div>
+			<input class="easyui-datebox" style="width:100%;height:32px" name="JoinYLTime" value="@Model.JoinYLTime" readonly="true" >
+		</div>
+        
+        <div style="margin-bottom:10px">
+            <div>预备党员时间:</div>
+			<input class="easyui-datebox" style="width:100%;height:32px" name="StartTime" value="@Model.StartTime" readonly="true" >
+		</div>
+        <div style="margin-bottom:10px">
+            <div>入党申请时间:</div>
+			<input class="easyui-datebox" style="width:100%;height:32px" name="SubmitTime" value="@Model.SubmitTime"readonly="true"  >
+		</div>
+        <div style="margin-bottom:10px">
+            <div>党课结业时间:</div>
+			<input class="easyui-datebox" style="width:100%;height:32px" name="EndTime" value="@Model.EndTime"readonly="true" >
+		</div>
+        <div style="margin-bottom:10px">
+            <div>转正时间:</div>
+			<input class="easyui-datebox" style="width:100%;height:32px" name="RegularTime" value="@Model.RegularTime" readonly="true" >
+		</div>
+        <div style="margin-bottom:10px">
+            <div>奖励与惩罚:</div>
+			<input class="easyui-textbox" style="width:100%;height:60px" name="RewardPunishment" value="@Model.RewardPunishment" readonly="true" data-options="multiline:true">
+		</div>
+        <div style="margin-bottom:10px">
+            <div>挂科数目:</div>
+			<input class="easyui-textbox" style="width:100%;height:60px" name="FailedSubject" value="@Model.FailedSubject"readonly="true"  data-options="multiline:true">
+		</div>
+        <div style="margin-bottom:10px">
+            <div>班级职务:</div>
+			<input class="easyui-textbox" style="width:100%;height:32px" name="ClassPosition" value="@Model.ClassPosition"readonly="true"  >
+		</div>
+        <div style="margin-bottom:10px">
+            <div>班级号:</div>
+			<input class="easyui-textbox" style="width:100%;height:32px" name="ClassNO" value="@Model.ClassNO" readonly="true" >
+		</div>
+        @{var str = Model.Status == 1 ? "启用" : "未启用";}
+        <div style="margin-bottom:10px">
+			<div>状&nbsp;态:</div>
+			<input class="easyui-textbox" style="width:100%;height:32px" value="@str" readonly="true">
+		</div>
+        <div style="margin-bottom:10px">
+			<div>添加时间:</div>
+			<input class="easyui-textbox" style="width:100%;height:32px" value="@Model.RegTime" readonly="true">
+		</div>
+        <div style="margin-bottom:10px">
+			<div>修改时间:</div>
+			<input class="easyui-textbox" style="width:100%;height:32px" value="@Model.ModfiedTime" readonly="true">
+		</div>
+        
+                
+       
+    }

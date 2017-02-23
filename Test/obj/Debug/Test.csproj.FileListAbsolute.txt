@@ -1,0 +1,5 @@
+E:\DangYuan\HNCJ.DY\Test\bin\Debug\Test.dll
+E:\DangYuan\HNCJ.DY\Test\bin\Debug\Test.pdb
+E:\DangYuan\HNCJ.DY\Test\obj\Debug\Test.dll
+E:\DangYuan\HNCJ.DY\Test\obj\Debug\Test.pdb
+E:\DangYuan\HNCJ.DY\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache

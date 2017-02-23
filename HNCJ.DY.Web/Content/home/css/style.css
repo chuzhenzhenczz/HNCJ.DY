@@ -1,0 +1,84 @@
+* {
+    padding:0px;
+    margin:0px;
+    -webkit-box-sizing:content-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+}
+li{list-style:none }
+
+table{
+    border-collapse:collapse;
+    border-spacing:0;
+}
+select,input {
+    /*-webkit-appearance:none;*/
+    /*-moz-appearance:none;*/
+    /*appearance:none;*/
+}
+/*a {*/
+    /*text-decoration: none;*/
+    /*color:#333333;*/
+/*}*/
+
+.mh {max-height: 100%;}
+.mw {max-width: 100%;}
+
+html,body,.wrap {
+    height: 100%;
+}
+
+.album-old {
+    width: 138px;
+    height: 180px;
+
+    z-index: 1;
+}
+
+.upload-btn {
+    position: relative;
+    width: 140px;
+    height: 32px;
+    margin-left: 0px;
+    top: 200px;
+    margin-top: -16px;
+    border: 1px solid palegoldenrod;
+    z-index: 2;
+    background-image: url("../img/phono.png");
+}
+.upload-btn input {
+    width: 100%;
+    height: 100%;
+    /*margin-left: 10px;*/
+    opacity: 0;
+}
+
+.upload-img {
+    position: absolute;
+    z-index: 1;
+    overflow: hidden;
+}
+.upload-img.loading {
+    background:url(../img/loading.gif) no-repeat center;
+}
+.upload-img img {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    opacity: 0;
+}
+.album-old .upload-img {
+    width: 138px;
+    height: 180px;
+
+}
+.album-new .upload-img {
+    width: 138px;
+    height: 180px;
+    /*left:15px;*/
+}
+
+
+
+
+
+

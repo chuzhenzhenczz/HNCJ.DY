@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>新闻</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../lib/bootstrap-3.3.5-dist/css/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="../../css/talk.css">
+    <link type="text/css" rel="stylesheet" href="../../css/carousel.css">
+    <link type="text/css" rel="stylesheet" href="../../css/news.css">
+    <style>
+        /*.content .column a:link{*/
+            /*color: #fa0a14;*/
+        /*}*/
+        .content .column a:visited{
+            /*color: #676664;*/
+        }
+        .content .column a:hover{
+            color: #fa0a14;
+
+        }
+        .content .column a:active{
+            color: #fa0a14;
+        }
+        /*.con_right a:link{*/
+            /*color: #fa0a14;*/
+        /*}*/
+        .con_right a:visited{
+            color: #676664;
+        }
+        .con_right a:hover{
+            color: #fa0a14;
+
+        }
+        .con_right a:active{
+            color: #fa0a14;
+        }
+    </style>
+
+</head>
+<body>
+<header>
+    <nav style="height: 60px" class="navbar navbar-fixed-top nav_bottom">
+        <div class="container">
+            <!--logo-->
+            <nav class="navbar-header child-logo">
+                <a href="../first_page.html" >
+                    <img class="navbar-brand" style="height: 80px;width: 80px;margin-top: -10px" src="../../img/logo3.png" alt="">
+                </a>
+                <p style="font-weight: 700;font-size: 30px;color: #125ae4;margin: 10px auto">党员论坛</p>
+            </nav>
+            <!--搜索框-->
+            <form id="so1" class="navbar-form navbar-right collapse navbar-collapse childes" role="search">
+
+                <nav class="navbar-header col-md-2 ">
+                    <a href="files.html" class="navbar-brand" style="padding: 10px;font-size: 15px;">档案管理</a>
+                </nav>
+                <nav class="navbar-header  col-md-2">
+                    <a href="upFiles.html" class="navbar-brand" style="padding: 10px;font-size: 15px ;">党员资料</a>
+                </nav>
+                <nav class="navbar-header  col-md-2">
+                    <a href="learn.html" class="navbar-brand" style="padding: 10px;font-size: 15px;">在线学习</a>
+                </nav>
+                <nav class="navbar-header col-md-2">
+                    <a href="" class="navbar-brand" style="padding: 10px;font-size: 15px;">新闻在线</a>
+                </nav>
+                <nav class="navbar-header col-md-2">
+                    <a href="template/talk-hot.html" class="navbar-brand" style="padding: 10px;font-size: 15px;">党员论坛</a>
+                </nav>
+            </form>
+        </div>
+    </nav>
+</header>
+<div class="news-line">
+    <!--轮播图-->
+    <section class="zzsc">
+        <!-- 轮播图片参数的设置 -->
+        <div class="caroursel poster-main" data-setting='{
+		"width":1080,
+		"height":270,
+		"posterWidth":640,
+		"posterHeight":270,
+		"scale":0.8,
+		"dealy":"2000",
+		"algin":"middle"
+	}'>
+            <ul class="poster-list">
+                <li class="poster-item"><img src="../../image/1.jpg" width="100%" height="100%"></li>
+                <li class="poster-item"><img src="../../image/2.jpg" width="100%" height="100%"></li>
+                <li class="poster-item"><img src="../../image/3.jpg" width="100%" height="100%"></li>
+                <li class="poster-item"><img src="../../image/4.jpg" width="100%" height="100%"></li>
+                <li class="poster-item"><img src="../../image/5.jpg" width="100%" height="100%"></li>
+                <li class="poster-item"><img src="../../image/6.jpg" width="100%" height="100%"></li>
+                <li class="poster-item"><img src="../../image/1.jpg" width="100%" height="100%"></li>
+            </ul>
+            <div class="poster-btn poster-prev-btn"></div>
+            <div class="poster-btn poster-next-btn"></div>
+        </div>
+    </section>
+</div>
+<section class="content">
+    <div class= "container con_left">
+        <div class="clearfix">
+            <div class="column">
+                <h3>组织人事</h3>
+                <ul id="zuzhi">
+
+                </ul>
+            </div>
+            <div class="column">
+                <h3>反腐倡廉</h3>
+                <ul id="fanfu">
+
+                </ul>
+            </div>
+        </div>
+        <div class="clearfix">
+            <div class="column">
+                <h3>要言要论</h3>
+                <ul id="yaoyan">
+
+                </ul>
+            </div>
+            <div class="column">
+                <h3>理论学习</h3>
+                <ul id="lilun">
+
+                </ul>
+            </div>
+        </div>
+        <div class="clearfix">
+            <div class="column">
+                <h3>基层传真</h3>
+                <ul id="jiceng">
+
+                </ul>
+            </div>
+            <div class="column">
+                <h3>党史纵览</h3>
+                <ul id="dangshi">
+
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <div class="con_right">
+        <h3>党建要闻</h3>
+        <ul id="dangjian">
+
+        </ul>
+    </div>
+</section>
+
+<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation" style="height: 40px">
+    <ol class="breadcrumb">
+        <li><a href="">河南</a></li>
+        <li><a href="">平顶山</a></li>
+        <li><a href="">河南城建学院</a></li>
+        <li><a href="">计算机与数据科学学院</a></li>
+    </ol>
+</nav>
+<script src="../../js/jquery-2.1.1.min.js"></script>
+<script src="../../js/script.js"></script>
+<script src="../../js/nav.js"></script>
+<script src="../../lib/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+<script src="../../js/carousel.js"></script>
+<script src="../../js/news.js"></script>
+</body>
+</html>
+<script type="text/javascript">
+    //轮播图
+    Caroursel.init($('.caroursel'));
+</script>

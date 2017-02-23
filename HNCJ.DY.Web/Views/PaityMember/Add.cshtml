@@ -1,0 +1,206 @@
+﻿@model HNCJ.DY.Model.PaityMember
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Add</title>
+<link href="~/Content/jquery-easyui-1.5/themes/default/easyui.css" rel="stylesheet" />
+    <link href="~/Content/jquery-easyui-1.5/themes/icon.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.7.1.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Content/jquery-easyui-1.5/jquery.easyui.min.js"></script>
+    <script src="~/Content/jquery-easyui-1.5/locale/easyui-lang-zh_CN.js"></script>
+
+    <script type="text/javascript">
+        function afterAdd(result) {
+            if (result.status != 1) {
+                $.messager.show({
+                    title: 'Error',
+                    msg: result.errorMsg
+                });
+            } else {
+                window.parent.window.afterSuccess();
+            }
+        }
+        function submitForm() {
+            $("form").submit();
+        }
+    </script>
+</head>
+<body>
+    @using (Ajax.BeginForm(new AjaxOptions() { OnSuccess = "afterAdd" }))
+    {
+        @Html.ValidationSummary(true)
+    
+        <fieldset>
+            <legend>PaityMember</legend>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Name)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Name)
+                @Html.ValidationMessageFor(model => model.Name)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Sex)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Sex)
+                @Html.ValidationMessageFor(model => model.Sex)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Brithday)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Brithday)
+                @Html.ValidationMessageFor(model => model.Brithday)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ClassNO)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.ClassNO)
+                @Html.ValidationMessageFor(model => model.ClassNO)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.JoinYLTime)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.JoinYLTime)
+                @Html.ValidationMessageFor(model => model.JoinYLTime)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.SubmitTime)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.SubmitTime)
+                @Html.ValidationMessageFor(model => model.SubmitTime)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.StartTime)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.StartTime)
+                @Html.ValidationMessageFor(model => model.StartTime)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.EndTime)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.EndTime)
+                @Html.ValidationMessageFor(model => model.EndTime)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.RegularTime)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.RegularTime)
+                @Html.ValidationMessageFor(model => model.RegularTime)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ClassPosition)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.ClassPosition)
+                @Html.ValidationMessageFor(model => model.ClassPosition)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Telphone)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Telphone)
+                @Html.ValidationMessageFor(model => model.Telphone)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.IDCard)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.IDCard)
+                @Html.ValidationMessageFor(model => model.IDCard)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.RewardPunishment)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.RewardPunishment)
+                @Html.ValidationMessageFor(model => model.RewardPunishment)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.FailedSubject)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.FailedSubject)
+                @Html.ValidationMessageFor(model => model.FailedSubject)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Remark)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Remark)
+                @Html.ValidationMessageFor(model => model.Remark)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.DelFlag)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.DelFlag)
+                @Html.ValidationMessageFor(model => model.DelFlag)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Status)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Status)
+                @Html.ValidationMessageFor(model => model.Status)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.RegTime)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.RegTime)
+                @Html.ValidationMessageFor(model => model.RegTime)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ModfiedTime)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.ModfiedTime)
+                @Html.ValidationMessageFor(model => model.ModfiedTime)
+            </div>
+    
+            <p>
+                <input type="submit" value="Create" />
+            </p>
+        </fieldset>
+    }
+    
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</body>
+</html>

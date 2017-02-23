@@ -1,0 +1,75 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLoyout.cshtml";
+}
+
+<h2>Index</h2>
+@section header{
+    <script type="text/javascript">
+        function doaction(value) {
+            var str = "";
+            str += "<a href='javascript:void(0)' onclick=eidt('\/filesinfo\/edit?id=" + value + "')>修改</a> &nbsp;&nbsp;";
+            str += "<a href='javascript:void(0)' onclick=details('\/filesinfo\/details?id=" + value + "')>详细</a> &nbsp;&nbsp;";
+            str += "<a href='javascript:void(0)' onclick=deletes('\/filesinfo\/delete','" + value + "')>移除</a> ";
+            return str;
+        }
+        function menu(value) {
+            if (value == null) return null;
+            if (value) {
+                return "是";
+            }
+            return "否";
+        }
+        function Type(value) {
+            if (value == null) return null;
+            if (value==1) {
+                return "党员发展材料";
+            } else if (value == 2) {
+                return "季度思想报告";
+            } else if (value == 3) {
+                return "学习总结心得";
+            } else {
+                return "其他";
+            }
+
+            
+        }
+    </script>
+}
+       
+    @section content{
+        <table id="dg"  class="easyui-datagrid"  style="margin-left:0px"
+		url="/filesinfo/getallfilesinfos"
+		toolbar="#toolbar" pagination="true" 
+		rownumbers="true" fitColumns="true" >
+	<thead>
+		<tr> 
+			<th field="ck" checkbox="true" width="50"></th>
+			<th field="FileName" width="80">文件名</th>
+			
+			<th field="Type" width="80" formatter="Type">类型</th>
+							
+			<th field="Status" width="50" align="center"  formatter="iSstatus">状态</th>
+            <th field="RegTime" width="100" formatter="datetime">添加时间</th>
+            <th field="ID" width="100" align="center" formatter="doaction">操作</th>
+		</tr>
+	</thead>
+</table>
+        <div id="toolbar">
+	<a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="newAction('/filesinfo/add')">新增</a>
+	<a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editAction('/filesinfo/edit')">编辑</a>
+	<a href="#" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyAction('/filesinfo/delete')">移除</a>
+            <a href="#" class="easyui-linkbutton" iconCls="icon-lock" plain="true" onclick="qiehuanstatus('/filesinfo/AlterListStatus')">切换状态</a>
+    <div style="float:right;">
+        <select name="itemid" id="itemid" class="select">
+         <option value="1" >文件名</option>
+         <option value="2" >类型</option>
+         <option value="3" >状态</option>
+         
+     </select>
+	<input name="key" id="key" type="text"class="input" onkeydown="if(event.keyCode==13){doSearch();}">
+        <a href="#" class="easyui-linkbutton" iconCls="icon-search" plain="true" onclick="doSearch()">搜索</a>
+    </div>
+
+</div>
+        }

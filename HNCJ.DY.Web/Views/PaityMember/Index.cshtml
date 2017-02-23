@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLoyout.cshtml";
+}
+
+<h2>Index</h2>
+@section header{
+    <script type="text/javascript">
+        function doaction(value) {
+            var str = "";
+            str += "<a href='javascript:void(0)' onclick=eidt('\/paitymember\/edit?id=" + value + "')>修改</a> &nbsp;&nbsp;";
+            str += "<a href='javascript:void(0)' onclick=details('\/paitymember\/details?id=" + value + "')>详细</a> &nbsp;&nbsp;";
+            str += "<a href='javascript:void(0)' onclick=deletes('\/paitymember\/delete','" + value + "')>移除</a> ";
+            return str;
+        }
+        function menu(value) {
+            if (value == null) return null;
+            if (value) {
+                return "是";
+            }
+            return "否";
+        }
+    </script>
+}
+       
+    @section content{
+        <table id="dg"  class="easyui-datagrid"  style="margin-left:0px"
+		url="/paitymember/getallpaitymembers"
+		toolbar="#toolbar" pagination="true" 
+		rownumbers="true" fitColumns="true" >
+	<thead>
+		<tr> 
+			<th field="ck" checkbox="true" width="50"></th>
+			<th field="Name" width="80">姓名</th>
+			<th field="Sex" width="40">性别</th>
+			<th field="Telphone" width="80" align="center" >联系电话</th>	
+            <th field="IDCard" width="100" >身份证号</th>				
+			<th field="Status" width="50" align="center"  formatter="iSstatus">状态</th>
+            
+            <th field="ID" width="100" align="center" formatter="doaction">操作</th>
+		</tr>
+	</thead>
+</table>
+        <div id="toolbar">	
+	<a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editAction('/paitymember/edit')">编辑</a>
+	<a href="#" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyAction('/paitymember/delete')">移除</a>
+    <a href="#" class="easyui-linkbutton" iconCls="icon-lock" plain="true" onclick="qiehuanstatus('/paitymember/AlterListStatus')">切换状态</a>
+    <div style="float:right;">
+        <select name="itemid" id="itemid" class="select">
+         <option value="1" >姓名</option>
+         <option value="2" >性别</option>
+         <option value="3" >身份证号</option>
+         <option value="4" >电话号码</option>
+         <option value="5" >状态</option>
+         
+     </select>
+	<input name="key" id="key" type="text"class="input" onkeydown="if(event.keyCode==13){doSearch();}">
+        <a href="#" class="easyui-linkbutton" iconCls="icon-search" plain="true" onclick="doSearch()">搜索</a>
+    </div>
+
+</div>
+        }

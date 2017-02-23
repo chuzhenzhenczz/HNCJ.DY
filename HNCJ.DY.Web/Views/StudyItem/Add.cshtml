@@ -1,0 +1,94 @@
+﻿@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<h2>Add</h2>
+@section header{
+    <script src="~/Content/jcrop/jquery.upload.js"></script>
+    <script type="text/javascript">
+        function submitForm() {
+            var name = $("#Title").val();
+            var pwd = $("#Path").val();
+            if (name == "") {
+                alert("资料不能为空？");
+                return false;
+            }
+            if (pwd == "") {
+                alert("请上传一个文件？");
+                return false;
+            }
+            $("form").submit();
+        }
+        function doUpload() {
+            var name = $("#Path").val();
+
+            // 上传方法
+            $.upload({
+                // 上传地址
+                url: '/UserDoAction/UploadFile',
+                // 文件域名字
+                fileName: 'Filedata',
+                // 其他表单数据
+                params: { name: name },
+                // 上传完成后, 返回json, text
+                dataType: 'json',
+                // 上传之前回调,return true表示可继续上传
+                onSend: function () {
+                    return true;
+                },
+                // 上传之后回调
+                onComplate: function (data) {
+                    $("#Path").attr('value', data.path);
+                    $("#FileFormat").attr('value', data.format);
+
+                    //alert(data.path);
+                }
+            });
+        }
+        
+    </script>
+   <style type="text/css">
+       .sec {
+           width:200px;height:32px;
+           border:1px solid #95B8E7;border-radius:5px;font-size:15px;
+           margin-left:20px;
+       }
+   </style>
+    
+    }
+@section content{
+    <div style="margin-top:-30px;">
+           <div style="margin-bottom:10px;">
+			<input class="easyui-textbox"  style="width:100%;height:32px" type="text" id="Title" name="Title"data-options="label:'资料名:'"  >
+		   </div>
+        <div style="margin-bottom:10px">
+			<input class="easyui-textbox"  style="width:100%;height:60px" type="text" id="Context" name="Context"data-options="label:'描述:'"  >
+		   </div>
+        <div style="margin-bottom:10px">
+                类型：
+            @Html.DropDownList("StudyOnlineID",null,new { @class = "sec" })
+		   </div>
+        
+        
+        
+			<div style="margin-bottom:10px" id="menu">
+                <div>上传文件:<a href="#" onclick="doUpload();" class="btn" style="text-decoration:none;">上传</a></div>
+                
+                
+		   </div>
+        <div style="margin-bottom:10px" >
+                路径：
+                <input  type="text" id="Path" name="Path"  readonly="true" class="sec" >
+                
+                
+		   </div>
+        <div style="margin-bottom:10px" >
+                格式：
+                <input  type="text" id="FileFormat" name="FileFormat" readonly="true" class="sec" >
+
+		   </div>
+        </div>
+   
+        
+    }

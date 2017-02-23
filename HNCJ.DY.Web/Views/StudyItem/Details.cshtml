@@ -1,0 +1,40 @@
+﻿@model HNCJ.DY.Model.StudyItem
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutDetails.cshtml";
+}
+
+<h2>Details</h2>
+@section content{
+    <div style="margin-bottom:10px">
+			<div>学习资料名称:</div>
+			<input class="easyui-textbox" style="width:100%;height:32px" value="@Model.Title" readonly="true">
+		</div>
+     <div style="margin-bottom:10px">
+			<div>描述:</div>
+			<input class="easyui-textbox" style="width:100%;height:32px" value="@Model.Context" readonly="true">
+		</div>
+        <div style="margin-bottom:10px">
+			<div>文件格式:</div>
+			<input class="easyui-textbox" style="width:100%;height:32px" value="@Model.FileFormat" readonly="true">
+		</div>
+    <div style="margin-bottom:10px">
+			<div>文件路径:</div>
+			<input class="easyui-textbox" style="width:100%;height:32px" value="@Model.Path" readonly="true">
+		</div>
+    <div style="margin-bottom:10px">
+			<div>类型名称:</div>
+			<input class="easyui-textbox" style="width:100%;height:32px" value="@Model.StudyOnline.Name" readonly="true">
+		</div>
+        @{var str = Model.Status == 1 ? "启用" : "未启用";}
+        <div style="margin-bottom:10px">
+			<div>状&nbsp;态:</div>
+			<input class="easyui-textbox" style="width:100%;height:32px" value="@str" readonly="true">
+		</div>
+        <div style="margin-bottom:10px">
+			<div>添加时间:</div>
+			<input class="easyui-textbox" style="width:100%;height:32px" value="@Model.RegTime" readonly="true">
+		</div>
+    
+    }

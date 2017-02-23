@@ -1,0 +1,22 @@
+@import "com/class";
+@import "com/animate";
+
+@import "head";
+@import "left";
+@import "left_son";
+@import "shadow";
+@import "item";
+* {
+    box-sizing: border-box;
+}
+ul,body {
+    margin: 0;
+    padding: 0;
+}
+body {
+    text-align: left;
+    font: 14px Verdana, Arial, Helvetica, sans-serif;
+}
+
+
+

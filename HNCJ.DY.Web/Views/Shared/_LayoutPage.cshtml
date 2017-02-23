@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/jquery-easyui-1.5/themes/default/easyui.css" rel="stylesheet" />
+    <link href="~/Content/jquery-easyui-1.5/themes/icon.css" rel="stylesheet" />   
+    <link href="~/Content/demo.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.7.1.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    <script src="~/Content/jquery-easyui-1.5/jquery.easyui.min.js"></script>
+    <script src="~/Content/jquery-easyui-1.5/locale/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript">
+    function afterAdd(result) {
+        if (result.status != 1) {
+            $.messager.show({
+                title: 'Error',
+                msg: result.errorMsg
+            });
+        } else {
+            window.parent.window.afterSuccess();
+        }
+    }  
+    </script>
+     @RenderSection("header",false) 
+    <style type="text/css">
+        .btn{ display:inline-block;padding-top:5px; color:#fff; font-size:12px; height:25px;width:40px;  text-align:center; }
+.btn{ background:#1e7bb3; border:1px solid #02598E; border-radius:2px; vertical-align:middle; }
+.btn:hover{ color:#fff; opacity:0.9; }
+    </style>
+</head>
+<body>
+    <div style="padding:50px 60px;max-width:400px;font-size:20px;">
+    @using (Ajax.BeginForm(new AjaxOptions() { OnSuccess = "afterAdd" }))
+    {
+            @RenderSection("content",false) 
+    }    
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,79 @@
+﻿@model HNCJ.DY.Model.ReplyInfo
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <fieldset>
+        <legend>ReplyInfo</legend>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.Title)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Title)
+        </div>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.Content)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Content)
+        </div>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.Status)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Status)
+        </div>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.DelFlag)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.DelFlag)
+        </div>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.RegTime)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.RegTime)
+        </div>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.ModfiedTime)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.ModfiedTime)
+        </div>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.TopicInfoID)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.TopicInfoID)
+        </div>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.UserInfoID)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.UserInfoID)
+        </div>
+    </fieldset>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

@@ -1,0 +1,142 @@
+﻿@model HNCJ.DY.Model.RoleInfo
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SetAction</title>
+    <link href="~/Content/jquery-easyui-1.5/themes/default/easyui.css" rel="stylesheet" />
+    <link href="~/Content/jquery-easyui-1.5/themes/icon.css" rel="stylesheet" />    
+    <link href="~/Content/demo.css" rel="stylesheet" />
+    <script src="~/Content/jquery-easyui-1.5/jquery.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Content/jquery-easyui-1.5/jquery.easyui.min.js"></script>
+    <script src="~/Content/jquery-easyui-1.5/locale/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript">
+        var actionIdlist = [];
+        function initTable() {
+            $('#dg').datagrid({
+                url: '/actioninfo/getallactioninfos',
+                pagination: true,
+                rownumbers: true,
+                idField:'ID',
+                fitColumns: true,
+                onCheck: function (rowIndex, rowData) {
+                    addCheck(rowData.ID);
+                },
+                onUncheck: function (rowIndex, rowData) {
+                    removeCheck(rowData.ID);
+                },
+                onSelectAll:function(rows){
+                    for (var i in rows) {
+                        addCheck(rows[i].ID);
+                    }
+                },
+                onUnselectAll: function (rows) {
+                    for (var i in rows) {
+                        removeCheck(rows[i].ID);
+                    }
+                },
+                columns: [[
+
+                { field: 'ck', checkbox: "true", title: 'Code', width: 100 },
+            { field: 'ActionName', title: '权限名', width: 100 },
+                { field: 'Url', title: 'URL', width: 100 },
+                { field: 'HttpMethd', title: 'HTTP', width: 100, align: 'center' },
+            { field: 'IsMenu', title: '是否菜单', align: 'center', width: 100, formatter: function (value) { if (value) { return "是" } return "否"; } },
+            { field: 'Status', title: '状态', width: 100, formatter: function (value) { if (value==1) { return "正常" } return "未启用"; } }
+            
+                ]],
+                onLoadSuccess: function (data) {
+                    f_ischeck();
+                }
+            });
+        }
+        function doSearch() {
+            $('#dg').datagrid('load', {
+                itemid: $('#itemid').val(),
+                key: $('#key').val()
+            });
+        }
+        function f_ischeck() {  
+            for (var i in actionIdlist) {
+                if (actionIdlist[i] != "")
+                    $('#dg').datagrid('selectRecord', actionIdlist[i]);
+            }
+        }
+        function addCheck(id) {
+            var is = findCheck(id);
+            if (is == -1) {
+                actionIdlist.splice(0, 0, id);
+            }
+        }
+        function removeCheck(id) {
+            var is = findCheck(id);            
+                actionIdlist.splice(is, 1);
+            
+        }
+        function findCheck(id) {
+            for (var i in actionIdlist) {
+                if (actionIdlist[i] == id) return i;
+            }
+            return -1;
+        }
+        function submitForm() {
+            var ids = "";
+            for (var i in actionIdlist) {
+                ids += actionIdlist[i] + ",";           
+            }
+            ids = ids.substr(0, ids.length - 1);
+            if (ids == "") return;
+            $.post('/roleinfo/action', { id: $("#roleid").val(),actionlist:ids }, function (result) {
+                if (result.status == 1) {
+                    window.parent.window.afterSuccess();
+                } else {
+                    $.messager.show({	// show error message
+                        title: 'Error',
+                        msg: "败了？？怎么回事？"
+                    });
+                }
+                return;
+            }, 'json');
+        }
+        $(function () {
+            $.post('/roleinfo/getaction', { id: $("#roleid").val() }, function (result) {
+                if (result.status == 1) {
+                    actionIdlist = result.data;
+                }
+                return;
+            }, 'json');
+            initTable();
+        });
+    </script>
+    <style type="text/css">
+        .select{ border:0px solid #fff; width:60px; border-radius:2px; color:#d3b4b4; border-bottom-color:#fff ;             
+         -moz-appearance:none;
+         -webkit-appearance:none; }
+        .input{  height:20px; background:#fff; color:#999; border:1px solid #e8e8e8; border-radius:2px; }
+        a {
+            text-decoration:none;
+        }
+        a:hover{ color:#999; opacity:0.9; }
+    </style>
+</head>
+<body>
+    <input id="roleid" type="hidden" value="@Model.ID" />
+    <a href="#" onclick="submitForm();">设置</a>
+    <div style="float:right;">
+        <select name="itemid" id="itemid" class="select">
+         <option value="1" >权限名</option>
+         
+     </select>
+	<input name="key" id="key" type="text"class="input">
+        <a href="#" class="easyui-linkbutton" iconCls="icon-search" plain="true" onclick="doSearch()">搜索</a>
+    </div>
+    <table id="dg" style="height:320px" width="100%"></table>
+</body>
+</html>

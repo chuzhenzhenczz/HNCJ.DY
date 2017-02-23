@@ -1,0 +1,113 @@
+﻿@model HNCJ.DY.Model.UserInfo
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>设置特殊权限</title>
+    <link href="~/Content/jquery-easyui-1.5/tableStyle.css" rel="stylesheet" />
+     <link href="~/Content/jquery-easyui-1.5/themes/default/easyui.css" rel="stylesheet" />
+    <link href="~/Content/jquery-easyui-1.5/themes/icon.css" rel="stylesheet" />    
+    <link href="~/Content/demo.css" rel="stylesheet" />
+    <script src="~/Content/jquery-easyui-1.5/jquery.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    <script src="~/Content/jquery-easyui-1.5/jquery.easyui.min.js"></script>
+    <script src="~/Content/jquery-easyui-1.5/locale/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $(":radio").click(function () {
+                var uid = $(this).attr("uId");
+                var actionId = $(this).attr("actionId");
+                var value = $(this).val();
+                $.post("/UserInfo/SetUserAction", { userId: uid, ActionId: actionId, Value: value }, function (data) {
+                    if (data.status == 1) {
+                        $.messager.show({
+                            title: '提示',
+                            msg: data.errorMsg,
+                            timeout: 2000,
+                            showType: 'slide'
+                        });
+                    }
+                });
+            });
+            $(".btnDelete").click(function () {
+
+                //后台删除
+                if ($(this).siblings(":checked").length > 0) {
+                    $.post("/UserInfo/DeleteAction", { userId: $(this).attr("uId"), ActionId: $(this).attr("actionId") }, function (data) {
+                        if (data.status == 1) {
+                            $.messager.show({
+                                title: '提示',
+                                msg: data.errorMsg,
+                                timeout: 2000,
+                                showType: 'slide'
+                            });
+                        }
+                    });
+                }
+                //前台状态
+                $(this).siblings(":radio").attr("checked", false);
+             });
+        });
+        
+    </script>
+</head>
+<body>
+    <div>
+        <h2>当前给用户：@Model.UserName</h2><hr />
+        @{
+            List<HNCJ.DY.Model.ActionInfo> allActions = ViewBag.AllActions;
+            List<HNCJ.DY.Model.UserActionInfo> alluserActions = ViewBag.AllUserActions ;
+            <table width="100%" height="100%" >
+                <tr><th>主键</th><th>权限名</th><th>权限地址</th><th>HTTP</th><th>操作</th></tr>
+                @foreach (var ActionInfo in allActions)
+                {
+                    string strId = "rd_" + ActionInfo.ID;
+                    <tr>
+                        <td width="10%">@ActionInfo.ID</td>
+                        <td width="20%">@ActionInfo.ActionName</td>
+                        <td width="20%">@ActionInfo.Url</td>
+                        <td width="10%">@ActionInfo.HttpMethd</td>
+                        @if (alluserActions.Where(u=>u.DelFlag==true&&u.UserInfoID==Model.ID&&u.ActionInfoID==ActionInfo.ID&&u.HasPermissin==1).FirstOrDefault()!=null)
+                        {
+                        <td width="30%" >
+                                允许<input type="radio" actionId="@ActionInfo.ID" uId="@Model.ID" checked="checked" name="@strId" value="1" />&nbsp;
+                                拒绝<input type="radio" actionId="@ActionInfo.ID" uId="@Model.ID" name="@strId" value="0" />
+
+                            <input type="button" actionId="@ActionInfo.ID" uId="@Model.ID" name="@strId" value="删除" class="btnDelete" />
+                        </td>
+                        }
+                        else if (alluserActions.Where(u => u.DelFlag == true && u.UserInfoID == Model.ID && u.ActionInfoID == ActionInfo.ID && u.HasPermissin == 0).FirstOrDefault() != null)
+                        {
+                        
+                            <td  width="30%">
+                                允许<input type="radio" actionId="@ActionInfo.ID" uId="@Model.ID"  name="@strId" value="1" />&nbsp;
+                                拒绝<input type="radio" actionId="@ActionInfo.ID" uId="@Model.ID"checked="checked" name="@strId" value="0" />
+
+                            <input type="button" actionId="@ActionInfo.ID" uId="@Model.ID" name="@strId" value="删除" class="btnDelete" />
+                        </td>
+                        }
+                        else
+                        {
+                            <td  width="30%">
+                                允许<input type="radio" actionId="@ActionInfo.ID" uId="@Model.ID"  name="@strId" value="1" />&nbsp;
+                                拒绝<input type="radio" actionId="@ActionInfo.ID" uId="@Model.ID" name="@strId" value="0" />
+
+                            <input type="button" actionId="@ActionInfo.ID" uId="@Model.ID" name="@strId" value="删除" class="btnDelete" />
+                        </td>
+                        }
+
+                    </tr>
+                }
+            </table>
+                
+           
+         }
+    </div>
+</body>
+</html>

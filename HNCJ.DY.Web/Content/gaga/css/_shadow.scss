@@ -1,0 +1,16 @@
+.box-shadow-bottom {
+    position: fixed;
+    height: 1px;
+    width: 100%;
+    bottom: 0px;
+    box-shadow: -1px -1px 5px #000000;
+}
+.box-shadow-right {
+    position: fixed;
+    height: 100%;
+    width: 1px;
+    top: 0;
+    right: 0px;
+    z-index: 10000;
+    box-shadow: -2px -2px 10px #000000;
+}

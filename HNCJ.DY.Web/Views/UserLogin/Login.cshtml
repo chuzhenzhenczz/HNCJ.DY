@@ -1,0 +1,173 @@
+﻿@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录注册</title>
+    <link href='http://fonts.googleapis.com/css?family=Days+One' rel='stylesheet' type='text/css'>
+    <link href="~/Content/jquery-easyui-1.5/themes/icon.css" rel="stylesheet" />
+    <link href="~/Content/jquery-easyui-1.5/themes/default/easyui.css" rel="stylesheet" />
+    <link href="~/Content/dy/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/dy/css/login.css" rel="stylesheet" />
+    <script src="~/Content/jquery-easyui-1.5/jquery.min.js"></script>
+    <script src="~/Content/jquery-easyui-1.5/jquery.easyui.min.js"></script>
+    <script src="~/Content/dy/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script type="text/javascript">
+        function denglu() {
+            
+            if ($("#tel").val() == "" || $("#pwd").val() == "") {
+                $.messager.alert('提示', '请填写用户名和登录密码！', 'info');
+                changeCheckCode();
+                return false;
+            }
+            $.ajax({
+                type: "post",             
+                url: $("#dengluform").attr("url"),
+                data: { tel: $("#tel").val(), pwd: $("#pwd").val(), ucode: $("#ucode").val() },
+                dataType: "json",
+                success: function (data) {
+                    if (data.status == 1) {
+                        window.location.href = "/users/index";
+                    } else {
+                        
+                        $.messager.alert('提示', data.msg, 'info');
+                        
+                    }
+                }
+            
+            });
+            
+            return false;
+        }
+        function registbtn() {
+            if ($("#tels").val() == "") {
+                $.messager.alert('提示', '请填写用户名！', 'info');
+                changeCheckCode();
+                return false;
+            }
+            if ($("#pwds").val() == "" || $("#pwd1").val() == "") {
+                $.messager.alert('提示', '请填写密码！！！', 'info');
+                changeCheckCode();
+                return false;
+            }
+            if ($("#pwds").val() != $("#pwd1").val()) {
+                $.messager.alert('提示', '两次密码不一致！！', 'info');
+                changeCheckCode();
+                return false;
+            }
+            $.ajax({
+                type: "post",
+                url: $("#registform").attr("url"),
+                data: { tel: $("#tels").val(), pwd: $("#pwds").val(), pwd1: $("#pwd1").val(), vucode: $("#vucode").val() },
+                dataType: "json",
+                success: function (data) {
+                    if (data.status == 1) {
+                        window.location.href = "/users/index";
+                    } else {
+                        
+                        $.messager.alert('提示', data.msg, 'info');
+                        
+                    }
+                }
+
+            });
+            
+            return false;
+        }
+        
+    </script>
+</head>
+<body>
+
+         <div class="index-main-body">
+             <div class="index-header">
+                 <h1 class="logo hide-text">党员"一点通"</h1>
+                 <p class="subtitle">为党的建设提供更好的平台</p>
+             </div>
+             <div class="index-content" id="zhuce">
+                 <div class="index-tab-nav">
+                     <div class="nav-slider">
+                         <a class="zhu" href="#">注册</a>
+                         <div class="nav-slider-zhu"></div>
+                     </div>
+                     <div class="nav-slider2 nav-slider">
+                          <a class="deng" href="#">登录</a>
+                          <div class="nav-slider-deng"></div>
+                     </div>
+                 </div>
+                 <div class="nav-deng">
+                     <form id="dengluform" class="message2" novalidate="novalidate" url="/UserLogin/ProcessLogin" >
+                         <input type="tel" value=""id="tel" name="tel" placeholder="手机号(仅支持中国大陆)" required/><br>
+                         <input  type="password" value=""id="pwd" name="pwd"  placeholder="密码" required/><br>
+                         <div class="yanzheng2">
+                             <input type="password" value=""id="ucode" name="ucode" onkeydown="if(event.keyCode==13){denglu();}"  placeholder="验证码" required/><br>
+                             <div class="img2">
+                                 <a href="javascript:void(0)" onclick="changeCheckCode();return false;">
+                                 <img class="imgs" src="/UserLogin/ShowVcode/?id=1" style="width: 120px;height: 45px" alt="" /></a>
+                             </div>
+                         </div>
+
+                     </form>
+                     <button class="but-deng" onclick="denglu();" >登录</button>
+                 </div>
+             </div>
+             <div class="index-content2">
+                 
+                 <div class="nav-zhu">
+                     <form id="registform" class="message" novalidate="novalidate" url="/userlogin/registsubmit">
+                        
+                        <input type="tel" value="" id="tels" name="tel" placeholder="手机号(仅支持中国大陆)" required/><br>
+                        <input  type="password" value="" id="pwds" name="pwd"  placeholder="密码" required/><br>
+                        <input type="password" value="" id="pwd1" name="pwd1"   placeholder="确认密码" required/><br>
+                         <div class="yanzheng">
+                             <input type="password" value="" id="vucode" name="vucode"   placeholder="验证码" required/><br>
+                             <div class="img">
+                                <a href="javascript:void(0)" onclick="changeCheckCode();return false;">
+                                 <img class="imgs" src="/UserLogin/ShowVcode/?id=1" style="width: 120px;height: 45px" alt="" /></a>
+                             </div>
+                         </div>
+                         
+                     </form>
+                     <button class="but-zhu" onclick="registbtn();">注册</button>
+                     <div class="nav-agree">
+                         <p>点击"注册"按钮,即代表你同意 <a href="#">《党建协议》</a></p>
+                     </div>
+                 </div>
+             </div>
+
+
+         </div>
+
+     <footer >
+         <nav class="nav navbar-default navbar-fixed-bottom" role="navigation">
+             <ol class="breadcrumb text-center">
+                 <li><a href="#">版权声明</a></li>
+                 <li><a href="#">网站公告</a></li>
+                 <li><a href="#">广告招商</a></li>
+                 <li><a href="#">联系我们</a></li>
+                 <li><a href="#">本站帮助</a></li>
+             </ol>
+         </nav>
+     </footer>
+</body>
+</html>
+<script src="~/Content/dy/js/login.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

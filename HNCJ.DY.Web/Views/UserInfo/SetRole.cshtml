@@ -1,0 +1,60 @@
+﻿@model HNCJ.DY.Model.UserInfo
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>设置角色</title>
+    <script src="~/scripts/jquery-1.7.1.min.js"></script>
+    <script src="~/scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script type="text/javascript">
+        function afterAdd(result) {
+            if (result.status != 1) {
+                $.messager.show({
+                    title: 'Error',
+                    msg: result.errorMsg
+                });
+            } else {
+                window.parent.window.afterSuccess();
+            }
+        }
+        function submitForm() {
+            $("form").submit();
+        }
+
+    </script>
+</head>
+<body>
+    <div>
+        <h2>当前给用户：@Model.UserName</h2><hr />
+        @{
+            List<HNCJ.DY.Model.RoleInfo> allRoles = ViewBag.AllRoles;
+            List<int> existRoleIdList=ViewBag.ExitsRoles;
+            using (Ajax.BeginForm("ProcessSetRole", "UserInfo", new AjaxOptions() { OnSuccess = "afterAdd" }))
+            {
+                <input type="hidden" name="Uid" value="@Model.ID" />
+                int i=0;
+                foreach(var roleInfo in allRoles){
+                    string str = "ckb_" + roleInfo.ID;
+                    if(i%3==0&&i!=0){
+                    <hr />
+                    }
+                    if(existRoleIdList.Contains(roleInfo.ID))
+                    {
+                    <input type="checkbox" checked="checked" name="@str" id="@str" />
+                    }else{
+                    <input type="checkbox" name="@str" id="@str" />
+                    }
+                    <label for="@str">@roleInfo.RoleName</label>
+                    i++;
+                }
+            }
+         }
+    </div>
+</body>
+</html>

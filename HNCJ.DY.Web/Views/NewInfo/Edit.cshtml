@@ -1,0 +1,121 @@
+﻿@model HNCJ.DY.Model.NewInfo
+
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<h2>Add</h2>
+@section header{
+    <link href="~/Content/kindeditor/themes/default/default.css" rel="stylesheet" />
+    <script src="~/Content/kindeditor/kindeditor-min.js"></script>
+    <script src="~/Content/jcrop/jquery.upload.js"></script>
+    <script type="text/javascript">
+        function submitForm() {
+            var name = $("#Title").val();
+            var pwd = $("#Author").val();
+            if (name == "") {
+                alert("标题不能为空？");
+                return false;
+            }
+            if (pwd == "") {
+                alert("作者不能为空？");
+                return false;
+            }
+            $("form").submit();
+        }
+        function doUpload() {
+            var name = $("#ImagePath").val();
+
+            // 上传方法
+            $.upload({
+                // 上传地址
+                url: '/UserDoAction/UploadImage',
+                // 文件域名字
+                fileName: 'Filedata',
+                // 其他表单数据
+                params: { name: name },
+                // 上传完成后, 返回json, text
+                dataType: 'json',
+                // 上传之前回调,return true表示可继续上传
+                onSend: function () {
+                    return true;
+                },
+                // 上传之后回调
+                onComplate: function (data) {
+                    $("#img").attr('src', data.path);
+                    $("#MenuIcon").attr('value', data.path);
+
+                    //alert(data.path);
+                }
+            });
+        }
+
+
+        var editor;
+        KindEditor.ready(function (K) {
+            editor = K.create('textarea[name="Msg"]', {
+                resizeType: 1,
+                uploadJson: '/Content/kindeditor/asp.net/upload_json.ashx',
+                fileManagerJson: '/Content/kindeditor/asp.net/file_manager_json.ashx',
+                allowFileManager: true,
+                allowPreviewEmoticons: false,
+                allowImageUpload: true,
+                afterBlur: function () {  //利用该方法处理当富文本编辑框失焦之后，立即同步数据
+                    this.sync();
+                },
+                items: [
+                    'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+                    'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+                    'insertunorderedlist', '|', 'emoticons', 'image', 'link']
+            });
+        });
+    </script>
+   
+    
+    }
+@section content{
+    <div style="margin-top:-30px;">
+           <div style="margin-bottom:10px;">
+			<input class="easyui-textbox"  style="width:100%;height:32px" type="text" id="Title" value="@Model.Title" name="Title"data-options="label:'标题:'"  >
+		   </div>
+        <div style="margin-bottom:10px">
+			<input class="easyui-textbox"  style="width:100%;height:32px" type="text" id="Author" value="@Model.Author" name="Author"data-options="label:'作者:'"  >
+		   </div>
+        <div style="margin-bottom:10px">
+                <select class="easyui-combobox" name="Type" label="类型:" style="width:260px;"data-options="panelHeight:50">
+                    @if(Model.Type==1){
+                    <option value="1" selected="selected">党内即时新闻</option>
+                    <option value="2">党内国内信息公告</option>
+                    }else{
+                    <option value="1" >党内即时新闻</option>
+                    <option value="2"selected="selected">党内国内信息公告</option>
+                    }
+
+                </select>
+		   </div>
+        
+        <div style="margin-bottom:10px">
+            <div>图标:&nbsp;<a href="#" onclick="doUpload();" class="btn" style="text-decoration:none;margin-left:30px;">上传</a></div>
+			<input id="ImagePath" name="ImagePath" type="hidden" value="@Model.ImagePath" />
+                <img alt="" src="@Model.ImagePath" id="img" style="width:40px;height:40px;" />
+		   </div>
+    <div style="margin-bottom:10px">
+            <div>内容:</div>
+			<textarea  name="Msg" style="width:100%;height:80px;visibility:hidden;">@Html.Raw(Model.Msg)</textarea>
+		   </div>
+		
+        </div>
+                @Html.HiddenFor(model => model.ID)
+                @Html.HiddenFor(model => model.Status)
+            
+                @Html.HiddenFor(model => model.DelFlag)
+            
+                @Html.HiddenFor(model => model.RegTime)
+           
+                @Html.HiddenFor(model => model.ModfiedTime)
+    }
+
+    
+               
+  

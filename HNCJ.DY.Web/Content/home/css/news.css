@@ -1,0 +1,69 @@
+/*设置轮播图距离顶部的高度*/
+body{
+    font-size: 100%;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/xinwen.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment:fixed;
+    background-position:center;
+}
+.caroursel {
+    margin: 80px auto 20px auto;
+}
+/*轮播图*/
+.news-line {
+    width: 1080px;
+    margin: 0 auto;
+    /*border: 1px solid #5aff57;*/
+}
+.zzsc {
+    margin: 0 auto;
+    /*border: 1px solid red;*/
+}
+/*新闻标题*/
+.content{
+    width: 100%;
+    min-width: 1080px;
+    height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    background-color: white;
+    margin-bottom: 50px;
+}
+.content a{
+    line-height: 30px;
+}
+/*左侧*/
+.con_left{
+    margin-top: 50px;
+    width: 60%;
+    height: 100%;
+    min-width: 700px;
+    border-right: 1px solid silver;
+
+}
+/*右侧*/
+.con_right{
+    margin-top: 50px;
+    margin-left: 20px;
+    width: 30%;
+    height: 100%;
+    min-width: 300px;
+
+}
+/*左侧标题*/
+.clearfix{
+    width: 50%;
+    margin: 0 auto;
+    min-width: 600px;
+    /*background-color: silver;*/
+    display: flex;
+    flex-flow: row nowrap;
+}
+.clearfix .column{
+    width: 50%;
+}

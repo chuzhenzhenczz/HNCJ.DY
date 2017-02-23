@@ -1,0 +1,88 @@
+﻿@model IEnumerable<HNCJ.DY.Model.StudyOnline>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>doclist</title>
+    <link href="~/Content/gaga/css/main.css" rel="stylesheet" />
+</head>
+<body>
+   <ul class="list" data-id="list" >
+       @foreach(var entity in Model){
+       <li><a href="docdetail?id=@entity.ID" target="right" uid="@entity.ID">@entity.Name</a></li>
+       }
+   
+</ul>
+    <ul class='contextmenu hide' data-id="contextmenu">
+    <li><a href='/category/StudyAdd' target="right" >添加</a></li>
+    <li><a href='#' onclick="deletes()">删除</a></li>
+    <li><a id="aa" href='/category/StudyAdd' target="right">修改</a></li>
+</ul>
+<div class="box-shadow-right"></div>
+    <script src="~/Content/gaga/lib/jquery/jquery.js"></script>
+<script>
+    var _uid;
+   
+    function deletes() {
+        var id = _uid;
+        $.post("/category/studydelete", { id: id }, function (data) {
+            if (data.status == 1) {
+                window.location.reload(true);
+
+            } else {
+                alert("败了");
+            }
+        });
+        
+    }
+    
+    $("[data-id = list]").find("li > a").on("contextmenu", function (e) {
+        /*
+         *  点击时，获取点击时在页面中的坐标。
+         *  意外：
+         *    1. 菜单出了界面
+         *  解决：
+         *    1. y大于高度的一半，菜单朝上
+         *    2. x大于宽度的一半，菜单朝左
+         *  相关数据
+         *    1. 宽度 $(window).width()
+         *    2. 高度 $(window).height()
+         *    3. 菜单 高度 h: 110 宽度 w: 148
+         * */
+        var id = $(this).attr('uid');
+        // alert(id);
+        $("#aa").attr('href', '/category/StudyEdit?id=' + id);
+        _uid = id;
+        var h = 110;
+        var w = 148;
+        e.preventDefault();
+        $("[data-id=contextmenu]").removeClass('hide')
+        var left = e.pageX;
+        var top = e.pageY;
+        if (e.pageX > ($(window).width() / 2)) {
+            left -= w;
+        }
+        if (e.pageY - 60 > ($(window).width() / 2)) {
+            top -= h;
+        }
+        $("[data-id=contextmenu]").css({
+            left: left + "px",
+            top: top + "px"
+        });
+    });
+    $(document).on('contextmenu', function (e) {
+        e.preventDefault();
+    });
+    $(document).on('click', function () {
+        $("[data-id=contextmenu]").addClass('hide')
+    });
+</script>
+    
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+﻿body {
+}
+.page_nav{clear:both; padding:15px 0; color:#666; font:normal 12px/24px Arial; text-align:center;}
+.page_nav a{display:inline-block; height:22px; margin:0 2px; padding:0 8px; text-decoration:none; border:solid 1px #dbe5ee; -moz-border-radius:2px; -webkit-border-radius:2px; -khtml-border-radius:2px; border-radius:2px; background:#fff; color:#333; font:normal 12px/22px Arial, Helvetica, sans-serif; cursor:pointer;}
+.page_nav strong{display:inline-block; height:24px; margin:0 3px; padding:0 8px; border:none; -moz-border-radius:2px; -webkit-border-radius:2px; -khtml-border-radius:2px; border-radius:2px; background:#C00; color:#fff; font-weight:normal; line-height:24px; text-decoration:none;}
+.page_nav a:hover,
+.page_nav a.on{height:24px; margin:0 3px; border:none; background:#C00; color:#fff; line-height:24px; text-decoration:none;}
+.page_nav a.select{cursor:default;}
+.page_nav .view_all{display:block; text-align:center;}
+.page_nav .view_all a{height:auto; margin:0; padding:0; border:none; color:#06c; line-height:24px;}
+.page_nav .view_all a:hover{height:auto; margin:0; padding:0; background:none;}

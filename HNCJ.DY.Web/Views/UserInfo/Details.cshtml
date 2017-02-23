@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutDetails.cshtml";
+}
+@model HNCJ.DY.Model.UserInfo
+<h2>Details</h2>
+@section content{
+    <div style="margin-bottom:10px">
+			<div>用&nbsp;户&nbsp;名:</div>
+			<input class="easyui-textbox" style="width:100%;height:32px" value="@Model.UserName" readonly="true">
+		</div>
+        @{var str = Model.Status == 1 ? "启用" : "未启用";}
+        <div style="margin-bottom:10px">
+			<div>状&nbsp;态:</div>
+			<input class="easyui-textbox" style="width:100%;height:32px" value="@str" readonly="true">
+		</div>
+        <div style="margin-bottom:10px">
+			<div>注册时间:</div>
+			<input class="easyui-textbox" style="width:100%;height:32px" value="@Model.RegTime" readonly="true">
+		</div>
+    
+    }

@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLoyout.cshtml";
+}
+
+<h2>Index</h2>
+@section header{
+    <script type="text/javascript">
+        function doaction(value) {
+            var str = "";
+            str += "<a href='javascript:void(0)' onclick=eidt('\/template\/edit?id=" + value + "')>修改</a> &nbsp;&nbsp;";
+            str += "<a href='javascript:void(0)' onclick=details('\/template\/details?id=" + value + "')>详细</a> &nbsp;&nbsp;";
+            str += "<a href='javascript:void(0)' onclick=deletes('\/template\/delete','" + value + "')>移除</a> ";
+            return str;
+        }
+        function menu(value) {
+            if (value == null) return null;
+            if (value) {
+                return "是";
+            }
+            return "否";
+        }
+       
+    </script>
+}
+       
+    @section content{
+        <table id="dg"  class="easyui-datagrid"  style="margin-left:0px"
+		url="/template/getalltemplates"
+		toolbar="#toolbar" pagination="true" 
+		rownumbers="true" fitColumns="true" >
+	<thead>
+		<tr> 
+			<th field="ck" checkbox="true" width="50"></th>
+			<th field="Context" width="80">模板名</th>							
+			<th field="Path" width="100">路径</th>					
+			<th field="Status" width="50" align="center"  formatter="iSstatus">状态</th>
+            <th field="RegTime" width="100" formatter="datetime">添加时间</th>
+            <th field="ID" width="100" align="center" formatter="doaction">操作</th>
+		</tr>
+	</thead>
+</table>
+        <div id="toolbar">
+	<a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="newAction('/template/add')">新增</a>
+	<a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editAction('/template/edit')">编辑</a>
+	<a href="#" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyAction('/template/delete')">移除</a>
+	<a href="#" class="easyui-linkbutton" iconCls="icon-lock" plain="true" onclick="qiehuanstatus('/template/AlterListStatus')">切换状态</a>
+    <div style="float:right;">
+        <select name="itemid" id="itemid" class="select">
+         <option value="1" >模板名</option>
+         <option value="2" >路径</option>
+         <option value="3" >状态</option>
+     </select>
+	<input name="key" id="key" type="text"class="input" onkeydown="if(event.keyCode==13){doSearch();}">
+        <a href="#" class="easyui-linkbutton" iconCls="icon-search" plain="true" onclick="doSearch()">搜索</a>
+    </div>
+
+</div>
+        }

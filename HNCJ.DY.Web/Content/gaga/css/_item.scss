@@ -1,0 +1,45 @@
+.comment-list {
+  margin-top: 30px;
+}
+
+.de-top {
+  /*background: yellow;*/
+}
+
+.de-top {
+  h2 {
+    text-align: center;
+  }
+}
+
+ul {
+  /*background: gainsboro;*/
+  list-style-type: none;
+}
+
+.item {
+  @extend %clear;
+  margin: 20px;
+  & > a {
+    text-decoration: none;
+    &:link, &:visited, &:hover, &:active {
+      color: #0f0f0f;
+    }
+  }
+  div {
+    float: left;
+    width: 100px;
+    //background-color: red;
+  }
+  p {
+    float: left;
+    margin-left: 20px;
+    width: 400px;
+    //background-color: goldenrod;
+  }
+  img {
+    width: 80px;
+    height: 80px;
+  }
+}
+

@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutDetails.cshtml";
+}
+@model HNCJ.DY.Model.Template
+<h2>Details</h2>
+@section content{
+    <div style="margin-bottom:10px">
+			<div>模板资料名称:</div>
+			<input class="easyui-textbox" style="width:100%;height:32px" value="@Model.Context" readonly="true">
+		</div>
+         @{var str = Model.Status == 1 ? "可下载" : "不可下载";}
+        <div style="margin-bottom:10px">
+			<div>状&nbsp;态:</div>
+			<input class="easyui-textbox" style="width:100%;height:32px" value="@str" readonly="true">
+		</div>
+        <div style="margin-bottom:10px">
+			<div>上传时间:</div>
+			<input class="easyui-textbox" style="width:100%;height:32px" value="@Model.RegTime" readonly="true">
+		</div>
+    
+    }

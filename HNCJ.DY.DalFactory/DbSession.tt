@@ -1,0 +1,57 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ include file="EF.Utility.CS.ttinclude"#>
+
+<#@ output extension=".cs" #>
+<#
+CodeGenerationTools code = new CodeGenerationTools(this);
+MetadataLoader loader=new MetadataLoader(this);
+CodeRegion region=new CodeRegion(this,1);
+MetadataTools ef = new MetadataTools(this);
+string inputFile=@"..\\HNCJ.DY.Model\\DataModel.edmx";
+EdmItemCollection ItemCollection=loader.CreateEdmItemCollection(inputFile);
+string namespaceName=code.VsNamespaceSuggestion();
+var	fileManager = EntityFrameworkTemplateFileManager.Create(this);
+#>
+
+using HNCJ.DY.DAL;
+using HNCJ.DY.IDAL;
+using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
+using System.Text;
+
+
+
+namespace HNCJ.DY.DalFactory
+{
+    public class DbSession:IDbSession
+    {
+	<#
+
+	foreach (var entity in ItemCollection.GetItems<EntityType>().OrderBy(e=>e.Name))
+	{
+	#>
+	
+		public I<#=entity.Name#>Dal <#=entity.Name#>Dal 
+        { 
+            get{
+                return StaticDalFactory.Get<#=entity.Name#>Dal();
+            } 
+        }
+        
+ 
+	
+	<#
+	}
+	#>
+	/// <summary>
+        /// 向数据库提交的方法
+        /// </summary>
+        /// <returns></returns>
+        public int SaveChanges(){
+          return DbContextFactory.GetCurrentDbContext().SaveChanges();
+        }
+	}
+
+}

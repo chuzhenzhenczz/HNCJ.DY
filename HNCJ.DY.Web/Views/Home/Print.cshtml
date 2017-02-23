@@ -1,0 +1,35 @@
+﻿@model HNCJ.DY.Model.UserInfo
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Print</title>
+    <link href="~/Content/artdialog/ui-dialog.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.7.1.min.js"></script>
+    <script src="~/Content/artdialog/dialog-plus-min.js"></script>
+
+    <script type="text/javascript">
+        //打印订单
+        function OrderPrint() {
+            var winDialog = top.dialog({
+                title: '打印基本信息',
+                url: '/home/details',
+                width: 850
+            }).showModal();
+        }
+        function prinf() {
+            OrderPrint();
+        }
+    </script>
+</head>
+<body>
+    
+    <a href="#" onclick="prinf();">打印</a>
+    @Html.ActionLink("导出表格", "ExportExcel", "UserDoAction");
+</body>
+</html>

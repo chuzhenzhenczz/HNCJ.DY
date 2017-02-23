@@ -1,0 +1,110 @@
+
+.party-policy .container{
+    margin: 0 auto;
+    min-width: 1080px;
+}
+.party-policy .row{
+    width: 100%;
+    float: left;
+    margin: 0 auto;
+    min-width: 1080px;
+}
+
+/*= common css to all effects =*/
+.party-policy .single-member{
+    width: 280px;
+    float: left;
+    margin: 30px 2.5%;
+    background-color: #fff;
+    text-align: center;
+    position: relative;
+}
+.party-policy .member-image img{max-width: 100%; vertical-align: middle;}
+.party-policy h3 {font-size: 24px; font-weight: normal; margin: 10px 0 0; text-transform: uppercase;}
+.party-policy h4 {font-size: 16px; font-weight: 300; color: #6c6c6c;margin: 0 0 15px; line-height: 22px;  min-height: 30px}
+.party-policy p {font-size: 13px; font-weight: 300; line-height: 22px; padding: 0 30px; color: #8f8e8c;margin-bottom: 10px;width: 100%;
+    height: 110px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: pre-line;
+}
+.party-policy .social-touch a{
+    width: 27px;
+    height: 26px;
+    margin: 0 2px;
+    opacity: 0.7;
+    transition: 0.3s;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+
+}
+.party-policy .social-touch a:hover{
+    opacity: 1;
+    transition: 0.3s;
+}
+
+.effect-2{
+    max-height: 302px;
+    min-height: 302px;
+    overflow: hidden;
+}
+.effect-2 h3{
+    padding-top: 7px;
+    line-height: 33px;
+}
+.effect-2 .member-image{
+    border-bottom: 5px solid #e16139;
+    height: 212px;
+    overflow: hidden;
+    width: 100%;
+    transition: 0.4s;
+    display: inline-block;
+    float: none;
+    vertical-align: middle;
+}
+.effect-2 .member-info{
+    transition: 0.4s;
+    margin-top: 20px;
+
+}
+.effect-2 .member-image img{width: 100%; vertical-align: bottom;}
+.effect-2 .social-touch{
+    background-color: #e16139;
+    float: left;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    padding: 5px 0;
+    width: 100%;
+    height: 80px;
+    transition: 0.4s;
+}
+.effect-2:hover .member-image{
+    height: 81px;
+    transition: 0.4s;
+}
+/*= effect-2 css end =*/
+
+/*= effect-3 css =*/
+.effect-3{max-height: 302px; min-height: 302px; overflow: hidden;}
+.effect-3 h3{padding-top: 7px; line-height: 33px;}
+.effect-3 .member-image{border-bottom: 5px solid #e16139; transition: 0.4s; height: 212px; width: 100%; display: inline-block; float: none; vertical-align: middle;}
+.effect-3 .member-info{transition: 0.4s;margin-top: 20px;}
+.effect-3 .member-image img{width: 100%; vertical-align: bottom;}
+.effect-3 .social-touch{background-color: #e16139; float: left; left: 0; bottom: 0; overflow: hidden; padding: 5px 0; width: 100%; transition: 0.4s;height: 80px;}
+.effect-3:hover .member-image{border-bottom: 0; border-radius: 0 0 50px 50px; height: 81px; display: inline-block; overflow: hidden; width: 109px; transition: 0.4s;}
+/*= effect-3 css end =*/
+
+
+/*= Media Query
+=============== */
+@media only screen and (min-width: 1080px){
+    .row{width: 100%; margin: 110px auto;}
+    .team-members{
+        text-align: center;
+    }
+    .single-member{float: none; display: inline-block; vertical-align: bottom;}
+}
+/*= Media Query End
+=================== */

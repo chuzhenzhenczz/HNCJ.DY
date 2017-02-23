@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6419db458ab847218cc20fb4e975f113" Name="关系图1" ZoomLevel="66" >
+        <EntityTypeShape EntityType="DataModel.RoleInfo" Width="1.5" PointX="6.375" PointY="2.25" />
+        <EntityTypeShape EntityType="DataModel.TopicInfo" Width="1.5" PointX="11.5" PointY="5" />
+        <EntityTypeShape EntityType="DataModel.NewInfo" Width="1.5" PointX="13.5" PointY="1.375" />
+        <EntityTypeShape EntityType="DataModel.PaityMember" Width="1.5" PointX="0.5" PointY="0.75" />
+        <EntityTypeShape EntityType="DataModel.UserInfo" Width="1.5" PointX="4.125" PointY="0.75" />
+        <EntityTypeShape EntityType="DataModel.UserActionInfo" Width="1.5" PointX="8.25" PointY="1" />
+        <AssociationConnector Association="DataModel.UserInfoRoleInfo" />
+        <AssociationConnector Association="DataModel.UserInfoUserActionInfo" />
+        <AssociationConnector Association="DataModel.UserInfoTopicInfo" />
+        <EntityTypeShape EntityType="DataModel.ActionInfo" Width="1.5" PointX="11.125" PointY="1" />
+        <AssociationConnector Association="DataModel.ActionInfoUserActionInfo" />
+        <AssociationConnector Association="DataModel.RoleInfoActionInfo" />
+        <EntityTypeShape EntityType="DataModel.Message" Width="1.5" PointX="4.5" PointY="6.125" />
+        <EntityTypeShape EntityType="DataModel.StudyOnline" Width="1.5" PointX="14.875" PointY="5.625" />
+        <EntityTypeShape EntityType="DataModel.Template" Width="1.5" PointX="15.5" PointY="1.625" />
+        <EntityTypeShape EntityType="DataModel.StudyItem" Width="1.5" PointX="17.125" PointY="5.75" />
+        <AssociationConnector Association="DataModel.StudyOnlineStudyItem" />
+        <EntityTypeShape EntityType="DataModel.FilesInfo" Width="1.5" PointX="0.625" PointY="6.875" />
+        <AssociationConnector Association="DataModel.PaityMemberFilesInfo" />
+        <EntityTypeShape EntityType="DataModel.Category" Width="1.5" PointX="5.5" PointY="10.25" />
+        <EntityTypeShape EntityType="DataModel.ContentInfo" Width="1.5" PointX="8.875" PointY="10.25" />
+        <AssociationConnector Association="DataModel.CategoryContentInfo" />
+        <AssociationConnector Association="DataModel.TopicInfoUserInfo" />
+        <AssociationConnector Association="DataModel.StudyItemUserInfo" />
+        <AssociationConnector Association="DataModel.ContentInfoUserInfo" />
+        <AssociationConnector Association="DataModel.TopicInfoTopicInfo" />
+        <EntityTypeShape EntityType="DataModel.Friend" Width="1.5" PointX="2.25" PointY="0.625" />
+        <AssociationConnector Association="DataModel.UserInfoFriend" />
+        <EntityTypeShape EntityType="DataModel.VisitorRecord" Width="1.5" PointX="6.875" PointY="6.25" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1619DF89-2BAB-469B-B374-CFACEF2A31A4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HNCJ.DY.BLL</RootNamespace>
+    <AssemblyName>HNCJ.DY.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseService.cs" />
+    <Compile Include="BLL.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BLL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FilesInfoService.cs" />
+    <Compile Include="MessageService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StudyItemService.cs" />
+    <Compile Include="StudyOnlineService.cs" />
+    <Compile Include="TemplateService.cs" />
+    <Compile Include="TopicInfoService.cs" />
+    <Compile Include="UserInfoService.cs" />
+    <Compile Include="ActionInfoService.cs" />
+    <Compile Include="RoleInfoService.cs" />
+    <Compile Include="NewInfoService.cs" />
+    <Compile Include="PaityMemberService.cs" />
+    <Compile Include="UserActionInfoService.cs" />
+    <Compile Include="CategoryService.cs" />
+    <Compile Include="ContentInfoService.cs" />
+    <Compile Include="FriendService.cs" />
+    <Compile Include="VisitorRecordService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BLL.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>BLL.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HNCJ.DY.Common\HNCJ.DY.Common.csproj">
+      <Project>{3bc26c42-b9c3-4e58-bdb4-0b09eaadc9c1}</Project>
+      <Name>HNCJ.DY.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HNCJ.DY.DalFactory\HNCJ.DY.DalFactory.csproj">
+      <Project>{f23ad7fa-95b2-4cb3-8091-356cbe1ccaa6}</Project>
+      <Name>HNCJ.DY.DalFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HNCJ.DY.IBLL\HNCJ.DY.IBLL.csproj">
+      <Project>{ef17372a-97f0-436a-a9c1-8408f75daebc}</Project>
+      <Name>HNCJ.DY.IBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HNCJ.DY.IDAL\HNCJ.DY.IDAL.csproj">
+      <Project>{f6b3d2de-ffe9-4f9d-a69f-91d6aa187026}</Project>
+      <Name>HNCJ.DY.IDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HNCJ.DY.Model\HNCJ.DY.Model.csproj">
+      <Project>{8ca319ab-0ab9-4bb0-b1d7-b2376e13c01a}</Project>
+      <Name>HNCJ.DY.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

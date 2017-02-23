@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/jquery-easyui-1.3.6/themes/default/easyui.css" rel="stylesheet" />
+     <link href="~/Content/templates/main/css/style.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.7.1.min.js"></script>
+    <script src="~/Content/jquery-easyui-1.3.6/jquery.easyui.min.js"></script>
+    <script src="~/Content/jquery-easyui-1.3.6/locale/easyui-lang-zh_CN.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Content/templates/main/js/jquery.flexslider-min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/myjs/register.js"></script>
+    <script type="text/javascript">
+        if (window.parent.window != window) {
+            window.top.location.href = "/UserLogin/Login";
+        }
+        $(function () {
+            $.ajax({
+                type: "POST",
+                url: "/HomePage/Links",
+                dataType: "json",
+                success: function (data) {
+                    for (var i = 0; i < data.length;i++) {
+                        $(".foot-nav").prepend("<a target='_blank' href=" + data[i].Url + ">" + data[i].Title + "</a>");
+                    }
+                }
+            });
+            $(".focusbox").flexslider({
+                directionNav: false,
+                pauseOnAction: false
+            });
+        });
+        
+   
+</script>
+    
+</head>
+<body>
+    @*@RenderBody()
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)*@
+    <script type="text/javascript">
+        $.ajax({
+            type: "POST",
+            url: "/UserInfo/Check_login",
+            success: function (data) {
+                if (data == "ok") {
+                    $("#menu").prepend('<li class="line"><a href="/UserInfo/Exits">退出</a></li>');
+                    $("#menu").prepend('<li class="login"><em></em><a href="/UserInfo/Details">会员中心</a></li>');
+                } else if (data == "no") {
+                    $("#menu").prepend('<li class="line"><a href="/UserInfo/Register">注册</a></li>');
+                    $("#menu").prepend('<li class="login"><em></em><a href="/UserLogin/Login">登录</a></li>');
+                } else {
+                    $("#menu").prepend('<li class="line"><a href="/UserInfo/Register">注册</a></li>');
+                    $("#menu").prepend('<li class="login"><em></em><a href="/UserLogin/Login">登录</a></li>');
+                }
+            }
+        });
+    </script>
+    <div id="header">
+         <!--Header-->
+        <div class="header">
+          <div class="header-wrap">
+            <div class="section">
+             <div class="left-box">
+                <a class="logo" href="/HomePage/Index">校园物易物</a>
+       
+              </div>
+              <div class="right-box">
+     
+                  <ul id="menu">
+                       		               
+                  <li><a href="/homepage/Linksman">联系我们</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--/Header-->
+    </div>
+    
+    <div id="container">@RenderSection("Content",false)</div>
+    <div id="footer">
+        <!--Footer-->
+        <div class="footer">
+          <div class="foot-nav">
+          </div>
+          @*<div class="copyright">
+             <p>版权  &copy;  hnjc </p>
+          </div>*@
+        </div>
+<!--/Footer-->
+    </div>
+</body>
+</html>
+<body>
+    
+</body>

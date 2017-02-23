@@ -1,0 +1,37 @@
+
+----------------------header--------------------------
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+2016-10-09 17:02:48,262 [7] ERROR Demo - Microsoft.ReportingServices.Diagnostics.Utilities.InvalidXmlException: The input XML does not conform to the schema. XML grammar is described in the API documentation. For XML in reports, refer to Report Definition Language syntax.
+2016-10-09 17:02:48,817 [7] ERROR Demo - Microsoft.ReportingServices.Diagnostics.Utilities.InvalidXmlException: The input XML does not conform to the schema. XML grammar is described in the API documentation. For XML in reports, refer to Report Definition Language syntax.
+2016-10-09 17:02:49,327 [7] ERROR Demo - Microsoft.ReportingServices.Diagnostics.Utilities.InvalidXmlException: The input XML does not conform to the schema. XML grammar is described in the API documentation. For XML in reports, refer to Report Definition Language syntax.
+
+----------------------header--------------------------
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+
+----------------------footer--------------------------

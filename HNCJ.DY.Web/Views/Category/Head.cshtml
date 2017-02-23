@@ -1,0 +1,36 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Head</title>
+    <link href="~/Content/gaga/css/main.css" rel="stylesheet" />
+</head>
+<body>
+<!--头部-->
+<header>
+    <ul class="left" id="manger">
+        <li><a class="" href="doclist" target="left">文档管理</a></li>
+        <li><a class="" href="movlist" target="left">视频管理</a></li>
+    </ul>
+    @*<ul class="right">
+        <li><a href="#">添加</a></li>
+        <li><a href="#">删除</a></li>
+        <li><a href="#">修改</a></li>
+    </ul>*@
+</header>
+</body>
+<script src="~/Content/gaga/lib/jquery/jquery.js"></script>
+<script>
+    var li = $('#manger a');
+    li.eq('0').addClass('choose');
+    li.on('click', function (e) {
+        li.removeClass('choose');
+        $(e.target).addClass('choose');
+    })
+</script>
+</html>

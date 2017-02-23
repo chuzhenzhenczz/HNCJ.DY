@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>在线学习</title>
+    <link rel="stylesheet" href="../../lib/bootstrap-3.3.5-dist/css/swiper.min.css">
+    <link rel="stylesheet" href="../../css/learntitle.css">
+    <link rel="stylesheet" href="../../lib/bootstrap-3.3.5-dist/css/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="../../css/learn.css">
+    <link rel="stylesheet" href="../../css/template/search-form.css">
+</head>
+<body>
+<header>
+    <nav style="height: 60px" class="navbar navbar-fixed-top nav_bottom">
+        <div class="container">
+            <!--logo-->
+            <nav class="navbar-header child-logo">
+                <a href="../first_page.html" >
+                    <img class="navbar-brand" style="height: 80px;width: 80px;margin-top: -10px" src="../../img/logo3.png" alt="">
+                </a>
+                <p style="font-weight: 700;font-size: 30px;color: #125ae4;margin: 10px auto">党员资料</p>
+            </nav>
+            <!--搜索框-->
+            <form id="so1" class="navbar-form navbar-right collapse navbar-collapse childes" role="search">
+
+                <nav class="navbar-header col-md-2 ">
+                    <a href="files.html" class="navbar-brand" style="padding: 10px;font-size: 15px;">档案管理</a>
+                </nav>
+                <nav class="navbar-header  col-md-2">
+                    <a href="upFiles.html" class="navbar-brand" style="padding: 10px;font-size: 15px ;">党员资料</a>
+                </nav>
+                <nav class="navbar-header  col-md-2">
+                    <a href="learn.html" class="navbar-brand" style="padding: 10px;font-size: 15px;">在线学习</a>
+                </nav>
+                <nav class="navbar-header col-md-2">
+                    <a href="news.html" class="navbar-brand" style="padding: 10px;font-size: 15px;">新闻在线</a>
+                </nav>
+                <nav class="navbar-header col-md-2">
+                    <a href="template/talk-hot.html" class="navbar-brand" style="padding: 10px;font-size: 15px;">党员论坛</a>
+                </nav>
+            </form>
+        </div>
+    </nav>
+</header>
+<section>
+    <div class="up-Files-title">
+
+        <form onSubmit="submitFn(this, event);">
+            <div class="search-wrapper-upFiles">
+                <div class="input-holder-upFiles">
+                    <input type="text" class="search-input-upFiles" placeholder="请输入关键词" />
+                    <button class="search-icon-upFiles" onClick="searchToggle(this, event);"><span></span></button>
+                </div>
+                <span class="close-upFiles" onClick="searchToggle(this, event);"></span>
+                <div class="result-container-upFiles">
+
+                </div>
+            </div>
+        </form>
+        <div class="select-upFiles">
+            <ul class="menu-upFiles">
+                <li class="zongbu"><a href="learn.html">总部资料</a></li>|
+                <li class="benbu"><a href="template/learn-this.html">本部资料</a></li>|
+                <li class="dangzhang"><a href="template/learn-dang.html">党章党纪</a></li>|
+                <li class="guoce"><a href="template/learn-ce.html">国家政策</a></li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="content-upFiles">
+
+        <div class="study-upFiles study1">
+            <div class="my-upFiles">
+                <div class="read-upFiles">
+                    <div class="online-files">
+                        <h2>在线资料</h2>
+                        <p>Files OnLine</p>
+                    </div>
+                    <div class="online-files-content">
+                        <div class="files-left-bottom">
+                            <div id="online-files-left">
+
+                            </div>
+                            <div class="move-files">
+                                <p><a href="#">更多...</a></p>
+                            </div>
+                        </div>
+
+                        <div class="online-files-right">
+                            <div class="files-right-bottom">
+                                <div class="right-title">
+                                    重点学习
+                                </div>
+                                <div id="vital-study-bottom">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="read-upFiles">
+                    <div class="online-files">
+                        <h2>在线视频</h2>
+                        <p>Files OnLine</p>
+                    </div>
+                    <div class="LunBo-video">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide" style="background-image:url(../../img/imgs/swiper1.jpg)"></div>
+                            <div class="swiper-slide" style="background-image:url(../../img/imgs/swiper2.jpg)"></div>
+                            <div class="swiper-slide" style="background-image:url(../../img/imgs/swiper3.jpg)"></div>
+                            <div class="swiper-slide" style="background-image:url(../../img/imgs/swiper4.jpg)"></div>
+                            <div class="swiper-slide" style="background-image:url(../../img/imgs/swiper5.jpg)"></div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+
+
+                </div>
+                    <div class="online-files-content">
+                        <div class="files-left-bottom">
+                            <div id="online-files-left2">
+
+                            </div>
+                            <div class="move-files">
+                                <p><a href="#">更多...</a></p>
+                            </div>
+                        </div>
+
+                        <div class="online-files-right">
+                            <div class="files-right-bottom">
+                                <div class="right-title">
+                                    重点学习
+                                </div>
+                                <div id="vital-study-bottom2">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation" style="height: 40px">
+    <ol class="breadcrumb">
+        <li><a href="">河南</a></li>
+        <li><a href="">平顶山</a></li>
+        <li><a href="">河南城建学院</a></li>
+        <li><a href="">计算机与数据科学学院</a></li>
+    </ol>
+</nav>
+<script src="../../lib/bootstrap-3.3.5-dist/js/swiper-3.3.1.min.js"></script>
+<script type="text/javascript" src="../../lib/bootstrap-3.3.5-dist/js/jquery.js"></script>
+<script src="../../js/script.js"></script>
+<script src="../../js/search.js"></script>
+<script src="../../js/learn.js"></script>
+<script src="../../js/nav.js"></script>
+<script src="../../lib/bootstrap-3.3.5-dist/js/bootstrap.min.js" type="text/javascript"></script>
+</body>
+</html>
+

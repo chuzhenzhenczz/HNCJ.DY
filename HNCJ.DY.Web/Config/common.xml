@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net" default-autowire="constructor" >
+  
+			<!--启用了memcache分布式缓存的配置-->
+  <!--<object name="CacheWriter" type="HNCJ.DY.Common.Cache.MemcacheWriter, HNCJ.DY.Common" singleton="false"> 	
+  </object>-->
+<!--如果使用单机缓存的话请去掉下面这个配置类的注释-->
+  <object name="CacheWriter" type="HNCJ.DY.Common.Cache.HttpRuntimeCacheWriter, HNCJ.DY.Common" singleton="false">
+  </object>
+  <object name="CacheHelper" type="HNCJ.DY.Common.Cache.CacheHelper, HNCJ.DY.Common" singleton="false">
+    <property name="CacheWriter" ref="CacheWriter" />
+  </object>
+</objects>

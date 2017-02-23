@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        #menu{
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+            text-align: center;
+            position: absolute;
+            left: 0;
+            top:0;
+            display: none;
+        }
+        #div{
+            width: 400px;
+            height: 400px;
+            background-color: red;;
+        }
+    </style>
+</head>
+<body>
+<div id="menu">
+    <p id="p">lalala</p>
+</div>
+<div id="div"></div>
+<script>
+    (function () {
+
+        var menu = document.querySelector("#menu");
+        var div = document.querySelector("#div");
+        var p=document.querySelector("#p");
+        div.addEventListener("contextmenu", function (event) {
+            event.preventDefault();
+            console.log("contextmenu")
+            menu.style.display = "block";
+            menu.style.left = event.pageX + "px";
+            menu.style.top = event.pageY + "px";
+            p.addEventListener("click",function () {
+                alert("a");
+            });
+        });
+        document.addEventListener("contextmenu", function (event) {
+            if (event.pageX > 400 || event.pageY > 400) {
+                menu.style.display = "none";
+            }
+        });
+    })();
+</script>
+
+</body>
+</html>
+
+html

@@ -1,0 +1,1283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="DataModelStoreContainer">
+    <EntitySet Name="RoleInfo" EntityType="DataModel.Store.RoleInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TopicInfo" EntityType="DataModel.Store.TopicInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="NewInfo" EntityType="DataModel.Store.NewInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PaityMember" EntityType="DataModel.Store.PaityMember" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserInfo" EntityType="DataModel.Store.UserInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserAction" EntityType="DataModel.Store.UserAction" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ActionInfo" EntityType="DataModel.Store.ActionInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Message" EntityType="DataModel.Store.Message" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="StudyOnline" EntityType="DataModel.Store.StudyOnline" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Template" EntityType="DataModel.Store.Template" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="StudyItem" EntityType="DataModel.Store.StudyItem" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FilesInfo" EntityType="DataModel.Store.FilesInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Category" EntityType="DataModel.Store.Category" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ContentInfo" EntityType="DataModel.Store.ContentInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Friend" EntityType="DataModel.Store.Friend" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="VisitorRecord" EntityType="DataModel.Store.VisitorRecord" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserInfoRoleInfo" EntityType="DataModel.Store.UserInfoRoleInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RoleInfoActionInfo" EntityType="DataModel.Store.RoleInfoActionInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TopicInfoUserInfo" EntityType="DataModel.Store.TopicInfoUserInfo" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_UserInfoRoleInfo_UserInfo" Association="DataModel.Store.FK_UserInfoRoleInfo_UserInfo">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="UserInfoRoleInfo" EntitySet="UserInfoRoleInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserInfoRoleInfo_RoleInfo" Association="DataModel.Store.FK_UserInfoRoleInfo_RoleInfo">
+      <End Role="RoleInfo" EntitySet="RoleInfo" />
+      <End Role="UserInfoRoleInfo" EntitySet="UserInfoRoleInfo" />
+    </AssociationSet>
+    <AssociationSet Name="UserInfoUserActionInfo" Association="DataModel.Store.UserInfoUserActionInfo">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="UserActionInfo" EntitySet="UserAction" />
+    </AssociationSet>
+    <AssociationSet Name="UserInfoTopicInfo" Association="DataModel.Store.UserInfoTopicInfo">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="TopicInfo" EntitySet="TopicInfo" />
+    </AssociationSet>
+    <AssociationSet Name="ActionInfoUserActionInfo" Association="DataModel.Store.ActionInfoUserActionInfo">
+      <End Role="ActionInfo" EntitySet="ActionInfo" />
+      <End Role="UserActionInfo" EntitySet="UserAction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoleInfoActionInfo_RoleInfo" Association="DataModel.Store.FK_RoleInfoActionInfo_RoleInfo">
+      <End Role="RoleInfo" EntitySet="RoleInfo" />
+      <End Role="RoleInfoActionInfo" EntitySet="RoleInfoActionInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoleInfoActionInfo_ActionInfo" Association="DataModel.Store.FK_RoleInfoActionInfo_ActionInfo">
+      <End Role="ActionInfo" EntitySet="ActionInfo" />
+      <End Role="RoleInfoActionInfo" EntitySet="RoleInfoActionInfo" />
+    </AssociationSet>
+    <AssociationSet Name="StudyOnlineStudyItem" Association="DataModel.Store.StudyOnlineStudyItem">
+      <End Role="StudyOnline" EntitySet="StudyOnline" />
+      <End Role="StudyItem" EntitySet="StudyItem" />
+    </AssociationSet>
+    <AssociationSet Name="PaityMemberFilesInfo" Association="DataModel.Store.PaityMemberFilesInfo">
+      <End Role="PaityMember" EntitySet="PaityMember" />
+      <End Role="FilesInfo" EntitySet="FilesInfo" />
+    </AssociationSet>
+    <AssociationSet Name="CategoryContentInfo" Association="DataModel.Store.CategoryContentInfo">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="ContentInfo" EntitySet="ContentInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TopicInfoUserInfo_TopicInfo" Association="DataModel.Store.FK_TopicInfoUserInfo_TopicInfo">
+      <End Role="TopicInfo" EntitySet="TopicInfo" />
+      <End Role="TopicInfoUserInfo" EntitySet="TopicInfoUserInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TopicInfoUserInfo_UserInfo" Association="DataModel.Store.FK_TopicInfoUserInfo_UserInfo">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="TopicInfoUserInfo" EntitySet="TopicInfoUserInfo" />
+    </AssociationSet>
+    <AssociationSet Name="StudyItemUserInfo" Association="DataModel.Store.StudyItemUserInfo">
+      <End Role="StudyItem" EntitySet="StudyItem" />
+      <End Role="UserInfo" EntitySet="UserInfo" />
+    </AssociationSet>
+    <AssociationSet Name="ContentInfoUserInfo" Association="DataModel.Store.ContentInfoUserInfo">
+      <End Role="ContentInfo" EntitySet="ContentInfo" />
+      <End Role="UserInfo" EntitySet="UserInfo" />
+    </AssociationSet>
+    <AssociationSet Name="TopicInfoTopicInfo" Association="DataModel.Store.TopicInfoTopicInfo">
+      <End Role="TopicInfo" EntitySet="TopicInfo" />
+      <End Role="TopicInfo1" EntitySet="TopicInfo" />
+    </AssociationSet>
+    <AssociationSet Name="UserInfoFriend" Association="DataModel.Store.UserInfoFriend">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="Friend" EntitySet="Friend" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="RoleInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Status" Type="smallint" Nullable="true" DefaultValue="1" />
+    <Property Name="DelFlag" Type="bit" Nullable="true" DefaultValue="true" />
+    <Property Name="RegTime" Type="datetime" Nullable="true" />
+    <Property Name="ModfiedTime" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="TopicInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" Nullable="true" MaxLength="255" />
+    <Property Name="Content" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Type" Type="smallint" Nullable="true" />
+    <Property Name="Status" Type="smallint" Nullable="true" DefaultValue="1" />
+    <Property Name="DelFlag" Type="bit" Nullable="true" DefaultValue="true" />
+    <Property Name="RegTime" Type="datetime" Nullable="true" />
+    <Property Name="ModfiedTime" Type="datetime" Nullable="true" />
+    <Property Name="UserInfoID" Type="int" Nullable="false" />
+    <Property Name="TopicInfoID" Type="int" Nullable="true" DefaultValue="0" />
+  </EntityType>
+  <EntityType Name="NewInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" Nullable="true" MaxLength="255" />
+    <Property Name="Msg" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Author" Type="nvarchar" Nullable="true" MaxLength="64" />
+    <Property Name="ImagePath" Type="nvarchar" Nullable="true" MaxLength="255" />
+    <Property Name="Type" Type="smallint" Nullable="true" />
+    <Property Name="Status" Type="smallint" Nullable="true" DefaultValue="1" />
+    <Property Name="DelFlag" Type="bit" Nullable="true" DefaultValue="true" />
+    <Property Name="RegTime" Type="datetime" Nullable="true" />
+    <Property Name="ModfiedTime" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="PaityMember">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="true" MaxLength="64" />
+    <Property Name="Sex" Type="nvarchar" Nullable="true" MaxLength="4" />
+    <Property Name="Brithday" Type="datetime" Nullable="true" />
+    <Property Name="ClassNO" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="JoinYLTime" Type="datetime" Nullable="true" />
+    <Property Name="SubmitTime" Type="datetime" Nullable="true" />
+    <Property Name="StartTime" Type="datetime" Nullable="true" />
+    <Property Name="EndTime" Type="datetime" Nullable="true" />
+    <Property Name="RegularTime" Type="datetime" Nullable="true" />
+    <Property Name="ClassPosition" Type="nvarchar" Nullable="true" MaxLength="128" />
+    <Property Name="Telphone" Type="nvarchar" Nullable="true" MaxLength="11" />
+    <Property Name="IDCard" Type="nvarchar" Nullable="true" MaxLength="19" />
+    <Property Name="RewardPunishment" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="FailedSubject" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Remark" Type="nvarchar" Nullable="true" MaxLength="255" />
+    <Property Name="DelFlag" Type="bit" Nullable="true" DefaultValue="true" />
+    <Property Name="Status" Type="smallint" Nullable="true" DefaultValue="1" />
+    <Property Name="RegTime" Type="datetime" Nullable="true" />
+    <Property Name="ModfiedTime" Type="datetime" Nullable="true" />
+    <Property Name="UserInfoID" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="UserInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="UserKey" Type="nvarchar" Nullable="true" MaxLength="10" />
+    <Property Name="Userpwd" Type="nvarchar" Nullable="false" DefaultValue="123456" MaxLength="64" />
+    <Property Name="Status" Type="smallint" Nullable="true" DefaultValue="1" />
+    <Property Name="DelFlag" Type="bit" Nullable="true" DefaultValue="true" />
+    <Property Name="RegTime" Type="datetime" Nullable="true" />
+    <Property Name="ModfiedTime" Type="datetime" Nullable="true" />
+    <Property Name="Icon" Type="nvarchar" Nullable="true" MaxLength="64" />
+  </EntityType>
+  <EntityType Name="UserAction">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HasPermissin" Type="smallint" Nullable="true" />
+    <Property Name="UserInfoID" Type="int" Nullable="false" />
+    <Property Name="DelFlag" Type="bit" Nullable="true" DefaultValue="true" />
+    <Property Name="ActionInfoID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ActionInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ActionName" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Url" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="HttpMethd" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="IsMenu" Type="bit" Nullable="true" DefaultValue="false" />
+    <Property Name="MenuIcon" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Sort" Type="int" Nullable="true" />
+    <Property Name="Status" Type="smallint" Nullable="true" DefaultValue="1" />
+    <Property Name="DelFlag" Type="bit" Nullable="true" DefaultValue="true" />
+    <Property Name="RegTime" Type="datetime" Nullable="true" />
+    <Property Name="ModfiedTime" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Message">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Msg" Type="nvarchar" Nullable="true" MaxLength="255" />
+    <Property Name="Status" Type="smallint" Nullable="true" DefaultValue="1" />
+    <Property Name="DelFlag" Type="bit" Nullable="true" DefaultValue="true" />
+    <Property Name="RegTime" Type="datetime" Nullable="true" />
+    <Property Name="SenderID" Type="int" Nullable="false" />
+    <Property Name="RecipientID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StudyOnline">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="true" MaxLength="64" />
+    <Property Name="DelFlag" Type="bit" Nullable="true" DefaultValue="true" />
+    <Property Name="Status" Type="smallint" Nullable="true" DefaultValue="1" />
+    <Property Name="RegTime" Type="datetime" Nullable="true" />
+    <Property Name="ModfiedTime" Type="datetime" Nullable="true" />
+    <Property Name="Content" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Count" Type="int" Nullable="true" DefaultValue="0" />
+  </EntityType>
+  <EntityType Name="Template">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Context" Type="nvarchar" Nullable="true" MaxLength="256" />
+    <Property Name="Path" Type="nvarchar" Nullable="true" MaxLength="256" />
+    <Property Name="DelFlag" Type="bit" Nullable="true" DefaultValue="true" />
+    <Property Name="Status" Type="smallint" Nullable="true" DefaultValue="1" />
+    <Property Name="RegTime" Type="datetime" Nullable="true" />
+    <Property Name="ModfiedTime" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="StudyItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Context" Type="nvarchar" Nullable="true" MaxLength="256" />
+    <Property Name="DelFlag" Type="bit" Nullable="true" DefaultValue="true" />
+    <Property Name="RegTime" Type="datetime" Nullable="true" />
+    <Property Name="ModfiedTime" Type="datetime" Nullable="true" />
+    <Property Name="StudyOnlineID" Type="int" Nullable="false" />
+    <Property Name="UserInfoID" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="FilesInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FileName" Type="nvarchar" Nullable="true" MaxLength="128" />
+    <Property Name="FilePath" Type="nvarchar" Nullable="true" MaxLength="256" />
+    <Property Name="FileSize" Type="nvarchar" Nullable="true" MaxLength="32" />
+    <Property Name="Remark" Type="nvarchar" Nullable="true" MaxLength="256" />
+    <Property Name="Type" Type="smallint" Nullable="true" />
+    <Property Name="Status" Type="smallint" Nullable="true" DefaultValue="1" />
+    <Property Name="DelFlag" Type="bit" Nullable="true" DefaultValue="true" />
+    <Property Name="RegTime" Type="datetime" Nullable="true" />
+    <Property Name="ModfiedTime" Type="datetime" Nullable="true" />
+    <Property Name="PaityMemberID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="true" MaxLength="64" />
+    <Property Name="Count" Type="int" Nullable="true" DefaultValue="0" />
+    <Property Name="Status" Type="smallint" Nullable="true" DefaultValue="1" />
+    <Property Name="DelFlag" Type="bit" Nullable="true" DefaultValue="true" />
+    <Property Name="RegTime" Type="datetime" Nullable="true" />
+    <Property Name="ModfiedTime" Type="datetime" Nullable="true" />
+    <Property Name="Path" Type="nvarchar" Nullable="true" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="ContentInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dContent" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="DelFlag" Type="bit" Nullable="true" DefaultValue="true" />
+    <Property Name="RegTime" Type="datetime" Nullable="true" />
+    <Property Name="ModfiedTime" Type="datetime" Nullable="true" />
+    <Property Name="CategoryID" Type="int" Nullable="false" />
+    <Property Name="UserInfoID" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Friend">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FriendID" Type="int" Nullable="true" />
+    <Property Name="UserInfoID" Type="int" Nullable="false" />
+    <Property Name="DelFlag" Type="bit" Nullable="true" DefaultValue="true" />
+    <Property Name="Status" Type="smallint" Nullable="true" DefaultValue="1" />
+    <Property Name="RegTime" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="VisitorRecord">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VisitorID" Type="int" Nullable="false" />
+    <Property Name="RegTime" Type="datetime" Nullable="true" />
+    <Property Name="DelFlag" Type="bit" Nullable="true" DefaultValue="true" />
+    <Property Name="VisitorName" Type="nvarchar" Nullable="true" MaxLength="64" />
+    <Property Name="VisitorIcon" Type="nvarchar" Nullable="true" MaxLength="256" />
+    <Property Name="UserInfoID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserInfoRoleInfo">
+    <Key>
+      <PropertyRef Name="UserInfo_ID" />
+      <PropertyRef Name="RoleInfo_ID" />
+    </Key>
+    <Property Name="UserInfo_ID" Type="int" Nullable="false" />
+    <Property Name="RoleInfo_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RoleInfoActionInfo">
+    <Key>
+      <PropertyRef Name="RoleInfo_ID" />
+      <PropertyRef Name="ActionInfo_ID" />
+    </Key>
+    <Property Name="RoleInfo_ID" Type="int" Nullable="false" />
+    <Property Name="ActionInfo_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TopicInfoUserInfo">
+    <Key>
+      <PropertyRef Name="TopicInfo1_ID" />
+      <PropertyRef Name="UserInfo1_ID" />
+    </Key>
+    <Property Name="TopicInfo1_ID" Type="int" Nullable="false" />
+    <Property Name="UserInfo1_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="UserInfoUserActionInfo">
+    <End Role="UserInfo" Type="DataModel.Store.UserInfo" Multiplicity="1" />
+    <End Role="UserActionInfo" Type="DataModel.Store.UserAction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UserActionInfo">
+        <PropertyRef Name="UserInfoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserInfoTopicInfo">
+    <End Role="UserInfo" Type="DataModel.Store.UserInfo" Multiplicity="1" />
+    <End Role="TopicInfo" Type="DataModel.Store.TopicInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TopicInfo">
+        <PropertyRef Name="UserInfoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ActionInfoUserActionInfo">
+    <End Role="ActionInfo" Type="DataModel.Store.ActionInfo" Multiplicity="1" />
+    <End Role="UserActionInfo" Type="DataModel.Store.UserAction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ActionInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UserActionInfo">
+        <PropertyRef Name="ActionInfoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="StudyOnlineStudyItem">
+    <End Role="StudyOnline" Type="DataModel.Store.StudyOnline" Multiplicity="1" />
+    <End Role="StudyItem" Type="DataModel.Store.StudyItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StudyOnline">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="StudyItem">
+        <PropertyRef Name="StudyOnlineID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PaityMemberFilesInfo">
+    <End Role="PaityMember" Type="DataModel.Store.PaityMember" Multiplicity="1" />
+    <End Role="FilesInfo" Type="DataModel.Store.FilesInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PaityMember">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="FilesInfo">
+        <PropertyRef Name="PaityMemberID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CategoryContentInfo">
+    <End Role="Category" Type="DataModel.Store.Category" Multiplicity="1" />
+    <End Role="ContentInfo" Type="DataModel.Store.ContentInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ContentInfo">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="StudyItemUserInfo">
+    <End Role="StudyItem" Type="DataModel.Store.StudyItem" Multiplicity="*" />
+    <End Role="UserInfo" Type="DataModel.Store.UserInfo" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="StudyItem">
+        <PropertyRef Name="UserInfoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ContentInfoUserInfo">
+    <End Role="ContentInfo" Type="DataModel.Store.ContentInfo" Multiplicity="*" />
+    <End Role="UserInfo" Type="DataModel.Store.UserInfo" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ContentInfo">
+        <PropertyRef Name="UserInfoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TopicInfoTopicInfo">
+    <End Role="TopicInfo" Type="DataModel.Store.TopicInfo" Multiplicity="0..1" />
+    <End Role="TopicInfo1" Type="DataModel.Store.TopicInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TopicInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TopicInfo1">
+        <PropertyRef Name="TopicInfoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserInfoFriend">
+    <End Role="UserInfo" Type="DataModel.Store.UserInfo" Multiplicity="1" />
+    <End Role="Friend" Type="DataModel.Store.Friend" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Friend">
+        <PropertyRef Name="UserInfoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserInfoRoleInfo_UserInfo">
+    <End Role="UserInfo" Type="DataModel.Store.UserInfo" Multiplicity="1" />
+    <End Role="UserInfoRoleInfo" Type="DataModel.Store.UserInfoRoleInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UserInfoRoleInfo">
+        <PropertyRef Name="UserInfo_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserInfoRoleInfo_RoleInfo">
+    <End Role="UserInfoRoleInfo" Type="DataModel.Store.UserInfoRoleInfo" Multiplicity="*" />
+    <End Role="RoleInfo" Type="DataModel.Store.RoleInfo" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="RoleInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UserInfoRoleInfo">
+        <PropertyRef Name="RoleInfo_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoleInfoActionInfo_RoleInfo">
+    <End Role="RoleInfo" Type="DataModel.Store.RoleInfo" Multiplicity="1" />
+    <End Role="RoleInfoActionInfo" Type="DataModel.Store.RoleInfoActionInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RoleInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RoleInfoActionInfo">
+        <PropertyRef Name="RoleInfo_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoleInfoActionInfo_ActionInfo">
+    <End Role="RoleInfoActionInfo" Type="DataModel.Store.RoleInfoActionInfo" Multiplicity="*" />
+    <End Role="ActionInfo" Type="DataModel.Store.ActionInfo" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="ActionInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RoleInfoActionInfo">
+        <PropertyRef Name="ActionInfo_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TopicInfoUserInfo_TopicInfo">
+    <End Role="TopicInfo" Type="DataModel.Store.TopicInfo" Multiplicity="1" />
+    <End Role="TopicInfoUserInfo" Type="DataModel.Store.TopicInfoUserInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TopicInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TopicInfoUserInfo">
+        <PropertyRef Name="TopicInfo1_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TopicInfoUserInfo_UserInfo">
+    <End Role="TopicInfoUserInfo" Type="DataModel.Store.TopicInfoUserInfo" Multiplicity="*" />
+    <End Role="UserInfo" Type="DataModel.Store.UserInfo" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TopicInfoUserInfo">
+        <PropertyRef Name="UserInfo1_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="DataModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" >
+        <EntityContainer Name="DataModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="RoleInfo" EntityType="DataModel.RoleInfo" />
+          <EntitySet Name="TopicInfo" EntityType="DataModel.TopicInfo" />
+          <EntitySet Name="NewInfo" EntityType="DataModel.NewInfo" />
+          <EntitySet Name="PaityMember" EntityType="DataModel.PaityMember" />
+          <EntitySet Name="UserInfo" EntityType="DataModel.UserInfo" />
+          <EntitySet Name="UserAction" EntityType="DataModel.UserActionInfo" />
+          <AssociationSet Name="UserInfoRoleInfo" Association="DataModel.UserInfoRoleInfo">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="RoleInfo" EntitySet="RoleInfo" />
+          </AssociationSet>
+          <AssociationSet Name="UserInfoUserActionInfo" Association="DataModel.UserInfoUserActionInfo">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="UserActionInfo" EntitySet="UserAction" />
+          </AssociationSet>
+          <AssociationSet Name="UserInfoTopicInfo" Association="DataModel.UserInfoTopicInfo">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="TopicInfo" EntitySet="TopicInfo" />
+          </AssociationSet>
+          <EntitySet Name="ActionInfo" EntityType="DataModel.ActionInfo" />
+          <AssociationSet Name="ActionInfoUserActionInfo" Association="DataModel.ActionInfoUserActionInfo">
+            <End Role="ActionInfo" EntitySet="ActionInfo" />
+            <End Role="UserActionInfo" EntitySet="UserAction" />
+          </AssociationSet>
+          <AssociationSet Name="RoleInfoActionInfo" Association="DataModel.RoleInfoActionInfo">
+            <End Role="RoleInfo" EntitySet="RoleInfo" />
+            <End Role="ActionInfo" EntitySet="ActionInfo" />
+          </AssociationSet>
+          <EntitySet Name="Message" EntityType="DataModel.Message" />
+          <EntitySet Name="StudyOnline" EntityType="DataModel.StudyOnline" />
+          <EntitySet Name="Template" EntityType="DataModel.Template" />
+          <EntitySet Name="StudyItem" EntityType="DataModel.StudyItem" />
+          <AssociationSet Name="StudyOnlineStudyItem" Association="DataModel.StudyOnlineStudyItem">
+            <End Role="StudyOnline" EntitySet="StudyOnline" />
+            <End Role="StudyItem" EntitySet="StudyItem" />
+          </AssociationSet>
+          <EntitySet Name="FilesInfo" EntityType="DataModel.FilesInfo" />
+          <AssociationSet Name="PaityMemberFilesInfo" Association="DataModel.PaityMemberFilesInfo">
+            <End Role="PaityMember" EntitySet="PaityMember" />
+            <End Role="FilesInfo" EntitySet="FilesInfo" />
+          </AssociationSet>
+          <EntitySet Name="Category" EntityType="DataModel.Category" />
+          <EntitySet Name="ContentInfo" EntityType="DataModel.ContentInfo" />
+          <AssociationSet Name="CategoryContentInfo" Association="DataModel.CategoryContentInfo">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="ContentInfo" EntitySet="ContentInfo" />
+          </AssociationSet>
+          <AssociationSet Name="TopicInfoUserInfo" Association="DataModel.TopicInfoUserInfo">
+            <End Role="TopicInfo" EntitySet="TopicInfo" />
+            <End Role="UserInfo" EntitySet="UserInfo" />
+          </AssociationSet>
+          <AssociationSet Name="StudyItemUserInfo" Association="DataModel.StudyItemUserInfo">
+            <End Role="StudyItem" EntitySet="StudyItem" />
+            <End Role="UserInfo" EntitySet="UserInfo" />
+          </AssociationSet>
+          <AssociationSet Name="ContentInfoUserInfo" Association="DataModel.ContentInfoUserInfo">
+            <End Role="ContentInfo" EntitySet="ContentInfo" />
+            <End Role="UserInfo" EntitySet="UserInfo" />
+          </AssociationSet>
+          <AssociationSet Name="TopicInfoTopicInfo" Association="DataModel.TopicInfoTopicInfo">
+            <End Role="TopicInfo" EntitySet="TopicInfo" />
+            <End Role="TopicInfo1" EntitySet="TopicInfo" />
+          </AssociationSet>
+          <EntitySet Name="Friend" EntityType="DataModel.Friend" />
+          <AssociationSet Name="UserInfoFriend" Association="DataModel.UserInfoFriend">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="Friend" EntitySet="Friend" />
+          </AssociationSet>
+          <EntitySet Name="VisitorRecord" EntityType="DataModel.VisitorRecord" />
+        </EntityContainer>
+        <EntityType Name="RoleInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="RoleName" Nullable="true" MaxLength="50" />
+          <Property Type="Int16" Name="Status" Nullable="true" DefaultValue="1" />
+          <Property Type="Boolean" Name="DelFlag" Nullable="true" DefaultValue="true" />
+          <Property Type="DateTime" Name="RegTime" Nullable="true" />
+          <Property Type="DateTime" Name="ModfiedTime" Nullable="true" />
+          <NavigationProperty Name="UserInfo" Relationship="DataModel.UserInfoRoleInfo" FromRole="RoleInfo" ToRole="UserInfo" />
+          <NavigationProperty Name="ActionInfo" Relationship="DataModel.RoleInfoActionInfo" FromRole="RoleInfo" ToRole="ActionInfo" />
+        </EntityType>
+        <EntityType Name="TopicInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Title" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="Content" Nullable="true" MaxLength="Max" />
+          <Property Type="Int16" Name="Type" Nullable="true" />
+          <Property Type="Int16" Name="Status" Nullable="true" DefaultValue="1" />
+          <Property Type="Boolean" Name="DelFlag" Nullable="true" DefaultValue="true" />
+          <Property Type="DateTime" Name="RegTime" Nullable="true" />
+          <Property Type="DateTime" Name="ModfiedTime" Nullable="true" />
+          <NavigationProperty Name="UserInfo" Relationship="DataModel.UserInfoTopicInfo" FromRole="TopicInfo" ToRole="UserInfo" />
+          <Property Type="Int32" Name="UserInfoID" Nullable="false" />
+          <NavigationProperty Name="UserInfo1" Relationship="DataModel.TopicInfoUserInfo" FromRole="TopicInfo" ToRole="UserInfo" />
+          <NavigationProperty Name="TopicInfo1" Relationship="DataModel.TopicInfoTopicInfo" FromRole="TopicInfo" ToRole="TopicInfo1" />
+          <NavigationProperty Name="TopicInfo2" Relationship="DataModel.TopicInfoTopicInfo" FromRole="TopicInfo1" ToRole="TopicInfo" />
+          <Property Type="Int32" Name="TopicInfoID" Nullable="true" DefaultValue="0" />
+        </EntityType>
+        <EntityType Name="NewInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Title" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="Msg" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="Author" Nullable="true" MaxLength="64" />
+          <Property Type="String" Name="ImagePath" Nullable="true" MaxLength="255" />
+          <Property Type="Int16" Name="Type" Nullable="true" />
+          <Property Type="Int16" Name="Status" Nullable="true" DefaultValue="1" />
+          <Property Type="Boolean" Name="DelFlag" Nullable="true" DefaultValue="true" />
+          <Property Type="DateTime" Name="RegTime" Nullable="true" />
+          <Property Type="DateTime" Name="ModfiedTime" Nullable="true" />
+        </EntityType>
+        <EntityType Name="PaityMember">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="64" />
+          <Property Type="String" Name="Sex" Nullable="true" MaxLength="4" />
+          <Property Type="DateTime" Name="Brithday" Nullable="true" />
+          <Property Type="String" Name="ClassNO" Nullable="true" />
+          <Property Type="DateTime" Name="JoinYLTime" Nullable="true" />
+          <Property Type="DateTime" Name="SubmitTime" Nullable="true" />
+          <Property Type="DateTime" Name="StartTime" Nullable="true" />
+          <Property Type="DateTime" Name="EndTime" Nullable="true" />
+          <Property Type="DateTime" Name="RegularTime" Nullable="true" />
+          <Property Type="String" Name="ClassPosition" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Telphone" Nullable="true" MaxLength="11" />
+          <Property Type="String" Name="IDCard" Nullable="true" MaxLength="19" />
+          <Property Type="String" Name="RewardPunishment" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="FailedSubject" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="Remark" Nullable="true" MaxLength="255" />
+          <Property Type="Boolean" Name="DelFlag" Nullable="true" DefaultValue="true" />
+          <Property Type="Int16" Name="Status" Nullable="true" DefaultValue="1" />
+          <Property Type="DateTime" Name="RegTime" Nullable="true" />
+          <Property Type="DateTime" Name="ModfiedTime" Nullable="true" />
+          <NavigationProperty Name="FilesInfo" Relationship="DataModel.PaityMemberFilesInfo" FromRole="PaityMember" ToRole="FilesInfo" />
+          <Property Type="Int32" Name="UserInfoID" Nullable="true" />
+        </EntityType>
+        <EntityType Name="UserInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="UserName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="UserKey" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Userpwd" Nullable="false" MaxLength="64" DefaultValue="123456" />
+          <Property Type="Int16" Name="Status" Nullable="true" DefaultValue="1" />
+          <Property Type="Boolean" Name="DelFlag" Nullable="true" DefaultValue="true" />
+          <Property Type="DateTime" Name="RegTime" Nullable="true" />
+          <Property Type="DateTime" Name="ModfiedTime" Nullable="true" />
+          <NavigationProperty Name="RoleInfo" Relationship="DataModel.UserInfoRoleInfo" FromRole="UserInfo" ToRole="RoleInfo" />
+          <NavigationProperty Name="UserActionInfo" Relationship="DataModel.UserInfoUserActionInfo" FromRole="UserInfo" ToRole="UserActionInfo" />
+          <NavigationProperty Name="TopicInfo" Relationship="DataModel.UserInfoTopicInfo" FromRole="UserInfo" ToRole="TopicInfo" />
+          <NavigationProperty Name="TopicInfo1" Relationship="DataModel.TopicInfoUserInfo" FromRole="UserInfo" ToRole="TopicInfo" />
+          <Property Type="String" Name="Icon" Nullable="true" MaxLength="64" />
+          <NavigationProperty Name="StudyItem" Relationship="DataModel.StudyItemUserInfo" FromRole="UserInfo" ToRole="StudyItem" />
+          <NavigationProperty Name="ContentInfo" Relationship="DataModel.ContentInfoUserInfo" FromRole="UserInfo" ToRole="ContentInfo" />
+          <NavigationProperty Name="Friend" Relationship="DataModel.UserInfoFriend" FromRole="UserInfo" ToRole="Friend" />
+        </EntityType>
+        <EntityType Name="UserActionInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int16" Name="HasPermissin" Nullable="true" />
+          <Property Type="Int32" Name="UserInfoID" Nullable="false" />
+          <Property Type="Boolean" Name="DelFlag" Nullable="true" DefaultValue="true" />
+          <NavigationProperty Name="UserInfo" Relationship="DataModel.UserInfoUserActionInfo" FromRole="UserActionInfo" ToRole="UserInfo" />
+          <NavigationProperty Name="ActionInfo" Relationship="DataModel.ActionInfoUserActionInfo" FromRole="UserActionInfo" ToRole="ActionInfo" />
+          <Property Type="Int32" Name="ActionInfoID" Nullable="false" />
+        </EntityType>
+        <Association Name="UserInfoRoleInfo">
+          <End Type="DataModel.UserInfo" Role="UserInfo" Multiplicity="*" />
+          <End Type="DataModel.RoleInfo" Role="RoleInfo" Multiplicity="*" />
+        </Association>
+        <Association Name="UserInfoUserActionInfo">
+          <End Type="DataModel.UserInfo" Role="UserInfo" Multiplicity="1" />
+          <End Type="DataModel.UserActionInfo" Role="UserActionInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInfo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserActionInfo">
+              <PropertyRef Name="UserInfoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserInfoTopicInfo">
+          <End Type="DataModel.UserInfo" Role="UserInfo" Multiplicity="1" />
+          <End Type="DataModel.TopicInfo" Role="TopicInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInfo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TopicInfo">
+              <PropertyRef Name="UserInfoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ActionInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ActionName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Url" Nullable="true" />
+          <Property Type="String" Name="HttpMethd" Nullable="true" />
+          <Property Type="Boolean" Name="IsMenu" Nullable="true" DefaultValue="False" />
+          <Property Type="String" Name="MenuIcon" Nullable="true" />
+          <Property Type="Int32" Name="Sort" Nullable="true" />
+          <Property Type="Int16" Name="Status" Nullable="true" DefaultValue="1" />
+          <Property Type="Boolean" Name="DelFlag" Nullable="true" DefaultValue="true" />
+          <Property Type="DateTime" Name="RegTime" Nullable="true" />
+          <Property Type="DateTime" Name="ModfiedTime" Nullable="true" />
+          <NavigationProperty Name="UserActionInfo" Relationship="DataModel.ActionInfoUserActionInfo" FromRole="ActionInfo" ToRole="UserActionInfo" />
+          <NavigationProperty Name="RoleInfo" Relationship="DataModel.RoleInfoActionInfo" FromRole="ActionInfo" ToRole="RoleInfo" />
+        </EntityType>
+        <Association Name="ActionInfoUserActionInfo">
+          <End Type="DataModel.ActionInfo" Role="ActionInfo" Multiplicity="1" />
+          <End Type="DataModel.UserActionInfo" Role="UserActionInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ActionInfo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserActionInfo">
+              <PropertyRef Name="ActionInfoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RoleInfoActionInfo">
+          <End Type="DataModel.RoleInfo" Role="RoleInfo" Multiplicity="*" />
+          <End Type="DataModel.ActionInfo" Role="ActionInfo" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Message">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Msg" Nullable="true" MaxLength="255" />
+          <Property Type="Int16" Name="Status" Nullable="true" DefaultValue="1" />
+          <Property Type="Boolean" Name="DelFlag" Nullable="true" DefaultValue="true" />
+          <Property Type="DateTime" Name="RegTime" Nullable="true" />
+          <Property Type="Int32" Name="SenderID" Nullable="false" />
+          <Property Type="Int32" Name="RecipientID" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StudyOnline">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="64" />
+          <Property Type="Boolean" Name="DelFlag" Nullable="true" DefaultValue="true" />
+          <Property Type="Int16" Name="Status" Nullable="true" DefaultValue="1" />
+          <Property Type="DateTime" Name="RegTime" Nullable="true" />
+          <Property Type="DateTime" Name="ModfiedTime" Nullable="true" />
+          <NavigationProperty Name="StudyItem" Relationship="DataModel.StudyOnlineStudyItem" FromRole="StudyOnline" ToRole="StudyItem" />
+          <Property Type="String" Name="Content" Nullable="true" MaxLength="Max" />
+          <Property Type="Int32" Name="Count" Nullable="true" DefaultValue="0" />
+        </EntityType>
+        <EntityType Name="Template">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Context" Nullable="true" MaxLength="256" >
+            <Documentation>
+              <Summary>内容</Summary>
+              <LongDescription>内容</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="String" Name="Path" Nullable="true" MaxLength="256" >
+            <Documentation>
+              <Summary>文档路径</Summary>
+              <LongDescription>文档路径</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="DelFlag" Nullable="true" DefaultValue="true" />
+          <Property Type="Int16" Name="Status" Nullable="true" DefaultValue="1" />
+          <Property Type="DateTime" Name="RegTime" Nullable="true" />
+          <Property Type="DateTime" Name="ModfiedTime" Nullable="true" />
+        </EntityType>
+        <EntityType Name="StudyItem">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="StudyOnline" Relationship="DataModel.StudyOnlineStudyItem" FromRole="StudyItem" ToRole="StudyOnline" />
+          <Property Type="String" Name="Context" Nullable="true" MaxLength="256">
+            <Documentation>
+              <Summary>内容</Summary>
+              <LongDescription>内容</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="DelFlag" Nullable="true" DefaultValue="true" />
+          <Property Type="DateTime" Name="RegTime" Nullable="true" />
+          <Property Type="DateTime" Name="ModfiedTime" Nullable="true" />
+          <Property Type="Int32" Name="StudyOnlineID" Nullable="false" />
+          <NavigationProperty Name="UserInfo" Relationship="DataModel.StudyItemUserInfo" FromRole="StudyItem" ToRole="UserInfo" />
+          <Property Type="Int32" Name="UserInfoID" Nullable="true" />
+        </EntityType>
+        <Association Name="StudyOnlineStudyItem">
+          <End Type="DataModel.StudyOnline" Role="StudyOnline" Multiplicity="1" />
+          <End Type="DataModel.StudyItem" Role="StudyItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StudyOnline">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="StudyItem">
+              <PropertyRef Name="StudyOnlineID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="FilesInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="FileName" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="FilePath" Nullable="true" MaxLength="256" />
+          <Property Type="String" Name="FileSize" Nullable="true" MaxLength="32" />
+          <Property Type="String" Name="Remark" Nullable="true" MaxLength="256" />
+          <Property Type="Int16" Name="Type" Nullable="true" />
+          <Property Type="Int16" Name="Status" Nullable="true" DefaultValue="1" />
+          <Property Type="Boolean" Name="DelFlag" Nullable="true" DefaultValue="true" />
+          <Property Type="DateTime" Name="RegTime" Nullable="true" />
+          <Property Type="DateTime" Name="ModfiedTime" Nullable="true" />
+          <NavigationProperty Name="PaityMember" Relationship="DataModel.PaityMemberFilesInfo" FromRole="FilesInfo" ToRole="PaityMember" />
+          <Property Type="Int32" Name="PaityMemberID" Nullable="false" />
+        </EntityType>
+        <Association Name="PaityMemberFilesInfo">
+          <End Type="DataModel.PaityMember" Role="PaityMember" Multiplicity="1" />
+          <End Type="DataModel.FilesInfo" Role="FilesInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PaityMember">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FilesInfo">
+              <PropertyRef Name="PaityMemberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="64" />
+          <Property Type="Int32" Name="Count" Nullable="true" DefaultValue="0" />
+          <Property Type="Int16" Name="Status" Nullable="true" DefaultValue="1" />
+          <Property Type="Boolean" Name="DelFlag" Nullable="true" DefaultValue="true" />
+          <Property Type="DateTime" Name="RegTime" Nullable="true" />
+          <Property Type="DateTime" Name="ModfiedTime" Nullable="true" />
+          <NavigationProperty Name="ContentInfo" Relationship="DataModel.CategoryContentInfo" FromRole="Category" ToRole="ContentInfo" />
+          <Property Type="String" Name="Path" Nullable="true" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="ContentInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="dContent" Nullable="true" MaxLength="Max" />
+          <Property Type="Boolean" Name="DelFlag" Nullable="true" DefaultValue="true" />
+          <Property Type="DateTime" Name="RegTime" Nullable="true" />
+          <Property Type="DateTime" Name="ModfiedTime" Nullable="true" />
+          <NavigationProperty Name="Category" Relationship="DataModel.CategoryContentInfo" FromRole="ContentInfo" ToRole="Category" />
+          <Property Type="Int32" Name="CategoryID" Nullable="false" />
+          <NavigationProperty Name="UserInfo" Relationship="DataModel.ContentInfoUserInfo" FromRole="ContentInfo" ToRole="UserInfo" />
+          <Property Type="Int32" Name="UserInfoID" Nullable="true" />
+        </EntityType>
+        <Association Name="CategoryContentInfo">
+          <End Type="DataModel.Category" Role="Category" Multiplicity="1" />
+          <End Type="DataModel.ContentInfo" Role="ContentInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ContentInfo">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TopicInfoUserInfo">
+          <End Type="DataModel.TopicInfo" Role="TopicInfo" Multiplicity="*" />
+          <End Type="DataModel.UserInfo" Role="UserInfo" Multiplicity="*" />
+        </Association>
+        <Association Name="StudyItemUserInfo">
+          <End Type="DataModel.StudyItem" Role="StudyItem" Multiplicity="*" />
+          <End Type="DataModel.UserInfo" Role="UserInfo" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="UserInfo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="StudyItem">
+              <PropertyRef Name="UserInfoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ContentInfoUserInfo">
+          <End Type="DataModel.ContentInfo" Role="ContentInfo" Multiplicity="*" />
+          <End Type="DataModel.UserInfo" Role="UserInfo" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="UserInfo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ContentInfo">
+              <PropertyRef Name="UserInfoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TopicInfoTopicInfo">
+          <End Type="DataModel.TopicInfo" Role="TopicInfo" Multiplicity="0..1" />
+          <End Type="DataModel.TopicInfo" Role="TopicInfo1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TopicInfo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TopicInfo1">
+              <PropertyRef Name="TopicInfoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Friend">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="FriendID" Nullable="true" />
+          <NavigationProperty Name="UserInfo" Relationship="DataModel.UserInfoFriend" FromRole="Friend" ToRole="UserInfo" />
+          <Property Type="Int32" Name="UserInfoID" Nullable="false" />
+          <Property Type="Boolean" Name="DelFlag" Nullable="true" DefaultValue="true" />
+          <Property Type="Int16" Name="Status" Nullable="true" DefaultValue="1" />
+          <Property Type="DateTime" Name="RegTime" Nullable="true" />
+        </EntityType>
+        <Association Name="UserInfoFriend">
+          <End Type="DataModel.UserInfo" Role="UserInfo" Multiplicity="1" />
+          <End Type="DataModel.Friend" Role="Friend" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInfo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Friend">
+              <PropertyRef Name="UserInfoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="VisitorRecord">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="VisitorID" Nullable="false" />
+          <Property Type="DateTime" Name="RegTime" Nullable="true" />
+          <Property Type="Boolean" Name="DelFlag" Nullable="true" DefaultValue="true" />
+          <Property Type="String" Name="VisitorName" Nullable="true" MaxLength="64" />
+          <Property Type="String" Name="VisitorIcon" Nullable="true" MaxLength="256" />
+          <Property Type="Int32" Name="UserInfoID" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DataModelStoreContainer" CdmEntityContainer="DataModelContainer">
+    <EntitySetMapping Name="RoleInfo">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.RoleInfo)">
+        <MappingFragment StoreEntitySet="RoleInfo">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="RegTime" ColumnName="RegTime" />
+          <ScalarProperty Name="ModfiedTime" ColumnName="ModfiedTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TopicInfo">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.TopicInfo)">
+        <MappingFragment StoreEntitySet="TopicInfo">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="RegTime" ColumnName="RegTime" />
+          <ScalarProperty Name="ModfiedTime" ColumnName="ModfiedTime" />
+          <ScalarProperty Name="UserInfoID" ColumnName="UserInfoID" />
+          <ScalarProperty Name="TopicInfoID" ColumnName="TopicInfoID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NewInfo">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.NewInfo)">
+        <MappingFragment StoreEntitySet="NewInfo">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Msg" ColumnName="Msg" />
+          <ScalarProperty Name="Author" ColumnName="Author" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="RegTime" ColumnName="RegTime" />
+          <ScalarProperty Name="ModfiedTime" ColumnName="ModfiedTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaityMember">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.PaityMember)">
+        <MappingFragment StoreEntitySet="PaityMember">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="Brithday" ColumnName="Brithday" />
+          <ScalarProperty Name="ClassNO" ColumnName="ClassNO" />
+          <ScalarProperty Name="JoinYLTime" ColumnName="JoinYLTime" />
+          <ScalarProperty Name="SubmitTime" ColumnName="SubmitTime" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="RegularTime" ColumnName="RegularTime" />
+          <ScalarProperty Name="ClassPosition" ColumnName="ClassPosition" />
+          <ScalarProperty Name="Telphone" ColumnName="Telphone" />
+          <ScalarProperty Name="IDCard" ColumnName="IDCard" />
+          <ScalarProperty Name="RewardPunishment" ColumnName="RewardPunishment" />
+          <ScalarProperty Name="FailedSubject" ColumnName="FailedSubject" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="RegTime" ColumnName="RegTime" />
+          <ScalarProperty Name="ModfiedTime" ColumnName="ModfiedTime" />
+          <ScalarProperty Name="UserInfoID" ColumnName="UserInfoID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserInfo">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.UserInfo)">
+        <MappingFragment StoreEntitySet="UserInfo">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserKey" ColumnName="UserKey" />
+          <ScalarProperty Name="Userpwd" ColumnName="Userpwd" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="RegTime" ColumnName="RegTime" />
+          <ScalarProperty Name="ModfiedTime" ColumnName="ModfiedTime" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserAction">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.UserActionInfo)">
+        <MappingFragment StoreEntitySet="UserAction">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="HasPermissin" ColumnName="HasPermissin" />
+          <ScalarProperty Name="UserInfoID" ColumnName="UserInfoID" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="ActionInfoID" ColumnName="ActionInfoID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ActionInfo">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.ActionInfo)">
+        <MappingFragment StoreEntitySet="ActionInfo">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ActionName" ColumnName="ActionName" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="HttpMethd" ColumnName="HttpMethd" />
+          <ScalarProperty Name="IsMenu" ColumnName="IsMenu" />
+          <ScalarProperty Name="MenuIcon" ColumnName="MenuIcon" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="RegTime" ColumnName="RegTime" />
+          <ScalarProperty Name="ModfiedTime" ColumnName="ModfiedTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Message">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.Message)">
+        <MappingFragment StoreEntitySet="Message">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Msg" ColumnName="Msg" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="RegTime" ColumnName="RegTime" />
+          <ScalarProperty Name="SenderID" ColumnName="SenderID" />
+          <ScalarProperty Name="RecipientID" ColumnName="RecipientID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StudyOnline">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.StudyOnline)">
+        <MappingFragment StoreEntitySet="StudyOnline">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="RegTime" ColumnName="RegTime" />
+          <ScalarProperty Name="ModfiedTime" ColumnName="ModfiedTime" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Template">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.Template)">
+        <MappingFragment StoreEntitySet="Template">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Context" ColumnName="Context" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="RegTime" ColumnName="RegTime" />
+          <ScalarProperty Name="ModfiedTime" ColumnName="ModfiedTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StudyItem">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.StudyItem)">
+        <MappingFragment StoreEntitySet="StudyItem">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Context" ColumnName="Context" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="RegTime" ColumnName="RegTime" />
+          <ScalarProperty Name="ModfiedTime" ColumnName="ModfiedTime" />
+          <ScalarProperty Name="StudyOnlineID" ColumnName="StudyOnlineID" />
+          <ScalarProperty Name="UserInfoID" ColumnName="UserInfoID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FilesInfo">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.FilesInfo)">
+        <MappingFragment StoreEntitySet="FilesInfo">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="FileSize" ColumnName="FileSize" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="RegTime" ColumnName="RegTime" />
+          <ScalarProperty Name="ModfiedTime" ColumnName="ModfiedTime" />
+          <ScalarProperty Name="PaityMemberID" ColumnName="PaityMemberID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Category">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.Category)">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="RegTime" ColumnName="RegTime" />
+          <ScalarProperty Name="ModfiedTime" ColumnName="ModfiedTime" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContentInfo">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.ContentInfo)">
+        <MappingFragment StoreEntitySet="ContentInfo">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="dContent" ColumnName="dContent" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="RegTime" ColumnName="RegTime" />
+          <ScalarProperty Name="ModfiedTime" ColumnName="ModfiedTime" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="UserInfoID" ColumnName="UserInfoID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Friend">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.Friend)">
+        <MappingFragment StoreEntitySet="Friend">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FriendID" ColumnName="FriendID" />
+          <ScalarProperty Name="UserInfoID" ColumnName="UserInfoID" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="RegTime" ColumnName="RegTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VisitorRecord">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.VisitorRecord)">
+        <MappingFragment StoreEntitySet="VisitorRecord">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="VisitorID" ColumnName="VisitorID" />
+          <ScalarProperty Name="RegTime" ColumnName="RegTime" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="VisitorName" ColumnName="VisitorName" />
+          <ScalarProperty Name="VisitorIcon" ColumnName="VisitorIcon" />
+          <ScalarProperty Name="UserInfoID" ColumnName="UserInfoID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="UserInfoRoleInfo" TypeName="DataModel.UserInfoRoleInfo" StoreEntitySet="UserInfoRoleInfo">
+      <EndProperty Name="UserInfo">
+        <ScalarProperty Name="ID" ColumnName="UserInfo_ID" />
+      </EndProperty>
+      <EndProperty Name="RoleInfo">
+        <ScalarProperty Name="ID" ColumnName="RoleInfo_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="RoleInfoActionInfo" TypeName="DataModel.RoleInfoActionInfo" StoreEntitySet="RoleInfoActionInfo">
+      <EndProperty Name="RoleInfo">
+        <ScalarProperty Name="ID" ColumnName="RoleInfo_ID" />
+      </EndProperty>
+      <EndProperty Name="ActionInfo">
+        <ScalarProperty Name="ID" ColumnName="ActionInfo_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TopicInfoUserInfo" TypeName="DataModel.TopicInfoUserInfo" StoreEntitySet="TopicInfoUserInfo">
+      <EndProperty Name="TopicInfo">
+        <ScalarProperty Name="ID" ColumnName="TopicInfo1_ID" />
+      </EndProperty>
+      <EndProperty Name="UserInfo">
+        <ScalarProperty Name="ID" ColumnName="UserInfo1_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

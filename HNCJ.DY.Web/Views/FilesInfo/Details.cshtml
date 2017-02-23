@@ -1,0 +1,56 @@
+﻿@model HNCJ.DY.Model.FilesInfo
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutDetails.cshtml";
+}
+
+<h2>Details</h2>
+@section content{
+    <div style="margin-top:-30px;">
+           <div style="margin-bottom:10px;">
+			<input class="easyui-textbox"  style="width:100%;height:32px" type="text" id="FileName" value="@Model.FileName" name="FileName"data-options="label:'文件名:'"readonly="true"  >
+		   </div>
+        <div style="margin-bottom:10px;">
+			<input class="easyui-textbox"  style="width:100%;height:60px" type="text" id="Remark" value="@Model.Remark" name="Remark"data-options="label:'描述:',multiline:true" readonly="true" >
+		   </div>
+        <div style="margin-bottom:10px">
+                <select class="easyui-combobox" name="Type" label="类型:" style="width:260px;"data-options="panelHeight:50">
+                    
+                    <option value="1" >党员发展材料</option>
+                    <option value="2" >季度思想报告</option>
+                    <option value="3" >学习总结心得</option>
+                   
+
+                </select>
+		   </div>
+        
+        <div style="margin-bottom:10px">
+            <div>文件:</div>
+			<input id="FilePath" name="FilePath" type="text" value="@Model.FilePath" readonly="true" style="width:200px;height:32px;border:1px solid #95B8E7;border-radius:5px;font-size:15px;" />
+            <img src="@Model.FilePath" alt="" style="width:40px;height:40px;" />
+		   </div>
+           <div style="margin-bottom:10px">
+               <div>格式：
+			<input   style="width:100%;height:32px;border:1px solid #95B8E7;border-radius:5px;font-size:15px;" type="text" id="FileSize" value="@Model.FileSize" name="FileSize" readonly="true" data-options="label:'格式:'"  >
+		   </div>
+
+           </div>
+		    <div style="margin-bottom:10px">
+                <div>党员姓名：
+			<input   style="width:100%;height:32px;border:1px solid #95B8E7;border-radius:5px;font-size:15px;" type="text" id="Name" value="@Model.PaityMember.Name"  readonly="true" data-options="label:'格式:'"  >
+                    </div>
+
+		   </div>
+        </div>
+    @{var str = Model.Status == 1 ? "启用" : "未启用";}
+        <div style="margin-bottom:10px">
+			<div>状&nbsp;态:</div>
+			<input class="easyui-textbox" style="width:100%;height:32px" value="@str" readonly="true">
+		</div>
+        <div style="margin-bottom:10px">
+			<div>发布时间:</div>
+			<input class="easyui-textbox" style="width:100%;height:32px" value="@Model.RegTime" readonly="true">
+		</div>
+               
+    }

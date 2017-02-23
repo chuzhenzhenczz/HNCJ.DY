@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLoyout.cshtml";
+}
+
+<h2>Index</h2>
+@section header{
+    
+    <script type="text/javascript">
+        
+        function doaction(value) {
+            var str = "";
+            str += "<a href='javascript:void(0)' onclick=eidt('\/newinfo\/edit?id=" + value + "')>修改</a> &nbsp;&nbsp;";
+            str += "<a href='javascript:void(0)' onclick=details('\/newinfo\/details?id=" + value + "')>详细</a> &nbsp;&nbsp;";
+            str += "<a href='javascript:void(0)' onclick=deletes('\/newinfo\/delete','" + value + "')>移除</a> ";
+            return str;
+        }
+        function menu(value) {
+            if (value == null) return null;            
+                return "<img src="+value+" style='width:40px;height:40px;'/>";
+            
+        }
+        function type(value) {
+            if (value == null) return null;
+            if (value==1) {
+                return "党内即时新闻";
+            } else if (value == 2) {
+                return "党内国内信息公告";
+            }
+            return "";
+        }
+    </script>
+}
+       
+    @section content{
+        <table id="dg"  class="easyui-datagrid"  style="margin-left:0px"
+		url="/newinfo/getallnewinfos"
+		toolbar="#toolbar" pagination="true" 
+		rownumbers="true" fitColumns="true" >
+	<thead>
+		<tr> 
+			<th field="ck" checkbox="true" width="50"></th>
+			<th field="Title" width="80">标题</th>
+			<th field="Author" width="50">作者</th>
+			<th field="Type" width="100" formatter="type">类型</th>
+			<th field="ImagePath" width="50" align="center" formatter="menu">图标</th>					
+			<th field="Status" width="50" align="center"  formatter="iSstatus">状态</th>
+            <th field="RegTime" width="100" formatter="datetime">添加时间</th>
+            <th field="ID" width="100" align="center" formatter="doaction">操作</th>
+		</tr>
+	</thead>
+</table>
+        <div id="toolbar">
+	<a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="newAction('/newinfo/add')">新增</a>
+	<a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editAction('/newinfo/edit')">编辑</a>
+	<a href="#" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyAction('/newinfo/delete')">移除</a>
+    <a href="#" class="easyui-linkbutton" iconCls="icon-lock" plain="true" onclick="qiehuanstatus('/newinfo/AlterListStatus')">切换状态</a>
+    <div style="float:right;">
+        <select name="itemid" id="itemid" class="select">
+         <option value="1" >标题名</option>
+         <option value="2" >作者</option>
+         <option value="3" >类型</option>
+         <option value="4" >内容</option>
+         <option value="5" >状态</option>
+         
+     </select>
+	<input name="key" id="key" type="text"class="input" onkeydown="if(event.keyCode==13){doSearch();}">
+        <a href="#" class="easyui-linkbutton" iconCls="icon-search" plain="true" onclick="doSearch()">搜索</a>
+    </div>
+
+</div>
+        }

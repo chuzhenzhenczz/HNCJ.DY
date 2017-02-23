@@ -1,0 +1,997 @@
+@media screen and (min-width:780px){
+    .child-logo p{
+        display:none;
+    }
+}
+@media screen and (min-width:980px){
+
+    .left-talk-phone img{
+        display: none;
+    }
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-size: 100%;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/xinwen.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment:fixed;
+    background-position:center;
+}
+/*nav*/
+.navbar-header a:hover{
+    text-align: center;
+    font-weight: 700;
+    /*background-color: rgba(212, 222, 169, 0.5);*/
+    /*box-shadow: 20px 0 60px #ffc620;*/
+}
+.content-talk{
+    display: flex;
+    flex-flow: row nowrap;
+    width: 1080px;
+    height: 100%;
+    min-height: 700px;
+    margin: 100px auto;
+    margin-bottom: 0px;
+    background-color: #f8f5f5;
+
+}
+.content-talk .has-feedback{
+    margin-top: 10px;
+    position: fixed;
+}
+.content-left{
+    width: 250px;
+    background-color: #fffefd;
+    height: 600px;
+    position: fixed;
+    margin: 50px auto;
+}
+.content-right{
+    width: 100%;
+    background-color: #f8f5f5;
+    height: 100%;
+    float: right;
+}
+
+@media screen and (max-width:980px){
+    .content-left{
+        width: 250px;
+        background-color: #fffefd;
+        height: 720px;
+        position: absolute;
+        margin: 0px auto;
+
+    }
+    .left-talk-phone{
+        width: 80%;
+        height: 300px;
+        margin: 30px auto;
+    }
+    .left-talk-phone img{
+        width: 100%;
+        height: 300px;
+        background-size: 100% 100%;
+
+    }
+    .has-feedback{
+        display: none;
+    }
+
+
+}
+.phone-talk{
+    width: 70px;
+    height: 70px;
+    margin: 20px 20px 0 20px;
+    border-radius: 50%;
+    /*background-image:url("../img/块状花朵1.png");*/
+    background-size: 100% 100%;
+}
+.user-talk{
+    display: flex;
+    flex-flow: row nowrap;
+}
+.id-talk{
+    margin: 20px 20px 0px 20px;
+}
+.id-talk li{
+    font-size: 13px;
+    list-style-type: none;
+    color: #bab7b7;
+}
+.id-talk li p{
+    font-size: 15px;
+    list-style-type: none;
+    color: #716d73;
+}
+.action-information {
+    margin-left: 20px;
+}
+.action-information a{
+    text-align: center;
+    color: #716d73;
+    font-weight: 600;
+    font-size: 13px;
+    text-decoration: none;
+}
+.action-information a:hover{
+    color: #2b669a;
+}
+.menu-talk{
+     margin-top: 20px;
+
+ }
+.menu-talk li{
+    list-style-type: none;
+    margin-top: 20px;
+
+}
+.menu-files img{
+    margin-left: 20px;
+    width: 22px;
+    height: 22px;
+    margin-right: 20px;
+}
+.menu-files a:link{
+    color: #5c585e;
+    text-decoration: none;
+}
+.menu-files a:hover{
+    text-decoration: none;
+    color: #14099a;
+}
+.menu-files a:active{
+    color: #5c585e;
+    text-decoration: none;
+}
+.menu-files a:visited{
+    color: #5c585e;
+    text-decoration: none;
+}
+.content-right{
+    width: 100%;
+    background-color: #f8f5f5;
+    height: 100%;
+}
+/*个人主页*/
+
+.my-right{
+    width: 100%;
+    background-color: #f8f5f5;
+    height: 100%;
+    background-image: url("../img/xinwen.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment:fixed;
+    background-position:center;
+}
+.myHomePage{
+    width: 820px;
+    height: 260px;
+    /*background-color: #1f3eb3;*/
+    margin-left: 260px;
+    background-image: url("../img/zhuye.jpg");
+    background-size: 100% 100%;
+
+}
+.content-right .my-Phone{
+    width: 150px;
+    height: 150px;
+    /*background-image: url("../img/myphone1.jpg");*/
+    background-color:white;
+    background-size: 100% 100%;
+    margin-left: 280px;
+    position: relative;
+    top: -30px;
+    border-radius: 10px;
+    /*border: 3px solid white;*/
+    z-index: 1;
+}
+
+.content-right .my-content{
+    width: 820px;
+    height: 860px;
+    background-color: #f8f5f5;
+    margin-left: 260px;
+    top: -130px;
+    position: relative;
+
+}
+.content-right .my-name{
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.content-right .my-name ul{
+    width: 160px;
+    height: 80px;
+    /*background-color: #17b9e7;*/
+    margin-left: 180px;
+    list-style-type: none;
+    color: #8f8e8c;
+}
+.my-name ul h3{
+    color: #6c6c6c;
+    font-size: 20px;
+}
+.add-friend {
+    width: 250px;
+    height: 100px;
+    /*background-color: #8ecdd0;*/
+}
+.add-follow{
+    width: 250px;
+    height: 100px;
+    /*background-color: #ff8026;*/
+}
+.add-friend .ad-button,.add-follow .aw-button{
+    width: 120px;
+    height: 35px;
+    background-color: #E3F0FC;
+    margin-top: 50px;
+    border: 1px solid #B2CEDB;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 35px;
+}
+.my-name .add {
+    color: #2aabd2;
+    font-size: 30px;
+    margin-right: 15px;
+
+}
+.my-name .add2 {
+    color: #8f8e8c;
+    font-size: 20px;
+    position: relative;
+    top: -5px;
+
+}
+.other-content{
+    width: 100%;
+    height: 200px;
+    /*background-color: #2aabd2;*/
+    border-top: 1px solid #dad9d7;
+}
+.other-content .love-post{
+    width: 100%;
+    height: 18px;
+    border-left: 2px solid #ff8026;
+    margin-left: 20px;
+    margin-top: 20px;
+    line-height: 18px;
+}
+
+.other-content p{
+    margin-left: 10px;
+    color: #6c6c6c;
+    font-size: 18px;
+}
+#post-title{
+    display: flex;
+    flex-flow: row wrap;
+}
+.ad-post{
+    width: 230px;
+    height: 35px;
+    background-color: #E3F0FC;
+    margin-top: 50px;
+    margin-left: 20px;
+    border: 1px solid #B2CEDB;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 35px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.ad-post .add{
+   color: #6c6c6c;
+}
+
+
+
+/*热点*/
+.content-right .div5{
+    margin-left: 260px;
+    width: 820px;
+    height: 100%;
+}
+
+#user-talk-content{
+    width: 660px;
+    height: 100%;
+    margin: 30px auto;
+}
+.user-content-min{
+    margin: 30px auto;
+}
+
+.user-phone{
+    float: left;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-image: url("../img/块状花朵1.png");
+}
+.user-phone img{
+    width: 100px;
+    height:100px;
+    border-radius: 50%;
+    background-size: 100% 100%;
+}
+.user-name-talk{
+    display: flex;
+    flex-flow: row nowrap;
+}
+.user-content-bottom{
+    width: 600px;
+    height:130px;
+    background-color: white;
+    margin: 0 auto;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #ccc9c9;
+
+}
+.user-content-bottom .user-content{
+    width: 570px;
+    height: 80px;
+    margin: 0 auto;
+    background-color: #edeaea;
+    border-radius: 10px;
+    box-shadow: 10px 0 10px #ccc9c9;
+}
+.user-content p:nth-child(1){
+    font-size: 16px;
+    font-family: "Myriad Hebrew";
+    font-weight: 600;
+}
+.user-content p:nth-child(2){
+    font-size: 14px;
+    width:500px ;
+    color: #5c585e;
+    margin-left: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.user-content-bottom .user-title{
+    font-size: 20px;
+    color:black;
+    margin-left: 20px;
+}
+.user-name-talk .user-name{
+    font-size: 14px;
+    color: #5c585e;
+    margin-right: 50px;
+}
+.user-name-talk .user-lv{
+    font-size: 14px;
+    color: #5c585e;
+    margin-right: 350px;
+}
+
+.user-name-talk .user-number{
+    font-size: 14px;
+    color: #5c585e;
+    /*margin-left: 280px;*/
+}
+a:link{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+a:active{
+    text-decoration: none;
+}
+a:visited{
+    text-decoration: none;
+}
+/*我的帖子*/
+.div3-myPosts{
+    margin-top: 80px;
+    margin-left: 50px;
+}
+.myPosts-div{
+    width: 80%;
+    height: 100%;
+    padding: 15px;
+    margin-top: 30px;
+    border-top: 1px solid #e6e3e3;
+    border-bottom: 1px solid #e6e3e3;
+}
+.div3-myPosts textarea{
+    width: 80%;
+    border: 1px solid #c9c8c6;
+}
+.myPosts-title input{
+    margin-bottom: 30px;
+    border: 1px solid #c9c8c6;
+    width: 80%;
+    height: 40px;
+}
+.myPosts-button button{
+    width: 70px;
+    height: 30px;
+    text-align: center;
+    background-color: #5390ee;
+    border: 0;
+    border-radius: 3px;
+    color: white;
+    font-weight: 600;
+}
+.myPosts-button{
+   margin-left: 542px;
+}
+.new-myPosts img{
+    background-size: 100% 100%;
+    width: 32px;
+    height: 32px;
+}
+.new-myPosts{
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.myPosts{
+    width: 100%;
+    height: 110px;
+    margin-top: 20px;
+    border-bottom: 1px solid #e9e6e6;
+    margin-bottom: 10px;
+}
+.myPosts h3{
+    font-size: 20px;
+    color: #282828;
+    font-weight: 600;
+}
+.myPosts p{
+    font-size: 14px;
+    color: #5f5e5c;
+    line-height: 30px;
+}
+.myPosts-com{
+    display: flex;
+    flex-flow: row nowrap;
+}
+.myPosts-com img{
+     margin-right: 10px;
+ }
+.myPosts-time{
+    margin-right: 20px;
+}
+.myPosts-newCom{
+    margin-right: 60px;
+    color: #282828;
+}
+.myPosts-number,.newCom-name{
+    margin-right: 60px;
+    color: #a8a7a5;
+}
+.right-phone-bottom{
+    width: 80%;
+    height: 300px;
+    margin-top: 50px;
+
+}
+.right-phone-bottom img{
+    width: 100%;
+    height: 300px;
+    background-size: 100% 100%;
+}
+/*私信*/
+.Letter-talk-bottom{
+    width: 100%;
+    height: 630px;
+    background-color: #f7f7e9;
+    display: flex;
+    flex-flow: row nowrap;
+}
+.Letter-talk-left{
+     width: 30%;
+     height: 100%;
+    border-right: 1px solid #e6e3e3;
+
+ }
+.Letter-talk-right{
+    width: 70%;
+    height: 100%;
+    /*border: 1px solid silver;*/
+}
+.talk-myFriend .myFriend{
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    height: 50px;
+    /*border: 1px solid silver;*/
+    list-style-type: none;
+}
+
+.myFriend li{
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #2b2b2b;
+}
+.myFriend a:link{
+    color: #5f5e5c;
+}
+.myFriend a:hover{
+    color: #5f5e5c;
+}
+.myFriend a:active{
+    color: #5f5e5c;
+}
+.myFriend a:visited{
+    color: #5f5e5c;
+}
+.select-myFriend1{
+    width: 100%;
+    height: 2px;
+    background-color: #2144cb;
+    border-right: 10px;
+}
+.myFriend-one {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-flow: row nowrap;
+}
+.myFriend-one:link{
+    background-color: white;
+}
+.myFriend-one:hover{
+    background-color: #f0eded;
+}
+.myFriend-one:active{
+    background-color:  #f0eded;
+}
+.myFriend-one:visited{
+    background-color: white;
+}
+.myFriend-one img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-size: 100% 100%;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+.myFriend-name .name{
+    color: #a8a7a5;
+    margin-top: 10px;
+    margin-left: 15px;
+    font-size: 13px;
+    line-height: 30px;
+    display: flex;
+    flex-flow: row nowrap;
+}
+.myFriend-name{
+    width: 100%;
+    height: 100px;
+
+}
+.myFriend-name .Friend-name{
+    color: #5f5c5e;
+    margin-top: 25px;
+    margin-left: 15px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 30px;
+
+}
+.myFriend-name .Friend-name p{
+    width: 90px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.myFriend-name .news{
+    width: 23px;
+    height: 23px;
+    background-color: #ff7724;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 23px;
+    left: 30px;
+    position: relative;
+    bottom: 25px;
+
+}
+
+/*内部滚动*/
+#myFriend-bottom ,#myFriend-bottom2{
+    width: 100%;
+    height: 550px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-snap-points-y: repeat(450px);
+    scroll-snap-type: mandatory;
+    font-size: 0;
+}
+/*聊天界面*/
+.Letter-right-title{
+    width: 100%;
+    height: 70px;
+
+}
+.Letter-right-friend{
+    display: flex;
+    flex-flow: row nowrap;
+    list-style-type: none;
+    padding: 10px;
+
+}
+.Letter-right-friend img{
+    width: 50px;
+    height: 50px;
+    background-size: 100% 100%;
+    border-radius: 50%;
+    margin-right: 20px;
+
+}
+.Letter-right-friend li:nth-child(2){
+    font-size: 16px;
+    color: #5f5c5e;
+    margin-right: 20px;
+    font-weight: 600;
+    line-height: 50px;
+
+}
+.Letter-right-friend li:nth-child(3){
+    font-size: 13px;
+    color: #a8a7a5;
+    line-height: 50px;
+    margin-right: 250px;
+}
+.Letter-right-content{
+    width: 100%;
+    height: 60%;
+    border: 1px solid #e6e3e3;
+}
+textarea{
+    border: 1px solid #e6e3e3;
+    width: 100%;
+    outline:none;
+    border-left: none;
+    color: #2b2b2b;
+}
+.warning{
+    width: 100%;
+    height: 30px;
+    background-color: #f6ecda;
+    line-height: 30px;
+}
+.Letter-right-footer{
+    width: 100%;
+    height: 50px;
+
+}
+.Letter-right-footer ul{
+    display: flex;
+    flex-flow: row nowrap;
+    list-style-type: none;
+}
+.Letter-right-footer li:nth-child(1){
+    margin-left: 20px;
+}
+.Letter-right-footer li:nth-child(2){
+    margin-left: 20px;
+}
+.Letter-right-footer li:nth-child(3){
+    margin-left: 20px;
+}
+.Letter-right-footer li:nth-child(4){
+    margin-left: 350px;
+}
+.com-button{
+    width: 50px;
+    height: 30px;
+    background-color: #1f3eb3;
+    color: white;
+    border: none;
+}
+/*<!--我关注的帖子-->*/
+.myPosts-like{
+    width: 80%;
+    height: 100%;
+    margin: 50px auto;
+    /*background-color: #1b6d85;*/
+}
+.myPosts-like table{
+    margin: 10px auto;
+    width: 100%;
+    text-align: center;
+}
+.myPosts-tr{
+    height: 30px;
+}
+
+.myPosts-tr div{
+    width:200px ;
+    color: #5c585e;
+    /*多出的省略在a和td，tr中没用*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.myPosts-tr td:nth-child(1){
+    background-color: #f2ccad;
+    width: 33%;
+}
+.myPosts-tr td:nth-child(2){
+    background-color: #e8eea5;
+    width: 33%;
+
+}
+.myPosts-tr td:nth-child(3){
+    background-color: #cceeb1;
+    width: 33%;
+}
+.myPosts-like-ul{
+    display: flex;
+    flex-flow: row nowrap;
+    list-style-type: none;
+    width: 100%;
+   justify-content: space-around;
+    border-bottom: 2px solid #f2ccad;
+}
+.myPosts-like-ul li{
+    font-size: 18px;
+    font-weight: 700;
+
+}
+
+/*访客*/
+.myVisitor-bottom{
+    width: 90%;
+    min-height: 700px;
+    height: 100%;
+    margin-left: 20px;
+    background-color: #fffefd;
+    padding: 20px;
+
+}
+.myVisitor-number ul{
+    display: flex;
+    flex-flow: row nowrap;
+    list-style-type: none;
+    margin-bottom: 50px;
+}
+.myVisitor-number ul li{
+    margin-right: 20px;
+}
+.list_title{
+    position:relative;
+    height: 53px;
+    padding: 0;
+    margin: 0;
+}
+.list_title h2{
+    width: 116px;
+    height: 26px;
+    line-height: 26px;
+    font-size: 16px;
+    font-family: Tahoma,\5FAE\8F6F\96C5\9ED1,Serif;
+    position: absolute;
+    left: 0px;
+    border-radius: 3px;
+    text-align: center;
+    /*border: 1px solid #65c6fc;*/
+    background-color: #d6eef5;
+    /*top: -20px;*/
+
+}
+.bubble_trig{
+    width: 0;
+    height: 0;
+    border: 10px solid;
+    border-color: #d6eef5 #fffefd  #fffefd #fffefd;
+    margin-left: 50px;
+
+
+}
+.list_item{
+    width: 80%;
+    height: 100%;
+    /*background-color: #f2ccad;*/
+    display: flex;
+    flex-flow: row nowrap;
+    margin-top: -20px;
+
+}
+
+.list_item-time{
+     width:11%;
+     height: 120px;
+     /*background-color: #c7ee80;*/
+     border-right: 2px solid #d6eef5;
+
+ }
+.list_item-time p{
+    margin-top: 25px;
+    font-size: 14px;
+    color: #8d8c8a;
+}
+.list_item-time img{
+    margin-left: 52px;
+    margin-top: -60px;
+    background-color:#fffefd ;
+}
+.list_item-phone{
+    width:20%;
+    height: 100%;
+    /*background-color: #eed94e;*/
+    /*border-right: 1px solid #b5dcf5;*/
+}
+.list_item-phone img{
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background-size: 100% 100%;
+    margin-left: 30px;
+    margin-top: 30px;
+}
+.list_item-content{
+    width:75%;
+    height: 100%;
+    /*background-color: #f0e8dc;*/
+}
+.list_item-border{
+
+    padding: 20px;
+    width: 100%;
+    min-height: 40px;
+    background-color: #d6eef5;
+    margin-top: -50px;
+    border-radius: 5px;
+}
+.item_trig{
+    width: 0;
+    height: 0;
+    border: 10px solid;
+    border-color: #fffefd #d6eef5 #fffefd #fffefd;
+    margin-top: 45px;
+    margin-left: -20px;
+}
+.myVisitor-new{
+    width: 100%;
+    height: 100%;
+    margin-top: -20px;
+}
+.list_title-over{
+    position:relative;
+    height: 53px;
+    padding: 0;
+    margin: 0;
+}
+.list_title-over h2{
+    width: 116px;
+    height: 26px;
+    line-height: 26px;
+    font-size: 16px;
+    font-family: Tahoma,\5FAE\8F6F\96C5\9ED1,Serif;
+    position: absolute;
+    left: 0px;
+    border-radius: 3px;
+    text-align: center;
+    background-color: #d6eef5;
+    top: -20px;
+
+}
+.bubble_trig-over{
+    width: 0;
+    height: 0;
+    border: 10px solid;
+    border-color: #d6eef5 #fffefd  #fffefd #fffefd;
+    margin-left: 50px;
+    position: absolute;
+    margin-top: 25px;
+
+
+}
+
+
+/*谈话*/
+
+.other-talk .talk-content{
+    height: auto;
+    max-width: 400px;
+    min-height: 40px;
+    min-width: 50px;
+    border-radius: 5px;
+    background-color: #bed3ff;
+    padding: 10px;
+    line-height: 25px;
+}
+.other-talk {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-bottom: 30px;
+}
+.other-talk img{
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    background-size: 100% 100%;
+    margin-right: 30px;
+}
+.talk-content-bottom{
+    display: flex;
+    flex-flow: row nowrap;
+    min-height: 40px;
+    height: auto;
+}
+.talk-content-bottom .talk-one{
+    width: 0;
+    height: 0;
+    border: 10px solid;
+    border-color: #f7f7e9 #bed3ff #f7f7e9 #f7f7e9;
+    top: 15px;
+    position: relative;
+
+}
+
+.other-talking{
+    padding: 15px;
+    width: 100%;
+    height: 376px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-snap-points-y: repeat(450px);
+    scroll-snap-type: mandatory;
+
+}
+.other-talk2 .talk-content2{
+    height: auto;
+    max-width: 400px;
+    min-height: 40px;
+    min-width: 50px;
+    border-radius: 5px;
+    background-color: #bed3ff;
+    padding: 10px;
+    line-height: 25px;
+}
+.other-talk2 {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-bottom: 30px;
+    justify-content: flex-end;
+}
+.other-talk2 img{
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    background-size: 100% 100%;
+    margin-right: 30px;
+}
+.talk-content-bottom2{
+    display: flex;
+    flex-flow: row nowrap;
+    min-height: 40px;
+    height: auto;
+}
+.talk-content-bottom2 .talk-one2{
+    width: 0;
+    height: 0;
+    border: 10px solid;
+    border-color: #f7f7e9 #f7f7e9 #f7f7e9 #bed3ff;
+    top: 15px;
+    position: relative;
+
+}

@@ -1,0 +1,267 @@
+@media screen and (min-width:780px){
+    .child-logo p{
+        display:none;
+    }
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    width: 100%;
+    height: 100%;
+    background-image: url("../../img/xinwen.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment:fixed;
+    background-position:center;
+}
+
+/*nav*/
+.childes a:hover{
+    text-align: center;
+    font-weight: 700;
+    /*background-color: rgba(212, 222, 169, 0.5);*/
+    /*box-shadow: 20px 0 60px #ffc620;*/
+}
+.talkDetail-bottom{
+    width: 1080px;
+    height: 100%;
+    margin: 100px auto 60px auto;
+    background-color: #fcf9f3;
+    display: flex;
+    flex-flow: row nowrap;
+    /*justify-content: space-between;*/
+}
+.talkDetail-cache{
+    width:6%;
+}
+.talkDetail-cache-bottom{
+    position: relative;
+    width: 100%;
+    height: 200px;
+    /*background-color: #2aabd2;*/
+    margin-top: 600px;
+}
+.talkDetail-cache-one{
+    width:80%;
+    height: 30px;
+    line-height: 30px;
+    background-color: #ff9f26;
+    margin: 0 auto;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+}
+.talkDetail-cache-two{
+    width: 80%;
+    height: 50px;
+    background-color:#ff9f26;
+    margin: 10px auto;
+}
+.talkDetail-cache-two input{
+    width: 100%;
+    height: 50px;
+    background-color:#ff9f26;
+    margin: 0 auto;
+    border: none;
+    color: white;
+}
+.talkDetail-cache-three{
+    width: 0;
+    height: 0;
+    border: 25px solid;
+    margin: 0 auto;
+    border-color: #ff9f26 #fcf9f3 #fcf9f3 #fcf9f3;
+}
+.talkDetail-bottom-left{
+    width:65%;
+    height: 100%;
+    background-color: #fcf9f3;
+    /*border: 1px solid salmon;*/
+    margin-right: 70px;
+
+}
+.talkDetail-bottom-right{
+    width:20%;
+    height: 100%;
+    /*margin-right: 30px;*/
+    margin-top: 30px;
+    background-color: #fcf9f3;
+    /*border: 1px solid #2b50fa;*/
+}
+.talkDetail-left-title{
+    width:100%;
+    height: 100px;
+    border-top: 2px solid #fac5a9;
+    margin-top: 30px;
+}
+.myTags-talkDetail{
+    display: flex;
+    flex-flow: row nowrap;
+    list-style-type: none;
+}
+.myTags-talkDetail li{
+    margin-right: 30px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #2f2d31;
+}
+.talkDetail-left-content{
+    width: 100%;
+    border-bottom: 2px solid #fac5a9;
+
+}
+.talkDetail-left-content p {
+    font-size: 15px;
+    color: #716d73;
+    line-height: 30px;
+
+}
+.talkDetail-left-content img{
+    width: 100%;
+    height: 400px;
+    background-size: 100% 100%;
+    margin-bottom: 30px;
+}
+.com-talkDetail{
+    margin-top: 30px;
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid #f0eded;
+    margin-bottom: 30px;
+}
+.com-talkDetail-title{
+    display: flex;
+    flex-flow: row nowrap;
+
+}
+.com-talkDetail-title .com-talkDetail-a{
+    width: 600px;
+    display: flex;
+    flex-flow: row nowrap;
+}
+.com-talkDetail-title img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 10px;
+
+}
+.name-lv-talkDetail{
+    display: flex;
+    flex-flow: column nowrap;
+}
+.name-lv-talkDetail h3{
+    font-size: 20px;
+    color: #0f0f0f;
+    font-weight: 600;
+}
+.name-lv-talkDetail p{
+    font-size: 16px;
+    color: #716d73;
+    margin-left: 10px;
+}
+.talkDetail-left-com p{
+    font-size: 15px;
+    color: #716d73;
+    line-height: 30px;
+    margin-bottom: 20px;
+}
+#com-talkDetail-bottom{
+    width: 100%;
+    height: 100%;
+}
+a:link{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+a:active{
+    text-decoration: none;
+}
+a:visited{
+    text-decoration: none;
+}
+.number-com-talkDetail{
+    display: flex;
+    flex-flow: row nowrap;
+    margin-top: 30px;
+}
+.number-com-talkDetail img{
+    width: 30px;
+    height: 30px;
+}
+.talkDetail-phone-right img{
+    width: 100%;
+    height: 300px;
+    background-size: 100% 100%;
+
+}
+.right-name-talkDetail{
+    display: flex;
+    flex-flow: row nowrap;
+}
+.right-name-talkDetail img{
+    width: 40px;
+    height: 40px;
+
+}
+.right-name-talkDetail p{
+   font-size: 30px;
+    color: #282828;
+    font-weight: 600;
+
+}
+.right-concern{
+    width: 100%;
+    height: 50px;
+    background-color: #bc8b5e;
+    border: 2px solid #edeaea;
+    text-align: center;
+
+}
+.right-concern p{
+    font-size: 35px;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 20px;
+
+}
+.right-talkDetail{
+    width: 100%;
+    height: 50px;
+    background-color: #bc8b5e;
+    border: 2px solid #edeaea;
+    margin-top: 20px;
+    text-align: center;
+}
+.right-talkDetail p{
+    font-size: 35px;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 20px;
+}
+.right-myWords{
+    width: 100%;
+    min-height: 150px;
+    padding: 20px;
+    background-color: #ebb281;
+    /*border: 1px solid silver;*/
+    margin-top: 20px;
+}
+.talkDetail-up{
+    width: 0;
+    height: 0;
+    position: relative;
+    border: 25px solid;
+    margin-left:700px;
+    border-color: #fcf9f3 #fcf9f3 #ff9f26 #fcf9f3 ;
+}
+.talkDetail-up p{
+    /*display: none;*/
+
+
+}

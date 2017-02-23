@@ -1,0 +1,110 @@
+﻿@model HNCJ.DY.Model.Message
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Add</title>
+<link href="~/Content/jquery-easyui-1.5/themes/default/easyui.css" rel="stylesheet" />
+    <link href="~/Content/jquery-easyui-1.5/themes/icon.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.7.1.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Content/jquery-easyui-1.5/jquery.easyui.min.js"></script>
+    <script src="~/Content/jquery-easyui-1.5/locale/easyui-lang-zh_CN.js"></script>
+
+    <script type="text/javascript">
+        function afterAdd(result) {
+            if (result.status != 1) {
+                $.messager.show({
+                    title: 'Error',
+                    msg: result.errorMsg
+                });
+            } else {
+                window.parent.window.afterSuccess();
+            }
+        }
+        function submitForm() {
+            $("form").submit();
+        }
+    </script>
+</head>
+<body>
+    @using (Ajax.BeginForm(new AjaxOptions() { OnSuccess = "afterAdd" }))
+    {
+        @Html.ValidationSummary(true)
+    
+        <fieldset>
+            <legend>Message</legend>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.DailogueID)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.DailogueID)
+                @Html.ValidationMessageFor(model => model.DailogueID)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Msg)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Msg)
+                @Html.ValidationMessageFor(model => model.Msg)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Status)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Status)
+                @Html.ValidationMessageFor(model => model.Status)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.DelFlag)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.DelFlag)
+                @Html.ValidationMessageFor(model => model.DelFlag)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.RegTime)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.RegTime)
+                @Html.ValidationMessageFor(model => model.RegTime)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ModfiedTime)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.ModfiedTime)
+                @Html.ValidationMessageFor(model => model.ModfiedTime)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.UserInfoID)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.UserInfoID)
+                @Html.ValidationMessageFor(model => model.UserInfoID)
+            </div>
+    
+            <p>
+                <input type="submit" value="Create" />
+            </p>
+        </fieldset>
+    }
+    
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</body>
+</html>

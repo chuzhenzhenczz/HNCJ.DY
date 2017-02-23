@@ -1,0 +1,223 @@
+.menu-upFiles li{
+     width: 100px;
+     height: 100%;
+
+     /*border: 1px solid silver;*/
+     background-color:#89ACCA;
+     text-align: center;
+     font-size: 20px;
+     /*border-radius:10px 10px 0 0 ;*/
+ }
+.menu-upFiles{
+    font-size: 20px;
+    width: 400px;
+    text-align: center;
+    background-color:#89ACCA;
+    border-radius:10px 10px 0 0 ;
+}
+.menu-upFiles li:nth-child(1){
+    border-radius:10px 0 0 0 ;
+}
+.menu-upFiles li:nth-child(4){
+    border-radius: 0 10px 0 0;
+}
+.menu-upFiles a{
+    color:white;
+
+}
+.select-upFiles{
+    width: 1080px;
+    margin: 0 auto;
+    /*background-color: silver;*/
+}
+.content-upFiles{
+    width: 100%;
+    min-width: 1080px;
+    height: 100%;
+    background-color: #ebeae8;
+    margin: -20px auto;
+
+}
+.my-upFiles,.all-upFiles{
+    width: 1080px;
+    height: 100%;
+    background-color: #ebeae8;
+    margin: 0 auto;
+    text-align: center;
+}
+/*阅读*/
+.read-upFiles{
+    position: relative;
+    top: 60px;
+    margin-bottom: 90px;
+}
+/*在线资料*/
+.online-files{
+    width: 120px;
+    height: 40px;
+    margin: 0 auto;
+    border-bottom: 2px solid #b5dcf5;
+    margin-bottom: 70px;
+
+}
+.online-files-content{
+    width: 100%;
+    height: 400px;
+    /*background-color: silver;*/
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+/*各种资料左*/
+.files-left-bottom{
+    width: 55%;
+    height: 100%;
+    /*background-color: #65c6fc;*/
+    border-right: 2px solid #dcdbd9;
+}
+
+#online-files-left,#online-files-left2,#online-files-left3,#online-files-left4{
+    width: 100%;
+    height: 90%;
+    /*background-color: #65c6fc;*/
+    /*border-right: 2px solid silver;*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+#left-title-bottom,#left-title-bottom2,#left-title-bottom3,#left-title-bottom4{
+    width: 100%;
+    height: 40px;
+    /*background-color: silver;*/
+    display: flex;
+    flex-flow: row nowrap;
+
+}
+.files-left-title{
+    width: 50%;
+    height: 100%;
+    /*background-color: #c7ee80;*/
+    text-align: left;
+}
+.files-right-title{
+    width: 50%;
+    height: 100%;
+    /*background-color: #b4d042;*/
+    text-align: left;
+}
+.files-title{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    flex-flow: row nowrap;
+}
+.files-title p{
+    line-height: 40px;
+    font-size: 20px;
+    color: #0f0f0f;
+}
+.files-title img{
+    width: 30px;
+    height: 35px;
+    background-size: 100% 100%;
+}
+.files-title a{
+    margin-left: 10px;
+    text-decoration: none;
+}
+.move-files{
+    width: 100%;
+    height: 30px;
+    text-align: center;
+}
+.move-files p a{
+   font-size: 20px;
+    font-weight: 500;
+    text-decoration: none;
+    margin: 20px 70px 0 0 ;
+}
+/*重点学习*/
+.online-files-right{
+    width: 35%;
+    height: 100%;
+    /*background-color: #cceeb1;*/
+}
+.files-right-bottom{
+    width: 60%;
+    height: 100%;
+    margin: 0 auto;
+    /*background-color: #2aabd2;*/
+}
+.right-title{
+    width: 150px;
+    height: 30px;
+    position: relative;
+    margin: 0 auto;
+    /*top: 30px;*/
+    font-size: 25px;
+    font-weight: 500;
+    color: #4b4a48;
+}
+#vital-study-bottom,#vital-study-bottom2,#vital-study-bottom3,#vital-study-bottom4{
+    width: 100%;
+    height: 330px;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 20px auto;
+
+}
+.vital-study-title{
+    width: 100%;
+    height: 40px;
+    /*background-color: #71cad2;*/
+    display: flex;
+    flex-flow: row nowrap;
+    margin-left: 20px;
+}
+.vital-study-title img{
+    width: 30px;
+    height: 30px;
+    background-size: 100% 100%;
+
+}
+.vital-study-title a{
+    text-decoration: none;
+
+    font-size: 20px;
+    margin-left: 10px;
+
+}
+.LunBo-video{
+    width: 100%;
+    height: 500px;
+    margin-bottom: 70px;
+    /*background-color: #1f3eb3;*/
+}
+.swiper-container {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 600px;
+    height: 400px;
+
+}
+a:link{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+a:active{
+    text-decoration: none;
+}
+a:visited{
+    text-decoration: none;
+}

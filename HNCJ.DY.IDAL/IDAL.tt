@@ -1,0 +1,38 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ include file="EF.Utility.CS.ttinclude"#>
+
+<#@ output extension=".cs" #>
+<#
+CodeGenerationTools code = new CodeGenerationTools(this);
+MetadataLoader loader=new MetadataLoader(this);
+CodeRegion region=new CodeRegion(this,1);
+MetadataTools ef = new MetadataTools(this);
+string inputFile=@"..\\HNCJ.DY.Model\\DataModel.edmx";
+EdmItemCollection ItemCollection=loader.CreateEdmItemCollection(inputFile);
+string namespaceName=code.VsNamespaceSuggestion();
+var	fileManager = EntityFrameworkTemplateFileManager.Create(this);
+#>
+
+using HNCJ.DY.IDAL;
+using HNCJ.DY.Model;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace HNCJ.DY.IDAL
+{
+	<#
+
+	foreach (var entity in ItemCollection.GetItems<EntityType>().OrderBy(e=>e.Name))
+	{
+	#>
+	public partial interface I<#=entity.Name#>Dal:IBaseDal<<#=entity.Name#>>
+		{
+		}
+
+	<#
+	}
+	#>
+
+}

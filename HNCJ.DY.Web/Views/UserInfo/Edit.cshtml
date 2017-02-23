@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+@model HNCJ.DY.Model.UserInfo
+<h2>Edit</h2>
+@section header{
+    <script type="text/javascript">
+        function submitForm() {
+            var name = $("#UserName").val();
+            var pwd = $("#Pwd").val();
+            if (name == "") {
+                alert("用户名不能为空？");
+                return false;
+            }
+            if (pwd == "") {
+                alert("密码不能为空？");
+                return false;
+            }
+            $("form").submit();
+        }
+    </script>
+   
+    
+    }
+@section content{
+    @{var pwd = HNCJ.DY.Common.DESEncrypt.Decrypt(Model.Userpwd, Model.UserKey);}
+            <div style="margin-bottom:20px">
+				<input class="easyui-textbox" id="UserName" name="UserName" value="@Model.UserName" style="width:100%" data-options="label:'用户名:',required:true">
+			</div>
+               
+			<div style="margin-bottom:20px">
+				<input class="easyui-textbox" id="Pwd" name="Userpwd" type="password" value="@pwd" style="width:100%" data-options="label:'密码:',required:true">
+			</div>
+            
+                @Html.HiddenFor(model => model.ID)
+                @Html.HiddenFor(model => model.Status)
+            
+                @Html.HiddenFor(model => model.DelFlag)
+            
+                @Html.HiddenFor(model => model.RegTime)
+    }

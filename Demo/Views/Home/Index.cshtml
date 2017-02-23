@@ -1,0 +1,56 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="~/Content/jquery-easyui-1.5/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () { //本人习惯这样写了
+            var i = 2;
+            $("#cc").scroll(function () {
+                //$(window).scrollTop()这个方法是当前滚动条滚动的距离
+                //$(window).height()获取当前窗体的高度
+                //$(document).height()获取当前文档的高度
+                var bot = 50; //bot是底部距离的高度
+                if ((bot + $("#cc").scrollTop()) >= $("#cc").height()) {
+                    //当底部基本距离+滚动的高度〉=窗体的高度时；
+                    //我们需要去异步加载数据了
+                    fun(i, 20);
+                    i++;
+                }
+            });
+        });
+        function fun(index,size) {
+            $.post("/home/getjson", { index: index, pagesize:size }, function (data) {
+                var k=size*(index-1);
+                for (var j = 0; j < data.length; j++) {
+                    var kk=k+j+1;
+                    $("#cc").append("<a href='#'>" + data[j] + "&nbsp;<span>" + kk + "</span></a><br/>");
+                }
+            });
+        }
+    </script> 
+</head>
+<body>
+  <frameset rows="59,*" cols="*" frameborder="no" border="0" framespacing="0">
+  <frame src="a.html" name="topFrame" scrolling="No" noresize="noresize" id="topFrame"/>
+  <frameset cols="213,*" frameborder="no" border="0" framespacing="0">
+    <frame src="b.html" name="leftFrame" scrolling="No" noresize="noresize" id="leftFrame"/>
+    <frame src="c.htnl" name="mainFrame" id="mainFrame"/>
+  </frameset>
+
+  </frameset>
+
+    @*<div id="cc" style="height:200px;width:200px;background-color:#808080;overflow:auto;margin-left:100px;">
+        
+    </div>
+    <script type="text/javascript">
+        fun(1,20);
+    </script>*@
+</body>
+</html>

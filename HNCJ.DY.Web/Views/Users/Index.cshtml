@@ -1,0 +1,164 @@
+﻿@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="stylesheet" href="~/Content/dy/css/first_page.css">
+    <link rel="stylesheet" href="~/Content/dy/css/nav.css">
+    <link rel="stylesheet" href="~/Content/dy/css/lunbo.css">
+    <link rel="stylesheet" href="~/Content/dy/css/first_content.css">
+    <link rel="stylesheet" href="~/Content/dy/css/headline.css">
+    <script src="~/Scripts/jquery-1.7.1.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $.ajax({
+                type: "post",
+                url: "/Userdoaction/Check_login",
+                dataType: "json",
+                success: function (data) {
+                    if (data.status == 1) {
+                        var str = "欢迎登陆,<a href='/UserDoAction/Exits' alt=''>注销</a>";
+                        $("#dd").html(str);
+                    } else {
+                        var str = "<a href='/userlogin/login' >党员个人登录</a>";
+                        $("#dd").html(str);
+                    }
+                }
+            });
+            
+        })
+    </script>
+</head>
+<body>
+<header>
+    <div class="nav_first">
+        <div class="nav_top">
+            <div class="nav_top_one">
+                <ul class="nav_top_left">
+                    <li><a href="">欢迎访问"党员一点通"</a></li>
+                    <li><a href="">设为首页</a></li>
+                    <li><a href="">移动客户端</a></li>
+                </ul>
+            </div>
+            <div class="nav_top_two">
+                <ul class="nav_top_right">
+                    <li><input type="text" placeholder="请输入..." style="float:left;"><button class="sosuo" style="width:50px;">搜索</button></li>
+                    <li><div id="dd"></div></li>
+                    <li><a href="">我要投稿</a></li>
+                    <li><a href="">论坛留言</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="logo">
+        <div class="logo_title">
+            <div class="logo_left">
+                <ul class="menu">
+                    <li><img src="~/Content/dy/img/logo2.png" alt=""></li>
+                    <li>党员一点通</li>
+                </ul>
+            </div>
+            <div class="logo_right">
+                <ul class="menu">
+                    <li><a href="">档案管理</a></li>
+                    <li><a href="">在线学习</a></li>
+                    <li><a href="">新闻在线</a></li>
+                    <li><a href="">党员论坛</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</header>
+<section>
+    <div id="box">
+        <div id="content">
+            <img src="~/Content/dy/images/1.jpg" alt="" />
+            <img src="~/Content/dy/images/2.jpg" alt="" />
+            <img src="~/Content/dy/images/3.jpg" alt="" />
+            <img src="~/Content/dy/images/1.jpg" alt="" />
+        </div>
+        <ul>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+        </ul>
+    </div>
+    <div class="box_m">
+        <div class="box_p">
+            <p>党员一点通</p>
+        </div>
+    </div>
+    <div class="title_news">
+        <img src="~/Content/dy/img/title_news.png" alt="">
+    </div>
+
+    <div class="content_new">
+        <div class="new_left" >        
+            <div class="content">
+            <div class="nav">
+            </div>
+            <ul>
+                <li >
+                    <div class="contentView">
+                        <div class="left">
+                            <img src="~/Content/dy/img/20160722-101314.jpg"alt="" />
+                        </div>
+                        <div class="right">
+                           <h3>{{news.title}}</h3>
+                           <p><span>{{news.ptime}}</span><span>{{replyCount}}回复</span></p>
+                        </div>
+                    </div>
+                </li>
+                <li >
+                    <div class="contentView">
+                        <div class="left">
+                            <img src="~/Content/dy/img/20160722-101314.jpg"alt="" />
+                        </div>
+                        <div class="right">
+                           <h3>{{news.title}}</h3>
+                           <p><span>{{news.ptime}}</span><span>{{replyCount}}回复</span></p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        </div>
+        <div class="new_right">
+            <div class="content">
+    <div class="nav">
+        <button ng-click="mine.goBack()">返回</button>
+        <h2>详情页</h2>
+    </div>
+    <div class="title">
+        {{mine.title}}
+    </div>
+    <div class="ptime">
+        {{mine.timeAndSource}}
+    </div>
+    <div class="detailContent" ng-bind-html="mine.content">
+
+    </div>
+</div>
+        </div>
+
+    </div>
+</section>
+
+</body>
+
+</html>
+<script src="~/Content/dy/lib/angular.js"></script>
+<script src="~/Content/dy/js/lunbo.js"></script>
+<script src="~/Content/dy/js/tween.js"></script>
+<script src="~/Content/dy/lib/angular-route.js"></script>
+<script src="~/Content/dy/js/app.js"></script>
+<script src="~/Content/dy/js/detailController.js"></script>
+<script src="~/Content/dy/js/headlineController.js"></script>
+

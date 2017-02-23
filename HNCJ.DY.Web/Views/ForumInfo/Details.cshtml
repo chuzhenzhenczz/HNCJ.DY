@@ -1,0 +1,72 @@
+﻿@model HNCJ.DY.Model.ForumInfo
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <fieldset>
+        <legend>ForumInfo</legend>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.Name)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Name)
+        </div>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.Description)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Description)
+        </div>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.Sort)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Sort)
+        </div>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.Status)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Status)
+        </div>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.DelFlag)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.DelFlag)
+        </div>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.RegTime)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.RegTime)
+        </div>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.ModfiedTime)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.ModfiedTime)
+        </div>
+    </fieldset>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>
